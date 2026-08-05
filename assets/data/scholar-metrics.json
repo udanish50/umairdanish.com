@@ -1,467 +1,227 @@
-#!/usr/bin/env python3
-"""Refresh Google Scholar metrics through SerpApi.
-
-The updater retrieves the public Scholar author record, including metrics,
-articles and annual citation history. It does not overwrite the last valid
-snapshot with incomplete data.
-"""
-
-from __future__ import annotations
-
-import json
-import os
-import sys
-import urllib.parse
-import urllib.request
-from datetime import datetime, timezone
-from pathlib import Path
-from typing import Any
-
-
-AUTHOR_ID = "vDmY-KUAAAAJ"
-OUTPUT = Path("assets/data/scholar-metrics.json")
-ENDPOINT = "https://serpapi.com/search.json"
-
-
-def safe_int(value: Any, default: int = 0) -> int:
-    """Convert a value to an integer without raising an exception."""
-    try:
-        return int(value)
-    except (TypeError, ValueError):
-        return default
-
-
-def load_previous_snapshot() -> dict[str, Any]:
-    """Read the last successfully stored Scholar snapshot."""
-    if not OUTPUT.exists():
-        return {}
-
-    try:
-        data = json.loads(OUTPUT.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return {}
-
-    return data if isinstance(data, dict) else {}
-
-
-def extract_metric(
-    table: list[dict[str, Any]],
-    metric_name: str,
-) -> dict[str, Any]:
-    """Extract one metric from the SerpApi Scholar cited-by table."""
-    for row in table:
-        value = row.get(metric_name)
-
-        if not isinstance(value, dict):
-            continue
-
-        recent_key = next(
-            (key for key in value if key != "all"),
-            None,
-        )
-
-        return {
-            "all": safe_int(value.get("all")),
-            "since_year": (
-                safe_int(value.get(recent_key))
-                if recent_key
-                else 0
-            ),
-            "since_label": (
-                recent_key.replace("_", " ").title()
-                if recent_key
-                else "Recent"
-            ),
-        }
-
-    raise RuntimeError(
-        f"Google Scholar metric is missing: {metric_name}"
-    )
-
-
-def normalize_graph(source: Any) -> list[dict[str, int]]:
-    """Normalize annual citation history returned in different formats."""
-    graph: list[dict[str, int]] = []
-
-    if isinstance(source, list):
-        for item in source:
-            if not isinstance(item, dict):
-                continue
-
-            year = safe_int(item.get("year"))
-
-            citations = safe_int(
-                item.get(
-                    "citations",
-                    item.get(
-                        "value",
-                        item.get("count", 0),
-                    ),
-                )
-            )
-
-            if year > 0:
-                graph.append(
-                    {
-                        "year": year,
-                        "citations": citations,
-                    }
-                )
-
-    elif isinstance(source, dict):
-        for raw_year, raw_citations in source.items():
-            year = safe_int(raw_year)
-
-            if year > 0:
-                graph.append(
-                    {
-                        "year": year,
-                        "citations": safe_int(raw_citations),
-                    }
-                )
-
-    unique: dict[int, int] = {}
-
-    for item in graph:
-        unique[item["year"]] = item["citations"]
-
-    return [
-        {
-            "year": year,
-            "citations": unique[year],
-        }
-        for year in sorted(unique)
-    ]
-
-
-def normalize_articles(source: Any) -> list[dict[str, Any]]:
-    """Normalize the publications returned by Scholar."""
-    if not isinstance(source, list):
-        return []
-
-    articles: list[dict[str, Any]] = []
-
-    for article in source:
-        if not isinstance(article, dict):
-            continue
-
-        title = str(article.get("title") or "").strip()
-
-        if not title:
-            continue
-
-        cited_by = article.get("cited_by")
-
-        if not isinstance(cited_by, dict):
-            cited_by = {}
-
-        articles.append(
-            {
-                "title": title,
-                "citations": safe_int(
-                    cited_by.get(
-                        "value",
-                        cited_by.get(
-                            "total",
-                            cited_by.get("citations", 0),
-                        ),
-                    )
-                ),
-                "year": str(article.get("year") or ""),
-                "publication": str(
-                    article.get("publication") or ""
-                ),
-                "authors": str(article.get("authors") or ""),
-                "citation_id": str(
-                    article.get("citation_id") or ""
-                ),
-                "link": str(article.get("link") or ""),
-            }
-        )
-
-    return articles
-
-
-def request_serpapi(
-    api_key: str,
-    *,
-    include_articles: bool,
-) -> dict[str, Any]:
-    """Request a fresh Scholar author response from SerpApi."""
-    parameters: dict[str, Any] = {
-        "engine": "google_scholar_author",
-        "author_id": AUTHOR_ID,
-        "hl": "en",
-        "api_key": api_key,
-        "no_cache": "true",
+{
+  "source": "Google Scholar via SerpApi",
+  "status": "live",
+  "author_id": "vDmY-KUAAAAJ",
+  "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
+  "updated_at": "2026-08-05T19:09:56Z",
+  "metrics": {
+    "citations": {
+      "all": 157,
+      "since_year": 156,
+      "since_label": "Since 2021"
+    },
+    "h_index": {
+      "all": 5,
+      "since_year": 5,
+      "since_label": "Since 2021"
+    },
+    "i10_index": {
+      "all": 5,
+      "since_year": 5,
+      "since_label": "Since 2021"
+    },
+    "article_count": 17
+  },
+  "citation_graph": [
+    {
+      "year": 2024,
+      "citations": 14
+    },
+    {
+      "year": 2025,
+      "citations": 79
+    },
+    {
+      "year": 2026,
+      "citations": 62
     }
-
-    if include_articles:
-        parameters.update(
-            {
-                "num": 100,
-                "sort": "pubdate",
-            }
-        )
-
-    url = f"{ENDPOINT}?{urllib.parse.urlencode(parameters)}"
-
-    request = urllib.request.Request(
-        url,
-        headers={
-            "Accept": "application/json",
-            "User-Agent": (
-                "umairdanish.com-scholar-refresh/4.0"
-            ),
-        },
-    )
-
-    with urllib.request.urlopen(
-        request,
-        timeout=90,
-    ) as response:
-        raw = json.load(response)
-
-    if not isinstance(raw, dict):
-        raise RuntimeError(
-            "SerpApi returned an invalid JSON response"
-        )
-
-    if raw.get("error"):
-        raise RuntimeError(str(raw["error"]))
-
-    metadata = raw.get("search_metadata")
-
-    if isinstance(metadata, dict):
-        status = metadata.get("status")
-
-        if status not in {
-            None,
-            "Success",
-            "Cached",
-        }:
-            raise RuntimeError(
-                f"SerpApi search status was: {status}"
-            )
-
-    return raw
-
-
-def extract_graph(
-    raw: dict[str, Any],
-) -> list[dict[str, int]]:
-    """Extract citation history from every supported response location."""
-    cited_by = raw.get("cited_by")
-
-    if not isinstance(cited_by, dict):
-        cited_by = {}
-
-    possible_sources = [
-        cited_by.get("graph"),
-        cited_by.get("citation_graph"),
-        cited_by.get("citations_per_year"),
-        cited_by.get("cites_per_year"),
-        raw.get("citation_graph"),
-        raw.get("citations_per_year"),
-        raw.get("cites_per_year"),
-    ]
-
-    for source in possible_sources:
-        graph = normalize_graph(source)
-
-        if graph:
-            return graph
-
-    return []
-
-
-def main() -> int:
-    api_key = os.environ.get("SERPAPI_KEY", "").strip()
-
-    if not api_key:
-        print(
-            "SERPAPI_KEY is not configured.",
-            file=sys.stderr,
-        )
-        return 1
-
-    previous = load_previous_snapshot()
-
-    try:
-        primary = request_serpapi(
-            api_key,
-            include_articles=True,
-        )
-
-        cited_by = primary.get("cited_by")
-
-        if not isinstance(cited_by, dict):
-            cited_by = {}
-
-        table = cited_by.get("table")
-
-        if not isinstance(table, list):
-            table = []
-
-        citations = extract_metric(
-            table,
-            "citations",
-        )
-
-        h_index = extract_metric(
-            table,
-            "h_index",
-        )
-
-        i10_index = extract_metric(
-            table,
-            "i10_index",
-        )
-
-        if citations["all"] < 1:
-            raise RuntimeError(
-                "Total Scholar citation count was missing or zero"
-            )
-
-        articles = normalize_articles(
-            primary.get("articles")
-        )
-
-        if not articles:
-            previous_articles = previous.get("articles")
-
-            if isinstance(previous_articles, list):
-                articles = previous_articles
-
-        if not articles:
-            raise RuntimeError(
-                "No Google Scholar articles were available"
-            )
-
-        graph = extract_graph(primary)
-        graph_source = "live"
-
-        if not graph:
-            print(
-                "The primary response did not include citation history. "
-                "Requesting a second fresh Scholar author overview.",
-                file=sys.stderr,
-            )
-
-            secondary = request_serpapi(
-                api_key,
-                include_articles=False,
-            )
-
-            graph = extract_graph(secondary)
-
-        if not graph:
-            previous_graph = normalize_graph(
-                previous.get("citation_graph")
-            )
-
-            if previous_graph:
-                graph = previous_graph
-                graph_source = "previous-valid-snapshot"
-
-        if not graph:
-            print(
-                "Top-level SerpApi keys: "
-                f"{sorted(primary.keys())}",
-                file=sys.stderr,
-            )
-
-            print(
-                "cited_by keys: "
-                f"{sorted(cited_by.keys())}",
-                file=sys.stderr,
-            )
-
-            raise RuntimeError(
-                "SerpApi did not return an annual citation graph, "
-                "and no previous valid graph was available"
-            )
-
-        timestamp = (
-            datetime.now(timezone.utc)
-            .replace(microsecond=0)
-            .isoformat()
-            .replace("+00:00", "Z")
-        )
-
-        payload = {
-            "source": "Google Scholar via SerpApi",
-            "status": "live",
-            "author_id": AUTHOR_ID,
-            "profile_url": (
-                "https://scholar.google.com/citations"
-                f"?hl=en&user={AUTHOR_ID}"
-            ),
-            "snapshot_at": timestamp,
-            "updated_at": timestamp,
-            "graph_status": graph_source,
-            "metrics": {
-                "citations": citations,
-                "h_index": h_index,
-                "i10_index": i10_index,
-                "article_count": len(articles),
-            },
-            "citation_graph": graph,
-            "articles": articles,
-            "public_access": (
-                primary.get("public_access") or {}
-            ),
-            "author": (
-                primary.get("author")
-                or previous.get("author")
-                or {}
-            ),
-        }
-
-        OUTPUT.parent.mkdir(
-            parents=True,
-            exist_ok=True,
-        )
-
-        temporary = OUTPUT.with_suffix(".tmp")
-
-        temporary.write_text(
-            json.dumps(
-                payload,
-                indent=2,
-                ensure_ascii=False,
-            )
-            + "\n",
-            encoding="utf-8",
-        )
-
-        temporary.replace(OUTPUT)
-
-        print(
-            "Updated Google Scholar snapshot: "
-            f"{citations['all']} citations, "
-            f"h-index {h_index['all']}, "
-            f"i10-index {i10_index['all']}, "
-            f"{len(articles)} works, "
-            f"{len(graph)} citation-history points "
-            f"({graph_source})."
-        )
-
-        return 0
-
-    except Exception as exc:
-        print(
-            f"Google Scholar refresh failed: {exc}",
-            file=sys.stderr,
-        )
-
-        print(
-            "The existing Scholar snapshot was not modified.",
-            file=sys.stderr,
-        )
-
-        return 1
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+  ],
+  "articles": [
+    {
+      "title": "Conditional denoising diffusion model for missing value imputation in smart meter data",
+      "citations": 0,
+      "year": "2026",
+      "publication": "Engineering Applications of Artificial Intelligence 181, 115403, 2026",
+      "authors": "M Buwaneswaran, MU Danish, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:GnPB-g6toBAC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:GnPB-g6toBAC"
+    },
+    {
+      "title": "Linear Lens: A human-centered, non-interventional mechanistic approach to explainable AI",
+      "citations": 0,
+      "year": "2026",
+      "publication": "Machine Learning with Applications, 100897, 2026",
+      "authors": "MU Danish, M Aziz, U Rehman, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:BqipwSGYUEgC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:BqipwSGYUEgC"
+    },
+    {
+      "title": "Monotone Delta: An Order-Theoretic Tournament Graph Approach for Internal Consistency Assessment",
+      "citations": 3,
+      "year": "2026",
+      "publication": "Frontiers in Applied Mathematics and Statistics 12, 1687194, 2026",
+      "authors": "MU Danish, U Rehman, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:iH-uZ7U-co4C",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:iH-uZ7U-co4C"
+    },
+    {
+      "title": "Any-class presence likelihood for robust multi-label classification with abundant negative data",
+      "citations": 2,
+      "year": "2026",
+      "publication": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …, 2026",
+      "authors": "D Tissera, O Awadallah, MU Danish, A Sadhu, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:HDshCWvjkbEC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:HDshCWvjkbEC"
+    },
+    {
+      "title": "Neural Networks and their Interpretability for Building Energy Modeling",
+      "citations": 0,
+      "year": "2025",
+      "publication": "The University of Western Ontario, 2025",
+      "authors": "MU Danish",
+      "citation_id": "vDmY-KUAAAAJ:j3f4tGmQtD8C",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:j3f4tGmQtD8C"
+    },
+    {
+      "title": "Distributional Feature Separability for Explainability of Neural Networks for Financial Credit Evaluation",
+      "citations": 0,
+      "year": "2025",
+      "publication": "2025 Conference on AI, Science, Engineering, and Technology (AIxSET), 127-133, 2025",
+      "authors": "M Aziz, MU Danish, U Rehman",
+      "citation_id": "vDmY-KUAAAAJ:hMod-77fHWUC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:hMod-77fHWUC"
+    },
+    {
+      "title": "Physics-guided memory network for building energy modeling",
+      "citations": 5,
+      "year": "2025",
+      "publication": "Energy and AI 21, 100538, 2025",
+      "authors": "MU Danish, K Ali, K Siddiqui, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:TQgYirikUcIC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:TQgYirikUcIC"
+    },
+    {
+      "title": "RootSolver: A Cognitive-Inspired Approach to Polynomial Root-Finding with Multiplicity Detection",
+      "citations": 0,
+      "year": "2025",
+      "publication": "2025 17th International Conference on Advanced Computational Intelligence …, 2025",
+      "authors": "MU Danish, AA Yousaf, M Aziz, K Grolinger, U Rehman",
+      "citation_id": "vDmY-KUAAAAJ:_Qo2XoVZTnwC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:_Qo2XoVZTnwC"
+    },
+    {
+      "title": "Towards a unified evaluation framework: integrating human perception and metrics for AI-generated images: M. Aziz et al.",
+      "citations": 21,
+      "year": "2025",
+      "publication": "Multimedia Systems 31 (3), 180, 2025",
+      "authors": "M Aziz, U Rehman, MU Danish, S Ali, AZ Abbasi",
+      "citation_id": "vDmY-KUAAAAJ:ZeXyd9-uunAC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:ZeXyd9-uunAC"
+    },
+    {
+      "title": "Kolmogorov–Arnold recurrent network for short term load forecasting across diverse consumers",
+      "citations": 55,
+      "year": "2025",
+      "publication": "Energy Reports 13, 713-727, 2025",
+      "authors": "MU Danish, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:dhFuZR0502QC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:dhFuZR0502QC"
+    },
+    {
+      "title": "Finite-Difference Approximation for Explaining Neural Network Predictions in Financial Credit Evaluation",
+      "citations": 0,
+      "year": "2025",
+      "publication": "International Conference on Advanced Machine Learning and Data Science, 2025",
+      "authors": "M Aziz, MU Danish, F Iqbal, U Rehman",
+      "citation_id": "vDmY-KUAAAAJ:_kc_bZDykSQC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:_kc_bZDykSQC"
+    },
+    {
+      "title": "Global-local image perceptual score (GLIPS): Evaluating photorealistic quality of ai-generated images",
+      "citations": 35,
+      "year": "2025",
+      "publication": "IEEE Transactions on Human-Machine Systems 55 (2), 223-233, 2025",
+      "authors": "M Aziz, U Rehman, MU Danish, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:IWHjjKOFINEC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:IWHjjKOFINEC"
+    },
+    {
+      "title": "Chebyregnet: An unsupervised deep learning technique for deformable medical image registration",
+      "citations": 2,
+      "year": "2024",
+      "publication": "IECON 2024-50th Annual Conference of the IEEE Industrial Electronics Society …, 2024",
+      "authors": "MU Danish, M Noorchenarboo, A Narayan, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:QIV2ME_5wuYC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:QIV2ME_5wuYC"
+    },
+    {
+      "title": "Graph attention convolutional u-net: A semantic segmentation model for identifying flooded areas",
+      "citations": 15,
+      "year": "2024",
+      "publication": "IECON 2024-50th Annual Conference of the IEEE Industrial Electronics Society …, 2024",
+      "authors": "MU Danish, M Buwaneswaran, T Fonseka, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:9ZlFYXVOiuMC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:9ZlFYXVOiuMC"
+    },
+    {
+      "title": "Leveraging hypernetworks and learnable kernels for consumer energy forecasting across diverse consumer types",
+      "citations": 19,
+      "year": "2024",
+      "publication": "IEEE Transactions on Power Delivery 40 (1), 75-87, 2024",
+      "authors": "MU Danish, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:R3hNpaxXUhUC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:R3hNpaxXUhUC"
+    },
+    {
+      "title": "Machine Learning with Applications",
+      "citations": 0,
+      "year": "",
+      "publication": "",
+      "authors": "MU Danish, M Aziz, U Rehman, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:O3NaXMp0MMsC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:O3NaXMp0MMsC"
+    },
+    {
+      "title": "Learning and Data Science (AMLDS)",
+      "citations": 0,
+      "year": "",
+      "publication": "",
+      "authors": "Z Liang, M Aziz, MU Danish, K Grolinger, U Rehman, F Iqbal, NA Dieye, ...",
+      "citation_id": "vDmY-KUAAAAJ:RHpTSmoSYBkC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:RHpTSmoSYBkC"
+    }
+  ],
+  "public_access": {
+    "link": "https://scholar.google.com/citations?view_op=list_mandates&hl=en&user=vDmY-KUAAAAJ",
+    "available": 7,
+    "not_available": 3
+  },
+  "author": {
+    "name": "Muhammad Umair Danish",
+    "affiliations": "The University of Western Ontario",
+    "email": "Verified email at uwo.ca",
+    "interests": [
+      {
+        "title": "Deep Learning",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:deep_learning",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Adeep_learning"
+      },
+      {
+        "title": "Mechanistic Interpretability",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:mechanistic_interpretability",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Amechanistic_interpretability"
+      },
+      {
+        "title": "Explainable AI",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:explainable_ai",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Aexplainable_ai"
+      },
+      {
+        "title": "Human-AI Interaction",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:human_ai_interaction",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Ahuman_ai_interaction"
+      }
+    ],
+    "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=vDmY-KUAAAAJ&citpid=2"
+  }
+}
