@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Refresh the public Google Scholar snapshot through SerpApi.
+"""Refresh Google Scholar metrics through SerpApi.
 
-The script keeps the last valid snapshot if the remote request fails or
-returns incomplete data. It uses only Python's standard library.
+The script:
+1. Retrieves the Scholar author profile.
+2. Makes a second clean request if citation history is missing.
+3. Never overwrites a valid snapshot with incomplete data.
+4. Fails the workflow when no yearly citation graph can be retrieved.
 """
 
 from __future__ import annotations
@@ -23,38 +26,45 @@ ENDPOINT = "https://serpapi.com/search.json"
 
 
 def safe_int(value: Any, default: int = 0) -> int:
-    """Convert a value to int without crashing on missing or invalid data."""
     try:
         return int(value)
     except (TypeError, ValueError):
         return default
 
 
-def load_previous_snapshot() -> dict[str, Any]:
-    """Load the last valid local snapshot, when available."""
+def load_previous() -> dict[str, Any]:
     if not OUTPUT.exists():
         return {}
 
     try:
         data = json.loads(OUTPUT.read_text(encoding="utf-8"))
         return data if isinstance(data, dict) else {}
-    except (OSError, json.JSONDecodeError, TypeError):
+    except (OSError, json.JSONDecodeError):
         return {}
 
 
-def metric(table: list[dict[str, Any]], key: str) -> dict[str, Any]:
-    """Extract one metric from the Google Scholar cited-by table."""
-    for row in table or []:
-        value = row.get(key)
+def extract_metric(
+    table: list[dict[str, Any]],
+    metric_name: str,
+) -> dict[str, Any]:
+    for row in table:
+        value = row.get(metric_name)
 
         if not isinstance(value, dict):
             continue
 
-        recent_key = next((item for item in value if item != "all"), None)
+        recent_key = next(
+            (key for key in value if key != "all"),
+            None,
+        )
 
         return {
             "all": safe_int(value.get("all")),
-            "since_year": safe_int(value.get(recent_key)) if recent_key else 0,
+            "since_year": (
+                safe_int(value.get(recent_key))
+                if recent_key
+                else 0
+            ),
             "since_label": (
                 recent_key.replace("_", " ").title()
                 if recent_key
@@ -62,65 +72,61 @@ def metric(table: list[dict[str, Any]], key: str) -> dict[str, Any]:
             ),
         }
 
-    raise ValueError(f"Missing Google Scholar metric: {key}")
+    raise RuntimeError(
+        f"Google Scholar metric is missing: {metric_name}"
+    )
 
 
-def normalize_graph(graph_source: Any) -> list[dict[str, int]]:
-    """Normalize possible SerpApi citation-history formats."""
+def normalize_graph(source: Any) -> list[dict[str, int]]:
     graph: list[dict[str, int]] = []
 
-    if isinstance(graph_source, dict):
-        for year, citations in graph_source.items():
-            if str(year).isdigit():
-                graph.append(
-                    {
-                        "year": safe_int(year),
-                        "citations": safe_int(citations),
-                    }
-                )
-
-    elif isinstance(graph_source, list):
-        for item in graph_source:
+    if isinstance(source, list):
+        for item in source:
             if not isinstance(item, dict):
                 continue
 
-            year = item.get("year")
-            if year in (None, ""):
-                continue
-
-            citations = item.get(
-                "citations",
+            year = safe_int(item.get("year"))
+            citations = safe_int(
                 item.get(
-                    "value",
-                    item.get("count", 0),
-                ),
+                    "citations",
+                    item.get(
+                        "value",
+                        item.get("count", 0),
+                    ),
+                )
             )
 
-            graph.append(
-                {
-                    "year": safe_int(year),
-                    "citations": safe_int(citations),
-                }
-            )
+            if year > 0:
+                graph.append(
+                    {
+                        "year": year,
+                        "citations": citations,
+                    }
+                )
 
-    graph = [
-        item
-        for item in graph
-        if item["year"] > 0
-    ]
+    elif isinstance(source, dict):
+        for year, citations in source.items():
+            parsed_year = safe_int(year)
+
+            if parsed_year > 0:
+                graph.append(
+                    {
+                        "year": parsed_year,
+                        "citations": safe_int(citations),
+                    }
+                )
 
     graph.sort(key=lambda item: item["year"])
     return graph
 
 
-def normalize_articles(raw_articles: Any) -> list[dict[str, Any]]:
-    """Normalize Scholar publication records and article citation counts."""
+def normalize_articles(source: Any) -> list[dict[str, Any]]:
+    if not isinstance(source, list):
+        return []
+
     articles: list[dict[str, Any]] = []
 
-    if not isinstance(raw_articles, list):
-        return articles
-
-    for article in raw_articles:
+    for article in source:
         if not isinstance(article, dict):
             continue
 
@@ -132,24 +138,26 @@ def normalize_articles(raw_articles: Any) -> list[dict[str, Any]]:
         if not isinstance(cited_by, dict):
             cited_by = {}
 
-        citation_count = safe_int(
-            cited_by.get(
-                "value",
-                cited_by.get(
-                    "total",
-                    cited_by.get("citations", 0),
-                ),
-            )
-        )
-
         articles.append(
             {
                 "title": title,
-                "citations": citation_count,
+                "citations": safe_int(
+                    cited_by.get(
+                        "value",
+                        cited_by.get(
+                            "total",
+                            cited_by.get("citations", 0),
+                        ),
+                    )
+                ),
                 "year": str(article.get("year") or ""),
-                "publication": str(article.get("publication") or ""),
+                "publication": str(
+                    article.get("publication") or ""
+                ),
                 "authors": str(article.get("authors") or ""),
-                "citation_id": str(article.get("citation_id") or ""),
+                "citation_id": str(
+                    article.get("citation_id") or ""
+                ),
                 "link": str(article.get("link") or ""),
             }
         )
@@ -157,32 +165,49 @@ def normalize_articles(raw_articles: Any) -> list[dict[str, Any]]:
     return articles
 
 
-def fetch_scholar_data(api_key: str) -> dict[str, Any]:
-    """Request the public Google Scholar author record through SerpApi."""
-    params = urllib.parse.urlencode(
-        {
-            "engine": "google_scholar_author",
-            "author_id": AUTHOR_ID,
-            "hl": "en",
-            "num": 100,
-            "sort": "pubdate",
-            "api_key": api_key,
-        }
-    )
+def request_serpapi(
+    api_key: str,
+    *,
+    include_article_options: bool,
+) -> dict[str, Any]:
+    params: dict[str, Any] = {
+        "engine": "google_scholar_author",
+        "author_id": AUTHOR_ID,
+        "hl": "en",
+        "api_key": api_key,
+        "no_cache": "true",
+    }
+
+    if include_article_options:
+        params.update(
+            {
+                "num": 100,
+                "sort": "pubdate",
+            }
+        )
+
+    url = f"{ENDPOINT}?{urllib.parse.urlencode(params)}"
 
     request = urllib.request.Request(
-        f"{ENDPOINT}?{params}",
+        url,
         headers={
-            "User-Agent": "umairdanish.com-scholar-refresh/2.0",
+            "User-Agent": (
+                "umairdanish.com-scholar-refresh/3.0"
+            ),
             "Accept": "application/json",
         },
     )
 
-    with urllib.request.urlopen(request, timeout=60) as response:
+    with urllib.request.urlopen(
+        request,
+        timeout=90,
+    ) as response:
         raw = json.load(response)
 
     if not isinstance(raw, dict):
-        raise RuntimeError("SerpApi returned an invalid response")
+        raise RuntimeError(
+            "SerpApi returned an invalid JSON response"
+        )
 
     if raw.get("error"):
         raise RuntimeError(str(raw["error"]))
@@ -190,30 +215,58 @@ def fetch_scholar_data(api_key: str) -> dict[str, Any]:
     metadata = raw.get("search_metadata")
     if isinstance(metadata, dict):
         status = metadata.get("status")
+
         if status not in {None, "Success", "Cached"}:
             raise RuntimeError(
-                f"SerpApi search status was not successful: {status}"
+                f"SerpApi status was: {status}"
             )
 
     return raw
 
 
+def graph_from_response(
+    raw: dict[str, Any],
+) -> list[dict[str, int]]:
+    cited_by = raw.get("cited_by")
+
+    if not isinstance(cited_by, dict):
+        cited_by = {}
+
+    possible_sources = [
+        cited_by.get("graph"),
+        raw.get("citation_graph"),
+        raw.get("citations_per_year"),
+        raw.get("cites_per_year"),
+    ]
+
+    for source in possible_sources:
+        graph = normalize_graph(source)
+
+        if graph:
+            return graph
+
+    return []
+
+
 def main() -> int:
-    previous = load_previous_snapshot()
     api_key = os.environ.get("SERPAPI_KEY", "").strip()
 
     if not api_key:
         print(
-            "SERPAPI_KEY is not configured; retaining the existing "
-            "Google Scholar snapshot.",
+            "SERPAPI_KEY is missing.",
             file=sys.stderr,
         )
-        return 0 if OUTPUT.exists() else 1
+        return 1
+
+    previous = load_previous()
 
     try:
-        raw = fetch_scholar_data(api_key)
+        primary = request_serpapi(
+            api_key,
+            include_article_options=True,
+        )
 
-        cited_by = raw.get("cited_by")
+        cited_by = primary.get("cited_by")
         if not isinstance(cited_by, dict):
             cited_by = {}
 
@@ -221,41 +274,59 @@ def main() -> int:
         if not isinstance(table, list):
             table = []
 
-        citations = metric(table, "citations")
-        h_index = metric(table, "h_index")
-        i10_index = metric(table, "i10_index")
+        citations = extract_metric(
+            table,
+            "citations",
+        )
+        h_index = extract_metric(
+            table,
+            "h_index",
+        )
+        i10_index = extract_metric(
+            table,
+            "i10_index",
+        )
 
         if citations["all"] < 1:
             raise RuntimeError(
-                "Scholar response failed validation: total citations "
-                "were missing or zero"
+                "Total citation count is missing or zero"
             )
 
-        articles = normalize_articles(raw.get("articles"))
+        articles = normalize_articles(
+            primary.get("articles")
+        )
 
         if not articles:
             previous_articles = previous.get("articles")
+
             if isinstance(previous_articles, list):
                 articles = previous_articles
 
-        graph_source = (
-            cited_by.get("graph")
-            or raw.get("citation_graph")
-            or raw.get("cites_per_year")
-            or raw.get("citations_per_year")
-            or []
-        )
-
-        graph = normalize_graph(graph_source)
-
-        if not graph:
-            previous_graph = previous.get("citation_graph")
-            graph = normalize_graph(previous_graph)
-
         if not articles:
             raise RuntimeError(
-                "Scholar response did not contain articles and no previous "
-                "article snapshot was available"
+                "No Scholar articles were returned"
+            )
+
+        graph = graph_from_response(primary)
+
+        if not graph:
+            print(
+                "Primary response contained no citation graph; "
+                "requesting a fresh author overview.",
+                file=sys.stderr,
+            )
+
+            secondary = request_serpapi(
+                api_key,
+                include_article_options=False,
+            )
+
+            graph = graph_from_response(secondary)
+
+        if not graph:
+            raise RuntimeError(
+                "SerpApi returned no cited_by.graph data "
+                "in either Scholar request"
             )
 
         now = (
@@ -282,18 +353,34 @@ def main() -> int:
             },
             "citation_graph": graph,
             "articles": articles,
-            "public_access": raw.get("public_access") or {},
-            "author": raw.get("author") or previous.get("author") or {},
+            "public_access": (
+                primary.get("public_access") or {}
+            ),
+            "author": (
+                primary.get("author")
+                or previous.get("author")
+                or {}
+            ),
         }
 
-        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+        OUTPUT.parent.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
 
-        temp = OUTPUT.with_suffix(".tmp")
-        temp.write_text(
-            json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+        temporary = OUTPUT.with_suffix(".tmp")
+
+        temporary.write_text(
+            json.dumps(
+                payload,
+                indent=2,
+                ensure_ascii=False,
+            )
+            + "\n",
             encoding="utf-8",
         )
-        temp.replace(OUTPUT)
+
+        temporary.replace(OUTPUT)
 
         print(
             "Updated Google Scholar snapshot: "
@@ -301,25 +388,23 @@ def main() -> int:
             f"h-index {h_index['all']}, "
             f"i10-index {i10_index['all']}, "
             f"{len(articles)} works, "
-            f"{len(graph)} citation-history points."
+            f"{len(graph)} yearly data points."
         )
-
-        if not graph:
-            print(
-                "Warning: SerpApi returned no annual citation graph; "
-                "the previous graph was unavailable.",
-                file=sys.stderr,
-            )
 
         return 0
 
     except Exception as exc:
         print(
-            "Google Scholar refresh failed; retaining the last valid "
-            f"snapshot: {exc}",
+            f"Google Scholar refresh failed: {exc}",
             file=sys.stderr,
         )
-        return 0 if OUTPUT.exists() else 1
+
+        print(
+            "The existing snapshot was not changed.",
+            file=sys.stderr,
+        )
+
+        return 1
 
 
 if __name__ == "__main__":
