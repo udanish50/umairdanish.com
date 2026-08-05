@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://umairdanish.com/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/research.html</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications.html</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/teaching.html</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/cv.html</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/contact.html</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/linear-lens/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/monotone-delta/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/conditional-diffusion-imputation/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/midipy/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/physics-guided-memory-network/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/kolmogorov-arnold-recurrent-network/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/glips/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/unified-ai-image-evaluation/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/hypernetworks-learnable-kernels/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/any-class-presence-likelihood/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/cognitive-effects-xai/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/statistically-guided-kernel-regression/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/seeing-through-risk/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/distributional-feature-separability/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/rootsolver/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/finite-difference-credit-xai/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/graph-attention-convolutional-unet/</loc><lastmod>2026-08-04</lastmod></url>
-  <url><loc>https://umairdanish.com/publications/chebyregnet/</loc><lastmod>2026-08-04</lastmod></url>
+<url><loc>https://umairdanish.com/</loc><lastmod>2026-08-05</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>https://umairdanish.com/research.html</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications.html</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/news.html</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/teaching.html</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/cv.html</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/contact.html</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/cognitive-effects-xai/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/human-centered-xai-explanation-modalities/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/midipy/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/seeing-through-risk/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/statistically-guided-kernel-regression/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/any-class-presence-likelihood/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/conditional-diffusion-imputation/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/linear-lens/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/monotone-delta/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/distributional-feature-separability/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/finite-difference-credit-xai/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/glips/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/kolmogorov-arnold-recurrent-network/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/physics-guided-memory-network/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/rootsolver/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/unified-ai-image-evaluation/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/chebyregnet/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/graph-attention-convolutional-unet/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://umairdanish.com/publications/hypernetworks-learnable-kernels/</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq></url>
 </urlset>

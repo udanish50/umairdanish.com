@@ -1,0 +1,62 @@
+[
+  {
+    "date": "2026-08-05",
+    "display": "August 2026",
+    "kind": "Acceptance",
+    "featured": true,
+    "title": "Two human-centered XAI papers accepted at IECON 2026",
+    "summary": "The accepted papers examine cognitive effects of explanation modalities and their influence on trust, understanding, and decision making.",
+    "link": "/publications.html?status=Accepted",
+    "image": "talk-method.webp"
+  },
+  {
+    "date": "2026-06-09",
+    "display": "June 9, 2026",
+    "kind": "Milestone",
+    "featured": true,
+    "title": "PhD Convocation at Western University",
+    "summary": "Celebrated the completion of a PhD in Electrical and Computer Engineering, with a dissertation on neural networks and their interpretability for building-energy modeling.",
+    "link": "/cv.html",
+    "image": "graduation.webp"
+  },
+  {
+    "date": "2026-06-01",
+    "display": "June 2026",
+    "kind": "Research visit",
+    "featured": true,
+    "title": "Research exchange at the University of Waterloo",
+    "summary": "Shared ongoing research with peers during a group visit from Western University hosted by the HFES Waterloo Chapter.",
+    "link": "/news.html#waterloo",
+    "image": "waterloo-group.webp"
+  },
+  {
+    "date": "2026-03-11",
+    "display": "March 2026",
+    "kind": "Publication",
+    "featured": false,
+    "title": "Monotone Delta published in Frontiers",
+    "summary": "An order-theoretic tournament-graph approach for internal-consistency assessment was published open access.",
+    "link": "/publications/monotone-delta/",
+    "image": "monotone-delta.svg"
+  },
+  {
+    "date": "2026-01-01",
+    "display": "January 2026",
+    "kind": "Fellowship",
+    "featured": true,
+    "title": "Started the Western Postdoctoral Fellowship",
+    "summary": "Joined Western University as a Postdoctoral Fellow in Applied AI under the supervision of Dr. Katarina Grolinger.",
+    "link": "https://www.uwo.ca/research/funding/students-trainees/postdoctoral-fellows-listing.html",
+    "image": "formal-headshot.webp"
+  },
+  {
+    "date": "2025-09-01",
+    "display": "2025",
+    "kind": "Award",
+    "featured": false,
+    "title": "Best Paper Award at AIxSET 2025",
+    "summary": "Distributional Feature Separability received the Best Paper Award for explainability research in financial credit evaluation.",
+    "link": "/publications/distributional-feature-separability/",
+    "image": "default.svg"
+  }
+]

@@ -1,26 +1,38 @@
 # umairdanish.com
 
-Personal research website of **Muhammad Umair Danish, PhD**.
+A custom, zero-dependency academic research website for **Muhammad Umair Danish, PhD**, Postdoctoral Fellow in Applied AI at Western University.
 
-## Deploy
+## Design goals
 
-1. Upload every file and folder in this repository to the `main` branch.
-2. Open **Settings → Pages**.
-3. Under **Build and deployment → Source**, select **GitHub Actions**.
-4. The included workflow publishes the site after every push to `main`.
-5. In **Settings → Pages → Custom domain**, enter `umairdanish.com` after DNS is configured.
+- Present research with the visual clarity of a leading AI lab while retaining the rigor of an academic record.
+- Put newly accepted and published work at the centre of the experience.
+- Keep the site fast, accessible, responsive, and deployable as plain static files on GitHub Pages.
+- Make scholarly impact transparent: live citation and author metrics are requested from OpenAlex using the public ORCID record, with a static snapshot as fallback.
 
-## Main content files
+## Main features
 
-- `index.html` — homepage
-- `research.html` — research program
-- `publications.html` — filterable publication list
-- `teaching.html` — teaching profile
-- `cv.html` — CV overview
-- `contact.html` — contact page
-- `assets/data/publications.json` — structured publication data
-- `assets/docs/Muhammad_Umair_Danish_CV.pdf` — downloadable CV
+- Interactive publication browser with topic, status, and type filters.
+- Live OpenAlex citation badges, h-index, i10-index, citation history, and latest indexed work.
+- Individual, citable publication pages with scholarly metadata, BibTeX, and copyable references.
+- Research map, news timeline, media gallery, teaching portfolio, HTML CV, and downloadable PDF CV.
+- Command-palette search (`⌘K` / `Ctrl+K`), dark mode, responsive navigation, PWA shell, semantic HTML, and reduced-motion support.
+- Structured data (`Person` and `ScholarlyArticle`), Google Scholar citation metadata, sitemap, Open Graph, and Twitter cards.
 
-## Updating publications
+## Architecture
 
-The current site is fully static for speed and reliability. Update the publication entries in `publications.html`, the corresponding page under `publications/`, and `assets/data/publications.json`. A future generator can automate these updates from the JSON file.
+The site uses hand-authored HTML, CSS, JSON, and vanilla JavaScript. There is no build step and no external framework. GitHub Pages publishes the repository root directly.
+
+- `assets/data/publications.json` — authoritative website publication data
+- `assets/data/news.json` — news and milestone data
+- `assets/js/impact.js` — OpenAlex integration and live scholarly metrics
+- `assets/js/publications.js` — interactive publication filtering and sorting
+- `assets/js/site.js` — navigation, search, theme, accessibility, and interactions
+- `publications/<slug>/` — stable publication landing pages
+
+## Scholarly-metric note
+
+Citation counts vary across Google Scholar, OpenAlex, Scopus, and Web of Science because their coverage and deduplication methods differ. The website labels the live source and links to Google Scholar for comparison.
+
+## Content ownership
+
+Text, photography, and personal research materials are © Muhammad Umair Danish unless a linked publication or external source states otherwise. Code for the website may be reused with attribution, but personal content and images should be replaced.

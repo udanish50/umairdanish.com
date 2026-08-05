@@ -1,0 +1,247 @@
+[
+  {
+    "title": "Home",
+    "kind": "Page",
+    "url": "/",
+    "summary": "Applied AI research profile and live scholarly impact."
+  },
+  {
+    "title": "Research",
+    "kind": "Page",
+    "url": "/research.html",
+    "summary": "Mechanistic interpretability, human-centered XAI, reliable temporal learning, and AI evaluation."
+  },
+  {
+    "title": "Publications",
+    "kind": "Page",
+    "url": "/publications.html",
+    "summary": "Filterable publication record with live OpenAlex citation data."
+  },
+  {
+    "title": "News",
+    "kind": "Page",
+    "url": "/news.html",
+    "summary": "Research milestones, acceptances, visits, awards, and updates."
+  },
+  {
+    "title": "Teaching",
+    "kind": "Page",
+    "url": "/teaching.html",
+    "summary": "Teaching philosophy, courses, mentoring, and evidence of effectiveness."
+  },
+  {
+    "title": "CV",
+    "kind": "Page",
+    "url": "/cv.html",
+    "summary": "Academic trajectory, awards, expertise, and downloadable CV."
+  },
+  {
+    "title": "Cognitive Effects of Textual, Graphical, and Interactive Explanations in Explainable Artificial Intelligence",
+    "kind": "Conference",
+    "url": "/publications/cognitive-effects-xai/",
+    "summary": "Examines how textual, graphical, and interactive explanation modalities shape cognitive processing, understanding, and user experience in explainable-AI systems.",
+    "tags": [
+      "Human-AI Interaction",
+      "Accepted",
+      "2026"
+    ]
+  },
+  {
+    "title": "Human-Centered Explainable Artificial Intelligence and the Effects of Explanation Modalities on Trust, Understanding, and Decision Making",
+    "kind": "Conference",
+    "url": "/publications/human-centered-xai-explanation-modalities/",
+    "summary": "Investigates how explanation modalities influence trust, understanding, and decision making, placing human outcomes at the centre of explainable-AI evaluation.",
+    "tags": [
+      "Human-AI Interaction",
+      "Accepted",
+      "2026"
+    ]
+  },
+  {
+    "title": "MidiPy: A Python Application for Processing MIDI Data in Improvised Active Music Therapy",
+    "kind": "Journal",
+    "url": "/publications/midipy/",
+    "summary": "Presents open-source Python research software for transforming MIDI event streams into reproducible measures and visual analytics for music-therapy research.",
+    "tags": [
+      "Research Software",
+      "Accepted",
+      "2026"
+    ]
+  },
+  {
+    "title": "Seeing Through Risk: A Symbolic Approximation of Prospect Theory",
+    "kind": "Conference",
+    "url": "/publications/seeing-through-risk/",
+    "summary": "Explores a symbolic approximation of Prospect Theory for interpretable modeling of risk-sensitive decisions.",
+    "tags": [
+      "Decision Science",
+      "Accepted",
+      "2026"
+    ]
+  },
+  {
+    "title": "Statistically-Guided Kernel Regression: Embedding Feature Relevance into Kernel Learning",
+    "kind": "Conference",
+    "url": "/publications/statistically-guided-kernel-regression/",
+    "summary": "Embeds statistically estimated feature relevance directly into kernel learning for regression.",
+    "tags": [
+      "Machine Learning Methods",
+      "Accepted",
+      "2026"
+    ]
+  },
+  {
+    "title": "Any-Class Presence Likelihood for Robust Multi-Label Classification with Abundant Negative Data",
+    "kind": "Conference",
+    "url": "/publications/any-class-presence-likelihood/",
+    "summary": "Improves multi-label classification when datasets contain many examples in which none of the target classes is present.",
+    "tags": [
+      "Computer Vision",
+      "Published",
+      "2026"
+    ]
+  },
+  {
+    "title": "Conditional Denoising Diffusion Model for Missing Value Imputation in Smart Meter Data",
+    "kind": "Journal",
+    "url": "/publications/conditional-diffusion-imputation/",
+    "summary": "Applies conditional denoising diffusion to reconstruct missing smart-meter observations in high-resolution energy data.",
+    "tags": [
+      "Time Series & Energy",
+      "Published",
+      "2026"
+    ]
+  },
+  {
+    "title": "Linear Lens: A Human-Centered, Non-Interventional Mechanistic Approach to Explainable AI",
+    "kind": "Journal",
+    "url": "/publications/linear-lens/",
+    "summary": "Introduces a non-interventional framework for tracing predictive information through neural networks and translating internal representations into human-centered evidence.",
+    "tags": [
+      "Interpretability",
+      "Published",
+      "2026"
+    ]
+  },
+  {
+    "title": "Monotone Delta: An Order-Theoretic Tournament Graph Approach for Internal Consistency Assessment",
+    "kind": "Journal",
+    "url": "/publications/monotone-delta/",
+    "summary": "Develops an order-theoretic tournament-graph method for assessing internal consistency in structured comparative settings.",
+    "tags": [
+      "Interpretability",
+      "Published",
+      "2026"
+    ]
+  },
+  {
+    "title": "Distributional Feature Separability for Explainability of Neural Networks for Financial Credit Evaluation",
+    "kind": "Conference",
+    "url": "/publications/distributional-feature-separability/",
+    "summary": "Explains credit-model behavior through the distributional separation of features associated with model decisions.",
+    "tags": [
+      "Interpretability",
+      "Published",
+      "2025"
+    ]
+  },
+  {
+    "title": "Finite-Difference Approximation for Explaining Neural Network Predictions in Financial Credit Evaluation",
+    "kind": "Conference",
+    "url": "/publications/finite-difference-credit-xai/",
+    "summary": "Uses finite-difference approximations to characterize how input changes affect neural-network credit predictions.",
+    "tags": [
+      "Interpretability",
+      "Published",
+      "2025"
+    ]
+  },
+  {
+    "title": "Global-Local Image Perceptual Score (GLIPS): Evaluating Photorealistic Quality of AI-Generated Images",
+    "kind": "Journal",
+    "url": "/publications/glips/",
+    "summary": "Introduces a perceptual score that combines global and local evidence to evaluate the photorealistic quality of AI-generated images.",
+    "tags": [
+      "Generative AI Evaluation",
+      "Published",
+      "2025"
+    ]
+  },
+  {
+    "title": "Kolmogorov-Arnold Recurrent Network for Short-Term Load Forecasting Across Diverse Consumers",
+    "kind": "Journal",
+    "url": "/publications/kolmogorov-arnold-recurrent-network/",
+    "summary": "Develops a recurrent architecture based on Kolmogorov-Arnold representations for forecasting heterogeneous consumer loads.",
+    "tags": [
+      "Time Series & Energy",
+      "Published",
+      "2025"
+    ]
+  },
+  {
+    "title": "Physics-Guided Memory Network for Building Energy Modeling",
+    "kind": "Journal",
+    "url": "/publications/physics-guided-memory-network/",
+    "summary": "Combines learned temporal memory with physical guidance to improve the reliability of building-energy modeling.",
+    "tags": [
+      "Time Series & Energy",
+      "Published",
+      "2025"
+    ]
+  },
+  {
+    "title": "RootSolver: A Cognitive-Inspired Approach to Polynomial Root-Finding with Multiplicity Detection",
+    "kind": "Conference",
+    "url": "/publications/rootsolver/",
+    "summary": "Presents a cognitive-inspired method for polynomial root finding with explicit multiplicity detection.",
+    "tags": [
+      "Machine Learning Methods",
+      "Published",
+      "2025"
+    ]
+  },
+  {
+    "title": "Towards a Unified Evaluation Framework: Integrating Human Perception and Metrics for AI-Generated Images",
+    "kind": "Journal",
+    "url": "/publications/unified-ai-image-evaluation/",
+    "summary": "Integrates human judgments and automated image-quality metrics into a unified framework for evaluating generated imagery.",
+    "tags": [
+      "Generative AI Evaluation",
+      "Published",
+      "2025"
+    ]
+  },
+  {
+    "title": "ChebyRegNet: An Unsupervised Deep Learning Technique for Deformable Medical Image Registration",
+    "kind": "Conference",
+    "url": "/publications/chebyregnet/",
+    "summary": "Develops an unsupervised deep-learning approach for deformable registration of medical images.",
+    "tags": [
+      "Computer Vision",
+      "Published",
+      "2024"
+    ]
+  },
+  {
+    "title": "Graph Attention Convolutional U-Net: A Semantic Segmentation Model for Identifying Flooded Areas",
+    "kind": "Conference",
+    "url": "/publications/graph-attention-convolutional-unet/",
+    "summary": "Combines graph attention with a convolutional U-Net to segment flooded regions in imagery.",
+    "tags": [
+      "Computer Vision",
+      "Published",
+      "2024"
+    ]
+  },
+  {
+    "title": "Leveraging Hypernetworks and Learnable Kernels for Consumer Energy Forecasting Across Diverse Consumer Types",
+    "kind": "Journal",
+    "url": "/publications/hypernetworks-learnable-kernels/",
+    "summary": "Uses hypernetworks and learnable kernels to adapt energy forecasts across diverse consumer profiles.",
+    "tags": [
+      "Time Series & Energy",
+      "Published",
+      "2024"
+    ]
+  }
+]
