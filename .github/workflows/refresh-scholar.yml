@@ -31,13 +31,168 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate Scholar updater
-        run: python -m py_compile scripts/update_scholar.py
+      - name: Confirm SerpApi secret exists
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -z "${SERPAPI_KEY:-}" ]; then
+            echo "::error::SERPAPI_KEY is missing from repository secrets."
+            exit 1
+          fi
+
+          echo "SERPAPI_KEY is available to the workflow."
+
+      - name: Validate SerpApi credentials
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          response_file="$(mktemp)"
+
+          http_status="$(
+            curl \
+              --silent \
+              --show-error \
+              --output "$response_file" \
+              --write-out "%{http_code}" \
+              --get \
+              --data-urlencode "api_key=${SERPAPI_KEY}" \
+              "https://serpapi.com/account.json"
+          )"
+
+          if [ "$http_status" != "200" ]; then
+            echo "::error::SerpApi credential validation failed with HTTP ${http_status}."
+
+            python - "$response_file" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          path = Path(sys.argv[1])
+
+          try:
+              response = json.loads(path.read_text(encoding="utf-8"))
+              message = (
+                  response.get("error")
+                  or response.get("message")
+                  or "No detailed error message was returned."
+              )
+              print(f"SerpApi response: {message}")
+          except Exception:
+              print("SerpApi returned a non-JSON error response.")
+          PY
+
+            rm -f "$response_file"
+            exit 1
+          fi
+
+          python - "$response_file" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          account = json.loads(
+              Path(sys.argv[1]).read_text(encoding="utf-8")
+          )
+
+          print("SERPAPI_KEY is valid.")
+          print(f"Plan: {account.get('plan_name', 'not reported')}")
+          print(
+              "Searches used this month: "
+              f"{account.get('this_month_usage', 'not reported')}"
+          )
+          print(
+              "Searches remaining: "
+              f"{account.get('total_searches_left', 'not reported')}"
+          )
+          PY
+
+          rm -f "$response_file"
+
+      - name: Validate Scholar updater syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/update_scholar.py
 
       - name: Refresh Google Scholar snapshot
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-        run: python scripts/update_scholar.py
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/update_scholar.py
+
+      - name: Validate refreshed Scholar data
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("assets/data/scholar-metrics.json")
+
+          if not path.exists():
+              raise SystemExit(
+                  "scholar-metrics.json was not created."
+              )
+
+          data = json.loads(path.read_text(encoding="utf-8"))
+          metrics = data.get("metrics") or {}
+
+          citations = (
+              metrics.get("citations", {}).get("all", 0)
+          )
+          h_index = (
+              metrics.get("h_index", {}).get("all", 0)
+          )
+          i10_index = (
+              metrics.get("i10_index", {}).get("all", 0)
+          )
+          works = metrics.get("article_count", 0)
+          graph = data.get("citation_graph") or []
+
+          if data.get("status") != "live":
+              raise SystemExit(
+                  "Scholar data status is not live."
+              )
+
+          if not isinstance(citations, int) or citations < 1:
+              raise SystemExit(
+                  "The citation total is missing or invalid."
+              )
+
+          if not isinstance(graph, list) or len(graph) == 0:
+              raise SystemExit(
+                  "The Scholar response contains no yearly citation graph."
+              )
+
+          for point in graph:
+              if not isinstance(point, dict):
+                  raise SystemExit(
+                      "An invalid citation-history point was found."
+                  )
+
+              if "year" not in point or "citations" not in point:
+                  raise SystemExit(
+                      "A citation-history point is incomplete."
+                  )
+
+          print("Google Scholar data validated successfully.")
+          print(f"Citations: {citations}")
+          print(f"h-index: {h_index}")
+          print(f"i10-index: {i10_index}")
+          print(f"Scholar works: {works}")
+          print(f"Citation-history points: {len(graph)}")
+          print(f"Updated at: {data.get('updated_at', 'unknown')}")
+          PY
 
       - name: Commit updated metrics
         id: commit
@@ -52,7 +207,8 @@ jobs:
           fi
 
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add assets/data/scholar-metrics.json
           git commit -m "Refresh Google Scholar metrics"
@@ -61,6 +217,7 @@ jobs:
           git push origin HEAD:main
 
           echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "Updated Scholar metrics committed to main."
 
       - name: Request GitHub Pages rebuild
         if: steps.commit.outputs.changed == 'true'
@@ -76,32 +233,45 @@ jobs:
 
           echo "GitHub Pages rebuild requested successfully."
 
-      - name: Display refresh summary
+      - name: Write workflow summary
+        if: success()
         shell: bash
         run: |
           python - <<'PY'
           import json
+          import os
           from pathlib import Path
 
-          path = Path("assets/data/scholar-metrics.json")
-          data = json.loads(path.read_text(encoding="utf-8"))
+          data = json.loads(
+              Path(
+                  "assets/data/scholar-metrics.json"
+              ).read_text(encoding="utf-8")
+          )
 
-          metrics = data.get("metrics", {})
+          metrics = data.get("metrics") or {}
           citations = metrics.get("citations", {}).get("all", "unknown")
           h_index = metrics.get("h_index", {}).get("all", "unknown")
           i10_index = metrics.get("i10_index", {}).get("all", "unknown")
           works = metrics.get("article_count", "unknown")
           graph_points = len(data.get("citation_graph") or [])
+          updated_at = data.get("updated_at", "unknown")
 
-          print(f"Citations: {citations}")
-          print(f"h-index: {h_index}")
-          print(f"i10-index: {i10_index}")
-          print(f"Scholar works: {works}")
-          print(f"Citation-history points: {graph_points}")
-          print(f"Updated at: {data.get('updated_at', 'unknown')}")
+          summary = f"""## Google Scholar refresh completed
 
-          if graph_points == 0:
-              raise SystemExit(
-                  "The Scholar refresh completed without citation-history data."
-              )
+          | Metric | Value |
+          |---|---:|
+          | Citations | {citations} |
+          | h-index | {h_index} |
+          | i10-index | {i10_index} |
+          | Scholar works | {works} |
+          | Citation-history points | {graph_points} |
+          | Updated at | {updated_at} |
+          """
+
+          with open(
+              os.environ["GITHUB_STEP_SUMMARY"],
+              "a",
+              encoding="utf-8",
+          ) as handle:
+              handle.write(summary)
           PY
