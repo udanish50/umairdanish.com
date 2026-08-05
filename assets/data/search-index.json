@@ -30,6 +30,19 @@
     "summary": "Teaching philosophy, courses, mentoring, and evidence of effectiveness."
   },
   {
+    "title": "Collaborators",
+    "kind": "Page",
+    "url": "/collaborators.html",
+    "summary": "Principal investigator profile and an interactive interdisciplinary collaboration network across AI, human factors, music therapy, health, cybersecurity, and data mining.",
+    "tags": [
+      "collaborators",
+      "research network",
+      "principal investigator",
+      "supervisor",
+      "human-centered AI"
+    ]
+  },
+  {
     "title": "CV",
     "kind": "Page",
     "url": "/cv.html",
@@ -242,6 +255,84 @@
       "Time Series & Energy",
       "Published",
       "2024"
+    ]
+  },
+  {
+    "title": "Katarina Grolinger, PhD, P.Eng.",
+    "kind": "Collaborator",
+    "url": "/collaborators.html#katarina-grolinger",
+    "summary": "My PhD and postdoctoral supervisor and the senior research mentor across my core Applied AI programme. Our collaboration connects rigorous model development with scalable machine learning, energy systems, interpretability, and human-aligned evaluation.",
+    "tags": [
+      "Research mentorship",
+      "Machine learning",
+      "Energy AI",
+      "Mechanistic XAI",
+      "Western University · Electrical & Computer Engineering"
+    ]
+  },
+  {
+    "title": "Umair Rehman, PhD",
+    "kind": "Collaborator",
+    "url": "/collaborators.html#umair-rehman",
+    "summary": "A major collaborator on research that brings human outcomes into explainable AI. We work across mechanistic evidence, explanation design, perception, trust, understanding, and decision quality.",
+    "tags": [
+      "Human-centered AI",
+      "HCI",
+      "Cognitive engineering",
+      "Trust & decisions",
+      "Western University · Computer Science"
+    ]
+  },
+  {
+    "title": "Demian Kogutek, PhD, MTA",
+    "kind": "Collaborator",
+    "url": "/collaborators.html#demian-kogutek",
+    "summary": "Our interdisciplinary collaboration translates improvisational music-therapy practice into reproducible computational workflows, with an emphasis on transparent data processing and clinically meaningful analysis.",
+    "tags": [
+      "Music therapy",
+      "MIDI analytics",
+      "Computational improvisation",
+      "Clinical research tools",
+      "Wilfrid Laurier University · Faculty of Music"
+    ]
+  },
+  {
+    "title": "Aleksandra Zecevic, PhD",
+    "kind": "Collaborator",
+    "url": "/collaborators.html#aleksandra-zecevic",
+    "summary": "A cross-disciplinary collaborator connecting human factors, aging, safety, and health research with the design and evaluation of human-facing AI explanations.",
+    "tags": [
+      "Human factors",
+      "Aging & health",
+      "Safety",
+      "Human–AI interaction",
+      "Western University · School of Health Studies"
+    ]
+  },
+  {
+    "title": "Farkhund Iqbal, PhD",
+    "kind": "Collaborator",
+    "url": "/collaborators.html#farkhund-iqbal",
+    "summary": "Our collaboration joins explainable machine learning with security, forensic reasoning, and high-stakes analytical settings where evidence quality and reproducibility are central.",
+    "tags": [
+      "Digital forensics",
+      "Cybersecurity",
+      "Deep learning",
+      "Financial XAI",
+      "Zayed University · College of Technological Innovation"
+    ]
+  },
+  {
+    "title": "Benjamin C. M. Fung, PhD, P.Eng.",
+    "kind": "Collaborator",
+    "url": "/collaborators.html#benjamin-fung",
+    "summary": "A senior collaborator in the broader research network around data mining, privacy, cybersecurity, and AI-driven threat analysis. This connection strengthens the security and data-integrity dimension of my applied AI programme.",
+    "tags": [
+      "Data mining",
+      "Privacy",
+      "AI security",
+      "Applied machine learning",
+      "McGill University · School of Information Studies"
     ]
   }
 ]

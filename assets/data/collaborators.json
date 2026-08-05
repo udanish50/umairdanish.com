@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Muhammad Umair Danish, PhD",
+    "role": "Principal Investigator & Research Lead",
+    "institution": "Western University",
+    "profile": "https://umairdanish.com/",
+    "image": "/assets/images/collaborators/muhammad-umair-danish.webp"
+  },
+  {
+    "name": "Katarina Grolinger, PhD, P.Eng.",
+    "relationship": "PhD & Postdoctoral Supervisor",
+    "institution": "Western University",
+    "profile": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/index.html",
+    "image": "/assets/images/collaborators/katarina-grolinger.webp"
+  },
+  {
+    "name": "Umair Rehman, PhD",
+    "relationship": "Major Research Collaborator",
+    "institution": "Western University",
+    "profile": "https://www.csd.uwo.ca/people/faculty/bios/rehman.html",
+    "image": "/assets/images/collaborators/umair-rehman.webp"
+  },
+  {
+    "name": "Demian Kogutek, PhD, MTA",
+    "relationship": "Computational Music Therapy Collaborator",
+    "institution": "Wilfrid Laurier University",
+    "profile": "https://www.wlu.ca/academics/faculties/faculty-of-music/faculty-profiles/demian-kogutek/index.html",
+    "image": "/assets/images/collaborators/demian-kogutek.webp"
+  },
+  {
+    "name": "Aleksandra Zecevic, PhD",
+    "relationship": "Human Factors & Health Collaborator",
+    "institution": "Western University",
+    "profile": "https://www.uwo.ca/fhs/shs/about/faculty/zecevic_a.html",
+    "image": "/assets/images/collaborators/aleksandra-zecevic.webp"
+  },
+  {
+    "name": "Farkhund Iqbal, PhD",
+    "relationship": "AI & Cybersecurity Collaborator",
+    "institution": "Zayed University",
+    "profile": "https://www.zu.ac.ae/main/en/colleges/colleges/__college_of_technological_innovation/faculty_and_staff/_auh/_computing-and-applied-technology/_profiles/farkhund_iqbal",
+    "image": "/assets/images/collaborators/farkhund-iqbal.webp"
+  },
+  {
+    "name": "Benjamin C. M. Fung, PhD, P.Eng.",
+    "relationship": "Data Mining & Security Collaborator",
+    "institution": "McGill University",
+    "profile": "https://www.mcgill.ca/newsroom/benjamin-fung",
+    "image": "/assets/images/collaborators/benjamin-fung.webp"
+  }
+]

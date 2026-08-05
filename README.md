@@ -10,7 +10,7 @@ The site presents a coherent research programme across mechanistic interpretabil
 
 - Editorial, research-led visual system with responsive layouts and dark mode
 - Interactive publication search, filters, citation sorting, and stable paper landing pages
-- Research map, milestones, media gallery, teaching record, HTML CV, and downloadable PDF CV
+- Research map, milestones, media gallery, teaching record, HTML CV, downloadable PDF CV, and an interactive collaboration-network page
 - Command-palette search (`⌘K` / `Ctrl+K`), reduced-motion support, semantic HTML, structured data, sitemap, and social previews
 - Progressive Web App shell with network-first caching
 
@@ -36,6 +36,8 @@ The website uses static HTML, CSS, JSON, SVG, and vanilla JavaScript. There is n
 - `assets/data/publications.json` — curated publication records
 - `assets/data/scholar-metrics.json` — last verified Google Scholar snapshot
 - `assets/data/news.json` — research news and milestones
+- `collaborators.html` — principal investigator profile and cross-institution research network
+- `assets/js/collaborators.js` — collaborator filtering and network interactions
 - `assets/js/impact.js` — renders Scholar metrics and article-level citations
 - `assets/js/publications.js` — publication search, filtering, and sorting
 - `scripts/update_scholar.py` — validates and writes the daily Scholar snapshot
@@ -49,3 +51,7 @@ Accepted work is labelled separately from formally published work. Citation metr
 ## Content ownership
 
 Text, photography, CV material, and research content are © Muhammad Umair Danish unless an external publication or linked source states otherwise. The website code may be adapted with attribution, but personal photographs and research materials must be replaced.
+
+## Collaboration profiles
+
+The collaborator page uses concise relationship descriptions, selected shared outputs, and portraits sourced from official institutional profiles. Each profile links back to its authoritative university page. External portraits remain the property of their respective institutions or creators and are included for scholarly identification and attribution.
