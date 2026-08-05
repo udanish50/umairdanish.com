@@ -67,7 +67,28 @@ def main() -> int:
             })
         if not articles or citations["all"] < 1:
             raise RuntimeError("Scholar response failed validation; refusing to replace the last valid snapshot")
-        graph = [{"year": int(x["year"]), "citations": int(x.get("citations", 0) or 0)} for x in cited.get("graph") or [] if x.get("year")]
+    graph_source = (
+    cited.get("graph")
+    or raw.get("citation_graph")
+    or raw.get("cites_per_year")
+    or []
+)
+
+graph = [
+    {
+        "year": int(item["year"]),
+        "citations": int(item.get("citations", item.get("value", 0)) or 0),
+    }
+    for item in graph_source
+    if item.get("year")
+]
+
+if not graph and OUTPUT.exists():
+    try:
+        previous = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        graph = previous.get("citation_graph") or []
+    except (OSError, ValueError, TypeError):
+        graph = []
         now = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         payload = {
             "source": "Google Scholar via SerpApi",
