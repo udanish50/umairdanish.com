@@ -12,10 +12,19 @@
 
   const menu = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
+  const closeMenu = () => {
+    nav?.classList.remove('open');
+    menu?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  };
   menu?.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
+    const open = nav?.classList.toggle('open') || false;
     menu.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('nav-open', open);
   });
+  nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  addEventListener('resize', () => { if (innerWidth > 1050) closeMenu(); });
+  addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
