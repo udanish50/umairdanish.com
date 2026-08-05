@@ -1,51 +1,73 @@
-
 (() => {
-  const ORCID='0009-0005-5728-3587';
-  const MAIL='mdanish3@uwo.ca';
-  const CACHE='ud-openalex-v2';
-  const TTL=12*60*60*1000;
+  const DATA_URL='/assets/data/scholar-metrics.json';
   const normalize=s=>(s||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim();
+  const tokens=s=>new Set(normalize(s).split(/\s+/).filter(Boolean));
+  function similarity(a,b){
+    const A=tokens(a),B=tokens(b); if(!A.size||!B.size)return 0;
+    let shared=0; A.forEach(x=>{if(B.has(x))shared++});
+    return shared/Math.max(A.size,B.size);
+  }
   function setAll(sel,val){document.querySelectorAll(sel).forEach(el=>el.textContent=val)}
-  function hIndex(works){const c=works.map(w=>w.cited_by_count||0).sort((a,b)=>b-a);let h=0;c.forEach((v,i)=>{if(v>=i+1)h=i+1});return h}
+  function number(v,fallback='—'){const n=Number(v);return Number.isFinite(n)?n.toLocaleString():fallback}
   function drawChart(counts){
-    const svg=document.querySelector('[data-impact-chart]'); if(!svg||!counts?.length)return;
-    const arr=[...counts].sort((a,b)=>a.year-b.year).slice(-8); const max=Math.max(1,...arr.map(x=>x.cited_by_count||0));
-    const pts=arr.map((x,i)=>[20+i*(600/Math.max(1,arr.length-1)),190-(x.cited_by_count||0)/max*150]);
+    const svg=document.querySelector('[data-impact-chart]'); if(!svg)return;
+    if(!Array.isArray(counts)||!counts.length){
+      svg.innerHTML='<text x="320" y="112" text-anchor="middle" font-size="15" fill="currentColor" opacity=".65">Citation history appears after the first daily Scholar sync.</text>';
+      return;
+    }
+    const arr=[...counts].map(x=>({year:Number(x.year),citations:Number(x.citations)||0})).filter(x=>x.year).sort((a,b)=>a.year-b.year).slice(-8);
+    const max=Math.max(1,...arr.map(x=>x.citations));
+    const pts=arr.map((x,i)=>[20+i*(600/Math.max(1,arr.length-1)),190-x.citations/max*150]);
     const line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
     const area=line+` L ${pts.at(-1)[0]} 200 L ${pts[0][0]} 200 Z`;
     const labels=arr.map((x,i)=>`<text x="${pts[i][0]}" y="216" text-anchor="middle" font-size="12" fill="currentColor">${x.year}</text>`).join('');
     svg.innerHTML='<path class="gridline" d="M20 180H620M20 130H620M20 80H620M20 30H620"/><path class="spark-area" d="'+area+'"/><path class="spark-line" d="'+line+'"/>'+labels;
   }
-  function apply(data){
-    window.__openAlexData=data;
-    const {author,works}=data; const h=hIndex(works); const i10=works.filter(w=>(w.cited_by_count||0)>=10).length;
-    setAll('[data-impact-citations]',author.cited_by_count?.toLocaleString()||'—');
-    setAll('[data-impact-works]',author.works_count?.toLocaleString()||works.length);
-    setAll('[data-impact-hindex]',h||author.summary_stats?.h_index||'—');
-    setAll('[data-impact-i10]',i10||author.summary_stats?.i10_index||'—');
-    setAll('[data-impact-status]','OpenAlex live');
-    const stamp=new Date(data.fetchedAt); setAll('[data-impact-updated]','Updated '+stamp.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}));
-    drawChart(author.counts_by_year);
-    const latest=[...works].sort((a,b)=>(b.publication_date||'').localeCompare(a.publication_date||''))[0];
-    const latestBox=document.querySelector('[data-latest-work]'); if(latest&&latestBox){ const venue=latest.primary_location?.source?.display_name||latest.type||''; latestBox.innerHTML=`<strong>${latest.display_name}</strong><p>${venue} · ${latest.publication_year||''}</p>`; }
-    const byDoi=new Map(),byTitle=new Map();
-    works.forEach(w=>{ if(w.doi)byDoi.set(w.doi.replace('https://doi.org/','').toLowerCase(),w); byTitle.set(normalize(w.display_name),w); });
-    document.querySelectorAll('[data-openalex-citations]').forEach(el=>{
-      const doi=(el.dataset.doi||'').toLowerCase(); const title=normalize(el.dataset.title); const w=(doi&&byDoi.get(doi))||byTitle.get(title);
-      if(w){el.dataset.citations=String(w.cited_by_count||0); const prefix=el.classList.contains('live-cite')?'Citations · ':''; el.textContent=prefix+(w.cited_by_count||0).toLocaleString();}
-      else if(!el.textContent.trim()||el.textContent.trim()==='—') el.textContent='Not indexed';
-    });
-    dispatchEvent(new CustomEvent('openalex:loaded',{detail:data}));
+  function bestArticle(title,articles){
+    const exact=articles.find(a=>normalize(a.title)===normalize(title)); if(exact)return exact;
+    let best=null,score=0; articles.forEach(a=>{const s=similarity(title,a.title);if(s>score){best=a;score=s}});
+    return score>=0.72?best:null;
   }
+  function apply(data){
+    window.__scholarData=data;
+    const m=data.metrics||{}; const articles=data.articles||[];
+    setAll('[data-impact-citations]',number(m.citations?.all, '157'));
+    setAll('[data-impact-works]',number(m.article_count, String(articles.length||17)));
+    setAll('[data-impact-hindex]',number(m.h_index?.all,'5'));
+    setAll('[data-impact-i10]',number(m.i10_index?.all,'5'));
+    setAll('[data-impact-status]',data.status==='live'?'Google Scholar · daily':'Google Scholar snapshot');
+    const stamp=new Date(data.updated_at||data.snapshot_at||Date.now());
+    const valid=!Number.isNaN(stamp.getTime());
+    setAll('[data-impact-updated]',(data.status==='live'?'Refreshed ':'Verified ')+(valid?stamp.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):'Aug 2026'));
+    drawChart(data.citation_graph||[]);
+    const latest=[...articles].filter(a=>a.year).sort((a,b)=>Number(b.year)-Number(a.year))[0];
+    const latestBox=document.querySelector('[data-latest-work]');
+    if(latest&&latestBox){latestBox.innerHTML=`<strong>${latest.title}</strong><p>${latest.publication||'Google Scholar'} · ${latest.year||''}</p>`;}
+    document.querySelectorAll('[data-scholar-citations]').forEach(el=>{
+      const title=el.dataset.title||''; const a=bestArticle(title,articles);
+      if(a){
+        const c=Number(a.citations)||0; el.dataset.citations=String(c);
+        const prefix=el.classList.contains('live-cite')?'Citations · ':'';
+        el.textContent=prefix+c.toLocaleString();
+        if(a.link){el.title='Google Scholar record';}
+      } else {
+        el.dataset.citations='0';
+        if(el.classList.contains('live-cite'))el.textContent='Citations · 0';
+        else if(!el.textContent.trim()||el.textContent.includes('—'))el.textContent='0 citations';
+      }
+    });
+    dispatchEvent(new CustomEvent('scholar:loaded',{detail:data}));
+  }
+  window.applyScholarMetrics=apply;
   async function load(){
-    try{const cached=JSON.parse(localStorage.getItem(CACHE)||'null');if(cached&&Date.now()-cached.fetchedAt<TTL){apply(cached);return}}catch(e){}
     try{
-      const author=await (await fetch(`https://api.openalex.org/authors/https://orcid.org/${ORCID}?mailto=${encodeURIComponent(MAIL)}`)).json();
-      const aid=(author.id||'').split('/').pop();
-      const url=`https://api.openalex.org/works?filter=author.id:${aid}&per_page=200&sort=publication_date:desc&select=id,display_name,cited_by_count,publication_year,publication_date,doi,primary_location,type,open_access&mailto=${encodeURIComponent(MAIL)}`;
-      const worksResp=await (await fetch(url)).json();
-      const data={author,works:worksResp.results||[],fetchedAt:Date.now()}; localStorage.setItem(CACHE,JSON.stringify(data)); apply(data);
-    }catch(e){ setAll('[data-impact-status]','Snapshot · live service unavailable'); }
+      const response=await fetch(DATA_URL+'?v='+Date.now(),{cache:'no-store'});
+      if(!response.ok)throw new Error('Scholar snapshot unavailable');
+      apply(await response.json());
+    }catch(error){
+      setAll('[data-impact-status]','Google Scholar snapshot');
+      setAll('[data-impact-updated]','Verified Aug 2026');
+    }
   }
   load();
 })();

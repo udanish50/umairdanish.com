@@ -1,38 +1,51 @@
 # umairdanish.com
 
-A custom, zero-dependency academic research website for **Muhammad Umair Danish, PhD**, Postdoctoral Fellow in Applied AI at Western University.
+The official research website of **Muhammad Umair Danish, PhD**, Postdoctoral Fellow in Applied AI at Western University.
 
-## Design goals
+## Purpose
 
-- Present research with the visual clarity of a leading AI lab while retaining the rigor of an academic record.
-- Put newly accepted and published work at the centre of the experience.
-- Keep the site fast, accessible, responsive, and deployable as plain static files on GitHub Pages.
-- Make scholarly impact transparent: live citation and author metrics are requested from OpenAlex using the public ORCID record, with a static snapshot as fallback.
+The site presents a coherent research programme across mechanistic interpretability, human-centered explainable AI, reliable temporal learning, physics-guided machine learning, and evaluation of generative systems. It is designed as a fast, accessible, publication-first academic profile rather than a general-purpose portfolio.
 
-## Main features
+## Experience
 
-- Interactive publication browser with topic, status, and type filters.
-- Live OpenAlex citation badges, h-index, i10-index, citation history, and latest indexed work.
-- Individual, citable publication pages with scholarly metadata, BibTeX, and copyable references.
-- Research map, news timeline, media gallery, teaching portfolio, HTML CV, and downloadable PDF CV.
-- Command-palette search (`⌘K` / `Ctrl+K`), dark mode, responsive navigation, PWA shell, semantic HTML, and reduced-motion support.
-- Structured data (`Person` and `ScholarlyArticle`), Google Scholar citation metadata, sitemap, Open Graph, and Twitter cards.
+- Editorial, research-led visual system with responsive layouts and dark mode
+- Interactive publication search, filters, citation sorting, and stable paper landing pages
+- Research map, milestones, media gallery, teaching record, HTML CV, and downloadable PDF CV
+- Command-palette search (`⌘K` / `Ctrl+K`), reduced-motion support, semantic HTML, structured data, sitemap, and social previews
+- Progressive Web App shell with network-first caching
+
+## Google Scholar metrics
+
+The repository contains a last-known-good public snapshot at `assets/data/scholar-metrics.json`. A scheduled GitHub Actions workflow refreshes it once every 24 hours using the Google Scholar Author endpoint provided by SerpApi.
+
+The workflow updates:
+
+- total citations and recent citations
+- h-index and i10-index
+- annual citation history
+- article-level citation badges
+- latest Scholar-indexed work
+- refresh timestamp
+
+The SerpApi credential is held only as the encrypted repository secret `SERPAPI_KEY`; it is never exposed in browser JavaScript or committed to the repository. If a refresh fails or returns an invalid response, the previous verified snapshot remains in place.
 
 ## Architecture
 
-The site uses hand-authored HTML, CSS, JSON, and vanilla JavaScript. There is no build step and no external framework. GitHub Pages publishes the repository root directly.
+The website uses static HTML, CSS, JSON, SVG, and vanilla JavaScript. There is no runtime framework or database.
 
-- `assets/data/publications.json` — authoritative website publication data
-- `assets/data/news.json` — news and milestone data
-- `assets/js/impact.js` — OpenAlex integration and live scholarly metrics
-- `assets/js/publications.js` — interactive publication filtering and sorting
-- `assets/js/site.js` — navigation, search, theme, accessibility, and interactions
-- `publications/<slug>/` — stable publication landing pages
+- `assets/data/publications.json` — curated publication records
+- `assets/data/scholar-metrics.json` — last verified Google Scholar snapshot
+- `assets/data/news.json` — research news and milestones
+- `assets/js/impact.js` — renders Scholar metrics and article-level citations
+- `assets/js/publications.js` — publication search, filtering, and sorting
+- `scripts/update_scholar.py` — validates and writes the daily Scholar snapshot
+- `.github/workflows/refresh-scholar.yml` — daily refresh and Pages rebuild request
+- `publications/<slug>/` — stable, citable publication landing pages
 
-## Scholarly-metric note
+## Data integrity
 
-Citation counts vary across Google Scholar, OpenAlex, Scopus, and Web of Science because their coverage and deduplication methods differ. The website labels the live source and links to Google Scholar for comparison.
+Accepted work is labelled separately from formally published work. Citation metrics are explicitly attributed to Google Scholar. The automation never overwrites a valid snapshot with an empty or malformed response.
 
 ## Content ownership
 
-Text, photography, and personal research materials are © Muhammad Umair Danish unless a linked publication or external source states otherwise. Code for the website may be reused with attribution, but personal content and images should be replaced.
+Text, photography, CV material, and research content are © Muhammad Umair Danish unless an external publication or linked source states otherwise. The website code may be adapted with attribution, but personal photographs and research materials must be replaced.

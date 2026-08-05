@@ -1,0 +1,149 @@
+{
+  "source": "Google Scholar via SerpApi",
+  "status": "snapshot",
+  "author_id": "vDmY-KUAAAAJ",
+  "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
+  "snapshot_at": "2026-08-05T18:00:00Z",
+  "updated_at": "2026-08-05T18:00:00Z",
+  "metrics": {
+    "citations": {
+      "all": 157,
+      "since_year": 156,
+      "since_label": "Since 2021"
+    },
+    "h_index": {
+      "all": 5,
+      "since_year": 5,
+      "since_label": "Since 2021"
+    },
+    "i10_index": {
+      "all": 5,
+      "since_year": 5,
+      "since_label": "Since 2021"
+    },
+    "article_count": 17
+  },
+  "citation_graph": [],
+  "articles": [
+    {
+      "title": "Kolmogorov–Arnold recurrent network for short term load forecasting across diverse consumers",
+      "citations": 55,
+      "year": "2025",
+      "publication": "Energy Reports 13, 713-727",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Global-local image perceptual score (GLIPS): Evaluating photorealistic quality of AI-generated images",
+      "citations": 35,
+      "year": "2025",
+      "publication": "IEEE Transactions on Human-Machine Systems 55 (2), 223-233",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Towards a unified evaluation framework: integrating human perception and metrics for AI-generated images",
+      "citations": 21,
+      "year": "2025",
+      "publication": "Multimedia Systems 31 (3), 180",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Leveraging hypernetworks and learnable kernels for consumer energy forecasting across diverse consumer types",
+      "citations": 19,
+      "year": "2024",
+      "publication": "IEEE Transactions on Power Delivery 40 (1), 75-87",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Graph attention convolutional u-net: A semantic segmentation model for identifying flooded areas",
+      "citations": 15,
+      "year": "2024",
+      "publication": "IECON 2024",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Physics-guided memory network for building energy modeling",
+      "citations": 5,
+      "year": "2025",
+      "publication": "Energy and AI 21, 100538",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Monotone Delta: An Order-Theoretic Tournament Graph Approach for Internal Consistency Assessment",
+      "citations": 3,
+      "year": "2026",
+      "publication": "Frontiers in Applied Mathematics and Statistics 12, 1687194",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Any-class presence likelihood for robust multi-label classification with abundant negative data",
+      "citations": 2,
+      "year": "2026",
+      "publication": "IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Chebyregnet: An unsupervised deep learning technique for deformable medical image registration",
+      "citations": 2,
+      "year": "2024",
+      "publication": "IECON 2024",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Conditional denoising diffusion model for missing value imputation in smart meter data",
+      "citations": 0,
+      "year": "2026",
+      "publication": "Engineering Applications of Artificial Intelligence 181, 115403",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Linear Lens: A human-centered, non-interventional mechanistic approach to explainable AI",
+      "citations": 0,
+      "year": "2026",
+      "publication": "Machine Learning with Applications, 100897",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Neural Networks and their Interpretability for Building Energy Modeling",
+      "citations": 0,
+      "year": "2025",
+      "publication": "Western University",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Distributional Feature Separability for Explainability of Neural Networks for Financial Credit Evaluation",
+      "citations": 0,
+      "year": "2025",
+      "publication": "AIxSET 2025",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "RootSolver: A Cognitive-Inspired Approach to Polynomial Root-Finding with Multiplicity Detection",
+      "citations": 0,
+      "year": "2025",
+      "publication": "Advanced Computational Intelligence",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Finite-Difference Approximation for Explaining Neural Network Predictions in Financial Credit Evaluation",
+      "citations": 0,
+      "year": "2025",
+      "publication": "Advanced Machine Learning and Data Science",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Cognitive Effects of Textual, Graphical, and Interactive Explanations in Explainable Artificial Intelligence",
+      "citations": 0,
+      "year": "2026",
+      "publication": "IECON 2026",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    },
+    {
+      "title": "Human-Centered Explainable Artificial Intelligence and the Effects of Explanation Modalities on Trust, Understanding, and Decision Making",
+      "citations": 0,
+      "year": "2026",
+      "publication": "IECON 2026",
+      "link": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ"
+    }
+  ],
+  "note": "Initial verified snapshot supplied from the public Google Scholar profile. The scheduled workflow replaces this file after the first successful refresh."
+}
