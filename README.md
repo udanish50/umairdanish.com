@@ -28,3 +28,7 @@ Added the July 27, 2026 acceptance of “Dispersity Measures Within Sessions Dur
 
 Publication records now expose publisher/journal or conference links, author-hosted PDF copies where available from Western University, and mapped research-code repositories. Large PDFs are linked but intentionally not precached by the service worker. DeepMEX is not attached to an archival publication entry because its public repository explicitly identifies the associated manuscript as under peer review and withholds bibliographic metadata.
 
+## V13.1 mobile refinement
+
+V13.1 preserves the desktop academic design and V13 publication resources while adding a mobile-only refinement layer (`assets/css/mobile-v13-1.css`). The layer activates only at widths of 900 px and below and improves navigation, typography, publication cards, research sections, collaborator cards, publication-detail resources, contact actions, footers, safe-area handling, and narrow-screen overflow. Desktop layout and content are intentionally unchanged.
+
