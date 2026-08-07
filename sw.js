@@ -1,45 +1,5 @@
-const CACHE='udanish-v10-paper-seo-20260807b';
-const SHELL=[
-  '/',
-  '/research.html',
-  '/publications.html',
-  '/news.html',
-  '/teaching.html',
-  '/collaborators.html',
-  '/cv.html',
-  '/contact.html',
-  '/assets/css/site.css',
-  '/assets/css/home-v9.css',
-  '/assets/js/site.js',
-  '/assets/css/collaborators-v9.css',
-  '/assets/js/collaborators-v9.js',
-  '/assets/js/home-v9.js',
-  '/assets/js/impact.js',
-  '/assets/js/publications.js',
-  '/assets/data/publications.json',
-  '/assets/data/scholar-metrics.json',
-  '/assets/images/graduation-hero-mobile.webp',
-  '/assets/images/papers/karn-paper-figure.webp',
-  '/assets/images/papers/glips-paper-figure.webp',
-  '/assets/images/papers/pgmn-paper-figure.webp'
-];
-self.addEventListener('install',event=>{
-  self.skipWaiting();
-  event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)));
-});
-self.addEventListener('activate',event=>{
-  event.waitUntil(Promise.all([
-    caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))),
-    self.clients.claim()
-  ]));
-});
-self.addEventListener('fetch',event=>{
-  if(event.request.method!=='GET'||new URL(event.request.url).origin!==location.origin)return;
-  event.respondWith(
-    fetch(event.request).then(response=>{
-      const copy=response.clone();
-      caches.open(CACHE).then(cache=>cache.put(event.request,copy));
-      return response;
-    }).catch(()=>caches.match(event.request).then(response=>response||caches.match('/404.html')))
-  );
-});
+const CACHE='udanish-v11-academic-20260807';
+const CORE=['/','/index.html','/research.html','/publications.html','/teaching.html','/about.html','/contact.html','/news.html','/collaborators.html','/cv.html','/assets/css/site.css','/assets/css/v11-academic.css','/assets/js/site.js','/assets/js/impact.js','/assets/js/publications.js','/assets/data/publications.json','/assets/data/search-index.json','/assets/images/formal-headshot.webp'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==location.origin)return;if(e.request.mode==='navigate'||u.pathname.endsWith('.html')||u.pathname.includes('/assets/data/')){e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match(e.request).then(r=>r||caches.match('/index.html'))));return}e.respondWith(caches.match(e.request).then(cached=>cached||fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}))) });

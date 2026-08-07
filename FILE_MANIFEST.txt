@@ -4,9 +4,9 @@
 ./CNAME
 ./FILE_MANIFEST.txt
 ./README.md
-./assets/css/collaborators-v9.css
-./assets/css/home-v9.css
+./about.html
 ./assets/css/site.css
+./assets/css/v11-academic.css
 ./assets/data/collaborators.json
 ./assets/data/news.json
 ./assets/data/publications.json
@@ -53,8 +53,6 @@
 ./assets/images/visuals/temporal.svg
 ./assets/images/waterloo-group.jpg
 ./assets/images/waterloo-group.webp
-./assets/js/collaborators-v9.js
-./assets/js/home-v9.js
 ./assets/js/impact.js
 ./assets/js/publications.js
 ./assets/js/site.js

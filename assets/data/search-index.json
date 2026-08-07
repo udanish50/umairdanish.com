@@ -1,345 +1,345 @@
 [
   {
-    "title": "Muhammad Umair Danish, PhD",
-    "kind": "Academic profile",
-    "url": "/",
-    "summary": "Official academic website of Muhammad Umair Danish, Postdoctoral Fellow in Applied AI at Western University.",
+    "kind": "Page",
+    "title": "Research",
+    "summary": "Explainable AI, physics-guided learning, time-series and energy intelligence, and responsible applied AI.",
+    "url": "/research.html",
     "tags": [
-      "Dr. Muhammad Umair Danish",
-      "Applied AI",
-      "Western University",
-      "explainable AI",
-      "mechanistic interpretability"
+      "mechanistic interpretability",
+      "physics guided",
+      "energy",
+      "time series",
+      "responsible AI"
     ]
   },
   {
-    "title": "Research",
     "kind": "Page",
-    "url": "/research.html",
-    "summary": "Mechanistic interpretability, human-centered XAI, reliable temporal learning, and AI evaluation."
-  },
-  {
     "title": "Publications",
-    "kind": "Page",
+    "summary": "Top research impact, recent and accepted work, and the full publication archive.",
     "url": "/publications.html",
-    "summary": "Filterable publication record with live Google Scholar citation data."
-  },
-  {
-    "title": "News",
-    "kind": "Page",
-    "url": "/news.html",
-    "summary": "Research milestones, acceptances, visits, awards, and updates."
-  },
-  {
-    "title": "Teaching",
-    "kind": "Page",
-    "url": "/teaching.html",
-    "summary": "Teaching philosophy, courses, mentoring, and evidence of effectiveness."
-  },
-  {
-    "title": "Collaborators",
-    "kind": "Page",
-    "url": "/collaborators.html",
-    "summary": "Research profile and an interdisciplinary collaboration network across AI, human factors, music therapy, health, cybersecurity, and data mining.",
     "tags": [
-      "collaborators",
-      "research network",
-      "supervisor",
-      "human-centered AI",
+      "papers",
+      "citations",
+      "journal",
+      "conference"
+    ]
+  },
+  {
+    "kind": "Page",
+    "title": "Teaching",
+    "summary": "Teaching philosophy, Western University courses, and mentoring.",
+    "url": "/teaching.html",
+    "tags": [
+      "programming",
+      "database",
+      "software design",
+      "mentoring"
+    ]
+  },
+  {
+    "kind": "Page",
+    "title": "About Muhammad Umair Danish",
+    "summary": "Academic biography, appointment, education, interests, and recognition.",
+    "url": "/about.html",
+    "tags": [
+      "biography",
+      "Western University",
+      "PhD",
       "postdoctoral fellow"
     ]
   },
   {
-    "title": "CV",
     "kind": "Page",
+    "title": "Research Collaborators",
+    "summary": "Research supervision and collaborators across applied AI, human-centered AI, music therapy, health, and cybersecurity.",
+    "url": "/collaborators.html",
+    "tags": [
+      "Katarina Grolinger",
+      "Umair Rehman",
+      "Demian Kogutek",
+      "Aleksandra Zecevic"
+    ]
+  },
+  {
+    "kind": "Page",
+    "title": "News",
+    "summary": "Research milestones, acceptances, fellowships, visits, publications, and awards.",
+    "url": "/news.html",
+    "tags": [
+      "milestones",
+      "IECON 2026",
+      "fellowship",
+      "award"
+    ]
+  },
+  {
+    "kind": "Page",
+    "title": "Contact",
+    "summary": "Research collaboration, applied AI opportunities, talks, and technical discussion.",
+    "url": "/contact.html",
+    "tags": [
+      "email",
+      "collaboration",
+      "contact"
+    ]
+  },
+  {
+    "kind": "Page",
+    "title": "Curriculum Vitae",
+    "summary": "Academic appointments, education, recognition, research, teaching, and technical profile.",
     "url": "/cv.html",
-    "summary": "Academic trajectory, awards, expertise, and downloadable CV."
+    "tags": [
+      "CV",
+      "resume",
+      "education",
+      "awards"
+    ]
   },
   {
+    "kind": "Publication",
     "title": "Cognitive Effects of Textual, Graphical, and Interactive Explanations in Explainable Artificial Intelligence",
-    "kind": "Conference",
-    "url": "/publications/cognitive-effects-xai/",
     "summary": "Examines how textual, graphical, and interactive explanation modalities shape cognitive processing, understanding, and user experience in explainable-AI systems.",
+    "url": "/publications/cognitive-effects-xai/",
     "tags": [
       "Human-AI Interaction",
+      "Conference",
       "Accepted",
+      "52nd Annual Conference of the IEEE Industrial Electronics Society (IECON 2026)",
       "2026"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Human-Centered Explainable Artificial Intelligence and the Effects of Explanation Modalities on Trust, Understanding, and Decision Making",
-    "kind": "Conference",
-    "url": "/publications/human-centered-xai-explanation-modalities/",
     "summary": "Investigates how explanation modalities influence trust, understanding, and decision making, placing human outcomes at the centre of explainable-AI evaluation.",
+    "url": "/publications/human-centered-xai-explanation-modalities/",
     "tags": [
       "Human-AI Interaction",
+      "Conference",
       "Accepted",
+      "52nd Annual Conference of the IEEE Industrial Electronics Society (IECON 2026)",
       "2026"
     ]
   },
   {
+    "kind": "Publication",
     "title": "MidiPy: A Python Application for Processing MIDI Data in Improvised Active Music Therapy",
-    "kind": "Journal",
-    "url": "/publications/midipy/",
     "summary": "Presents open-source Python research software for transforming MIDI event streams into reproducible measures and visual analytics for music-therapy research.",
+    "url": "/publications/midipy/",
     "tags": [
       "Research Software",
+      "Journal",
       "Accepted",
+      "Journal of Creative Music Systems",
       "2026"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Seeing Through Risk: A Symbolic Approximation of Prospect Theory",
-    "kind": "Conference",
-    "url": "/publications/seeing-through-risk/",
     "summary": "Explores a symbolic approximation of Prospect Theory for interpretable modeling of risk-sensitive decisions.",
+    "url": "/publications/seeing-through-risk/",
     "tags": [
       "Decision Science",
+      "Conference",
       "Accepted",
+      "22nd IEEE International Colloquium on Signal Processing and Its Applications",
       "2026"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Statistically-Guided Kernel Regression: Embedding Feature Relevance into Kernel Learning",
-    "kind": "Conference",
-    "url": "/publications/statistically-guided-kernel-regression/",
     "summary": "Embeds statistically estimated feature relevance directly into kernel learning for regression.",
+    "url": "/publications/statistically-guided-kernel-regression/",
     "tags": [
       "Machine Learning Methods",
+      "Conference",
       "Accepted",
+      "2nd International Conference on Advanced Machine Learning and Data Science",
       "2026"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Any-Class Presence Likelihood for Robust Multi-Label Classification with Abundant Negative Data",
-    "kind": "Conference",
-    "url": "/publications/any-class-presence-likelihood/",
     "summary": "Improves multi-label classification when datasets contain many examples in which none of the target classes is present.",
+    "url": "/publications/any-class-presence-likelihood/",
     "tags": [
       "Computer Vision",
+      "Conference",
       "Published",
+      "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
       "2026"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Conditional Denoising Diffusion Model for Missing Value Imputation in Smart Meter Data",
-    "kind": "Journal",
-    "url": "/publications/conditional-diffusion-imputation/",
     "summary": "Applies conditional denoising diffusion to reconstruct missing smart-meter observations in high-resolution energy data.",
+    "url": "/publications/conditional-diffusion-imputation/",
     "tags": [
       "Time Series & Energy",
+      "Journal",
       "Published",
+      "Engineering Applications of Artificial Intelligence",
       "2026"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Linear Lens: A Human-Centered, Non-Interventional Mechanistic Approach to Explainable AI",
-    "kind": "Journal",
-    "url": "/publications/linear-lens/",
     "summary": "Introduces a non-interventional framework for tracing predictive information through neural networks and translating internal representations into human-centered evidence.",
+    "url": "/publications/linear-lens/",
     "tags": [
       "Interpretability",
+      "Journal",
       "Published",
+      "Machine Learning with Applications",
       "2026"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Monotone Delta: An Order-Theoretic Tournament Graph Approach for Internal Consistency Assessment",
-    "kind": "Journal",
-    "url": "/publications/monotone-delta/",
     "summary": "Develops an order-theoretic tournament-graph method for assessing internal consistency in structured comparative settings.",
+    "url": "/publications/monotone-delta/",
     "tags": [
       "Interpretability",
+      "Journal",
       "Published",
+      "Frontiers in Applied Mathematics and Statistics",
       "2026"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Distributional Feature Separability for Explainability of Neural Networks for Financial Credit Evaluation",
-    "kind": "Conference",
-    "url": "/publications/distributional-feature-separability/",
     "summary": "Explains credit-model behavior through the distributional separation of features associated with model decisions.",
+    "url": "/publications/distributional-feature-separability/",
     "tags": [
       "Interpretability",
+      "Conference",
       "Published",
+      "IEEE Conference on AI, Science, Engineering, and Technology (AIxSET)",
       "2025"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Finite-Difference Approximation for Explaining Neural Network Predictions in Financial Credit Evaluation",
-    "kind": "Conference",
-    "url": "/publications/finite-difference-credit-xai/",
     "summary": "Uses finite-difference approximations to characterize how input changes affect neural-network credit predictions.",
+    "url": "/publications/finite-difference-credit-xai/",
     "tags": [
       "Interpretability",
+      "Conference",
       "Published",
+      "International Conference on Advanced Machine Learning and Data Science",
       "2025"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Global-Local Image Perceptual Score (GLIPS): Evaluating Photorealistic Quality of AI-Generated Images",
-    "kind": "Journal",
-    "url": "/publications/glips/",
     "summary": "Introduces a perceptual score that combines global and local evidence to evaluate the photorealistic quality of AI-generated images.",
+    "url": "/publications/glips/",
     "tags": [
       "Generative AI Evaluation",
+      "Journal",
       "Published",
+      "IEEE Transactions on Human-Machine Systems",
       "2025"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Kolmogorov-Arnold Recurrent Network for Short-Term Load Forecasting Across Diverse Consumers",
-    "kind": "Journal",
-    "url": "/publications/kolmogorov-arnold-recurrent-network/",
     "summary": "Develops a recurrent architecture based on Kolmogorov-Arnold representations for forecasting heterogeneous consumer loads.",
+    "url": "/publications/kolmogorov-arnold-recurrent-network/",
     "tags": [
       "Time Series & Energy",
+      "Journal",
       "Published",
+      "Energy Reports",
       "2025"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Physics-Guided Memory Network for Building Energy Modeling",
-    "kind": "Journal",
-    "url": "/publications/physics-guided-memory-network/",
     "summary": "Combines learned temporal memory with physical guidance to improve the reliability of building-energy modeling.",
+    "url": "/publications/physics-guided-memory-network/",
     "tags": [
       "Time Series & Energy",
+      "Journal",
       "Published",
+      "Energy and AI",
       "2025"
     ]
   },
   {
+    "kind": "Publication",
     "title": "RootSolver: A Cognitive-Inspired Approach to Polynomial Root-Finding with Multiplicity Detection",
-    "kind": "Conference",
-    "url": "/publications/rootsolver/",
     "summary": "Presents a cognitive-inspired method for polynomial root finding with explicit multiplicity detection.",
+    "url": "/publications/rootsolver/",
     "tags": [
       "Machine Learning Methods",
+      "Conference",
       "Published",
+      "17th International Conference on Advanced Computational Intelligence",
       "2025"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Towards a Unified Evaluation Framework: Integrating Human Perception and Metrics for AI-Generated Images",
-    "kind": "Journal",
-    "url": "/publications/unified-ai-image-evaluation/",
     "summary": "Integrates human judgments and automated image-quality metrics into a unified framework for evaluating generated imagery.",
+    "url": "/publications/unified-ai-image-evaluation/",
     "tags": [
       "Generative AI Evaluation",
+      "Journal",
       "Published",
+      "Multimedia Systems",
       "2025"
     ]
   },
   {
+    "kind": "Publication",
     "title": "ChebyRegNet: An Unsupervised Deep Learning Technique for Deformable Medical Image Registration",
-    "kind": "Conference",
-    "url": "/publications/chebyregnet/",
     "summary": "Develops an unsupervised deep-learning approach for deformable registration of medical images.",
+    "url": "/publications/chebyregnet/",
     "tags": [
       "Computer Vision",
+      "Conference",
       "Published",
+      "50th Annual Conference of the IEEE Industrial Electronics Society (IECON)",
       "2024"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Graph Attention Convolutional U-Net: A Semantic Segmentation Model for Identifying Flooded Areas",
-    "kind": "Conference",
-    "url": "/publications/graph-attention-convolutional-unet/",
     "summary": "Combines graph attention with a convolutional U-Net to segment flooded regions in imagery.",
+    "url": "/publications/graph-attention-convolutional-unet/",
     "tags": [
       "Computer Vision",
+      "Conference",
       "Published",
+      "50th Annual Conference of the IEEE Industrial Electronics Society (IECON)",
       "2024"
     ]
   },
   {
+    "kind": "Publication",
     "title": "Leveraging Hypernetworks and Learnable Kernels for Consumer Energy Forecasting Across Diverse Consumer Types",
-    "kind": "Journal",
-    "url": "/publications/hypernetworks-learnable-kernels/",
     "summary": "Uses hypernetworks and learnable kernels to adapt energy forecasts across diverse consumer profiles.",
+    "url": "/publications/hypernetworks-learnable-kernels/",
     "tags": [
       "Time Series & Energy",
+      "Journal",
       "Published",
+      "IEEE Transactions on Power Delivery",
       "2024"
-    ]
-  },
-  {
-    "title": "Katarina Grolinger, PhD, P.Eng.",
-    "kind": "Collaborator",
-    "url": "/collaborators.html#katarina-grolinger",
-    "summary": "My PhD and postdoctoral supervisor and the senior research mentor across my core applied-AI research. Our collaboration connects rigorous model development with scalable machine learning, energy systems, interpretability, and human-aligned evaluation.",
-    "tags": [
-      "Research mentorship",
-      "Machine learning",
-      "Energy AI",
-      "Mechanistic XAI",
-      "Western University · Electrical & Computer Engineering"
-    ]
-  },
-  {
-    "title": "Umair Rehman, PhD",
-    "kind": "Collaborator",
-    "url": "/collaborators.html#umair-rehman",
-    "summary": "A major collaborator on research that brings human outcomes into explainable AI. We work across mechanistic evidence, explanation design, perception, trust, understanding, and decision quality.",
-    "tags": [
-      "Human-centered AI",
-      "HCI",
-      "Cognitive engineering",
-      "Trust & decisions",
-      "Western University · Computer Science"
-    ]
-  },
-  {
-    "title": "Demian Kogutek, PhD, MTA",
-    "kind": "Collaborator",
-    "url": "/collaborators.html#demian-kogutek",
-    "summary": "Our interdisciplinary collaboration translates improvisational music-therapy practice into reproducible computational workflows, with an emphasis on transparent data processing and clinically meaningful analysis.",
-    "tags": [
-      "Music therapy",
-      "MIDI analytics",
-      "Computational improvisation",
-      "Clinical research tools",
-      "Wilfrid Laurier University · Faculty of Music"
-    ]
-  },
-  {
-    "title": "Aleksandra Zecevic, PhD",
-    "kind": "Collaborator",
-    "url": "/collaborators.html#aleksandra-zecevic",
-    "summary": "A cross-disciplinary collaborator connecting human factors, aging, safety, and health research with the design and evaluation of human-facing AI explanations.",
-    "tags": [
-      "Human factors",
-      "Aging & health",
-      "Safety",
-      "Human–AI interaction",
-      "Western University · School of Health Studies"
-    ]
-  },
-  {
-    "title": "Farkhund Iqbal, PhD",
-    "kind": "Collaborator",
-    "url": "/collaborators.html#farkhund-iqbal",
-    "summary": "Our collaboration joins explainable machine learning with security, forensic reasoning, and high-stakes analytical settings where evidence quality and reproducibility are central.",
-    "tags": [
-      "Digital forensics",
-      "Cybersecurity",
-      "Deep learning",
-      "Financial XAI",
-      "Zayed University · College of Technological Innovation"
-    ]
-  },
-  {
-    "title": "Benjamin C. M. Fung, PhD, P.Eng.",
-    "kind": "Collaborator",
-    "url": "/collaborators.html#benjamin-fung",
-    "summary": "A senior collaborator in the broader research network around data mining, privacy, cybersecurity, and AI-driven threat analysis. This connection strengthens the security and data-integrity dimension of my applied-AI research portfolio.",
-    "tags": [
-      "Data mining",
-      "Privacy",
-      "AI security",
-      "Applied machine learning",
-      "McGill University · School of Information Studies"
     ]
   }
 ]
