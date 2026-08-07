@@ -38,6 +38,24 @@
     "visual": "human-centered-xai.svg"
   },
   {
+    "slug": "dispersity-measures-music-therapy",
+    "year": 2026,
+    "type": "Journal",
+    "status": "Accepted",
+    "topic": "Music Therapy Analytics",
+    "featured": false,
+    "title": "Dispersity Measures Within Sessions During Improvised Active Music Therapy with Clients with Parkinson’s Disease",
+    "authors": "Demian Kogutek, Laura Carroll, Muhammad Umair Danish, and Cathy Lu",
+    "venue": "Approaches: An Interdisciplinary Journal of Music Therapy",
+    "details": "Accepted July 27, 2026 · Copyediting next",
+    "doi": "",
+    "link": "",
+    "summary": "Examines within-session dispersity measures in improvised active music therapy with clients with Parkinson’s disease.",
+    "code": "",
+    "award": "",
+    "visual": "default.svg"
+  },
+  {
     "slug": "midipy",
     "year": 2026,
     "type": "Journal",

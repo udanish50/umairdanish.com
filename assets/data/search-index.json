@@ -123,6 +123,21 @@
   },
   {
     "kind": "Publication",
+    "title": "Dispersity Measures Within Sessions During Improvised Active Music Therapy with Clients with Parkinson’s Disease",
+    "summary": "Examines within-session dispersity measures in improvised active music therapy with clients with Parkinson’s disease.",
+    "url": "/publications/dispersity-measures-music-therapy/",
+    "tags": [
+      "Music Therapy Analytics",
+      "Journal",
+      "Accepted",
+      "Approaches: An Interdisciplinary Journal of Music Therapy",
+      "2026",
+      "Parkinson’s disease",
+      "Demian Kogutek"
+    ]
+  },
+  {
+    "kind": "Publication",
     "title": "MidiPy: A Python Application for Processing MIDI Data in Improvised Active Music Therapy",
     "summary": "Presents open-source Python research software for transforming MIDI event streams into reproducible measures and visual analytics for music-therapy research.",
     "url": "/publications/midipy/",

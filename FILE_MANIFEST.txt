@@ -67,6 +67,7 @@
 ./publications/chebyregnet/index.html
 ./publications/cognitive-effects-xai/index.html
 ./publications/conditional-diffusion-imputation/index.html
+./publications/dispersity-measures-music-therapy/index.html
 ./publications/distributional-feature-separability/index.html
 ./publications/finite-difference-credit-xai/index.html
 ./publications/glips/index.html
