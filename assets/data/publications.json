@@ -215,7 +215,8 @@
     "link": "https://doi.org/10.1109/THMS.2025.3527397",
     "code": "",
     "award": "",
-    "visual": "glips.svg"
+    "visual": "papers/glips-paper-figure.webp",
+    "visual_note": "Figure from the GLIPS preprint; displayed under CC BY 4.0."
   },
   {
     "slug": "kolmogorov-arnold-recurrent-network",
@@ -233,7 +234,8 @@
     "link": "https://doi.org/10.1016/j.egyr.2024.12.038",
     "code": "",
     "award": "",
-    "visual": "temporal.svg"
+    "visual": "papers/karn-paper-figure.webp",
+    "visual_note": "Figure 1 from the paper; reproduced without substantive alteration under CC BY-NC-ND 4.0."
   },
   {
     "slug": "physics-guided-memory-network",
@@ -251,7 +253,8 @@
     "link": "https://doi.org/10.1016/j.egyai.2025.100538",
     "code": "",
     "award": "",
-    "visual": "physics-memory.svg"
+    "visual": "papers/pgmn-paper-figure.webp",
+    "visual_note": "Graphical abstract from the paper; displayed under CC BY-NC 4.0."
   },
   {
     "slug": "rootsolver",

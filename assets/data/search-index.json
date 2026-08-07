@@ -1,9 +1,16 @@
 [
   {
-    "title": "Home",
-    "kind": "Page",
+    "title": "Muhammad Umair Danish, PhD",
+    "kind": "Academic profile",
     "url": "/",
-    "summary": "Applied AI research profile and live scholarly impact."
+    "summary": "Official academic website of Muhammad Umair Danish, Postdoctoral Fellow in Applied AI at Western University.",
+    "tags": [
+      "Dr. Muhammad Umair Danish",
+      "Applied AI",
+      "Western University",
+      "explainable AI",
+      "mechanistic interpretability"
+    ]
   },
   {
     "title": "Research",
@@ -33,13 +40,13 @@
     "title": "Collaborators",
     "kind": "Page",
     "url": "/collaborators.html",
-    "summary": "Principal investigator profile and an interactive interdisciplinary collaboration network across AI, human factors, music therapy, health, cybersecurity, and data mining.",
+    "summary": "Research profile and an interdisciplinary collaboration network across AI, human factors, music therapy, health, cybersecurity, and data mining.",
     "tags": [
       "collaborators",
       "research network",
-      "principal investigator",
       "supervisor",
-      "human-centered AI"
+      "human-centered AI",
+      "postdoctoral fellow"
     ]
   },
   {
@@ -261,7 +268,7 @@
     "title": "Katarina Grolinger, PhD, P.Eng.",
     "kind": "Collaborator",
     "url": "/collaborators.html#katarina-grolinger",
-    "summary": "My PhD and postdoctoral supervisor and the senior research mentor across my core Applied AI programme. Our collaboration connects rigorous model development with scalable machine learning, energy systems, interpretability, and human-aligned evaluation.",
+    "summary": "My PhD and postdoctoral supervisor and the senior research mentor across my core applied-AI research. Our collaboration connects rigorous model development with scalable machine learning, energy systems, interpretability, and human-aligned evaluation.",
     "tags": [
       "Research mentorship",
       "Machine learning",
@@ -326,7 +333,7 @@
     "title": "Benjamin C. M. Fung, PhD, P.Eng.",
     "kind": "Collaborator",
     "url": "/collaborators.html#benjamin-fung",
-    "summary": "A senior collaborator in the broader research network around data mining, privacy, cybersecurity, and AI-driven threat analysis. This connection strengthens the security and data-integrity dimension of my applied AI programme.",
+    "summary": "A senior collaborator in the broader research network around data mining, privacy, cybersecurity, and AI-driven threat analysis. This connection strengthens the security and data-integrity dimension of my applied-AI research portfolio.",
     "tags": [
       "Data mining",
       "Privacy",

@@ -1,7 +1,7 @@
 {
-  "principal_investigator": {
+  "research_profile": {
     "name": "Muhammad Umair Danish, PhD",
-    "role": "Principal Investigator & Research Lead",
+    "role": "Postdoctoral Fellow in Applied AI",
     "institution": "Western University",
     "profile": "https://umairdanish.com/",
     "image": "/assets/images/collaborators/muhammad-umair-danish.webp"
@@ -19,7 +19,7 @@
     },
     {
       "name": "Umair Rehman, PhD",
-      "relationship": "Major Research Collaborator",
+      "relationship": "Core Research Collaborator",
       "institution": "Western University",
       "shared_work": [
         "Linear Lens",

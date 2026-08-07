@@ -4,7 +4,7 @@ The official research website of **Muhammad Umair Danish, PhD**, Postdoctoral Fe
 
 ## Purpose
 
-The site presents a coherent research programme across mechanistic interpretability, human-centered explainable AI, reliable temporal learning, physics-guided machine learning, and evaluation of generative systems. It is designed as a fast, accessible, publication-first academic profile rather than a general-purpose portfolio.
+The site presents a coherent research portfolio across mechanistic interpretability, human-centered explainable AI, reliable temporal learning, physics-guided machine learning, and evaluation of generative systems. It is designed as a fast, accessible, publication-first academic profile rather than a general-purpose portfolio.
 
 ## Experience
 
@@ -36,7 +36,7 @@ The website uses static HTML, CSS, JSON, SVG, and vanilla JavaScript. There is n
 - `assets/data/publications.json` — curated publication records
 - `assets/data/scholar-metrics.json` — last verified Google Scholar snapshot
 - `assets/data/news.json` — research news and milestones
-- `collaborators.html` — principal investigator profile and cross-institution research network
+- `collaborators.html` — research profile and cross-institution collaboration network
 - `assets/js/collaborators.js` — collaborator filtering and network interactions
 - `assets/js/impact.js` — renders Scholar metrics and article-level citations
 - `assets/js/publications.js` — publication search, filtering, and sorting
@@ -55,3 +55,18 @@ Text, photography, CV material, and research content are © Muhammad Umair Danis
 ## Collaboration profiles
 
 The collaborator page uses concise relationship descriptions, selected shared outputs, and portraits sourced from official institutional profiles. Each profile links back to its authoritative university page. External portraits remain the property of their respective institutions or creators and are included for scholarly identification and attribution.
+
+
+## Search visibility
+
+The site includes canonical URLs, XML sitemap and robots directives, Person/ProfilePage/WebSite structured data, scholarly citation metadata, descriptive image text, and consistent identity metadata for “Muhammad Umair Danish, PhD” and the alternate search form “Dr. Muhammad Umair Danish.” These measures improve crawlability and entity recognition, while search-engine indexing and ranking remain controlled by the search engine.
+
+
+## Paper imagery
+
+Publication cards use original paper figures only where a clear public reuse basis was identified. The remaining cards intentionally use site-authored editorial research visuals. Figure-level source and licence notes are documented in `assets/images/papers/ATTRIBUTION.md`.
+
+
+## Search discovery
+
+The site includes canonical URLs, crawlable navigation, XML sitemap/robots discovery, academic citation metadata, Person/ProfilePage/ScholarlyArticle structured data, and consistent identity links. These improve technical discoverability but do not guarantee a particular search-engine ranking. After deployment, the domain should be verified in Google Search Console and the root sitemap submitted there.

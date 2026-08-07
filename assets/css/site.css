@@ -309,3 +309,11 @@
   .hero-pi picture img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; border-radius: inherit; }
   .publication-result-meta { display: flex; flex-direction: column; gap: 5px; line-height: 1.45; }
 }
+
+
+/* V10 identity, paper-figure and accessibility refinements */
+.hero-person-name{margin:0 0 10px;font-family:var(--serif);font-size:clamp(19px,1.65vw,25px);font-weight:600;letter-spacing:-.025em;color:var(--text)}
+.paper-cover--paper-figure{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.paper-cover--paper-figure img{width:100%;height:100%;object-fit:contain;background:#fff}
+.paper-cover-note{position:absolute;left:12px;bottom:12px;z-index:2;padding:6px 9px;border:1px solid rgba(40,49,78,.12);border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 6px 18px rgba(25,33,58,.08);color:#59627a;font-size:9px;font-weight:800;letter-spacing:.03em}
+@media(max-width:820px){.hero-person-name{font-size:18px;margin-bottom:8px}.paper-cover-note{left:9px;bottom:9px;font-size:8px}}

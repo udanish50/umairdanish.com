@@ -18,7 +18,7 @@
     },
     'human-ai': {
       index: '04', domain: 'Human–AI interaction', title: 'Explanation modalities',
-      summary: 'A human-centered research programme examining how textual, graphical, and interactive explanations affect trust, understanding, and decision making.',
+      summary: 'A human-centered research project examining how textual, graphical, and interactive explanations affect trust, understanding, and decision making.',
       people: ['Muhammad Umair Danish','Umair Rehman','Aleksandra Zecevic'], link: '/publications/human-centered-xai-explanation-modalities/'
     }
   };

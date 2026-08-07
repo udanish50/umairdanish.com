@@ -1,4 +1,4 @@
-const CACHE='udanish-v9-light-interactive-20260807';
+const CACHE='udanish-v10-paper-seo-20260807b';
 const SHELL=[
   '/',
   '/research.html',
@@ -18,7 +18,10 @@ const SHELL=[
   '/assets/js/publications.js',
   '/assets/data/publications.json',
   '/assets/data/scholar-metrics.json',
-  '/assets/images/graduation-hero-mobile.webp'
+  '/assets/images/graduation-hero-mobile.webp',
+  '/assets/images/papers/karn-paper-figure.webp',
+  '/assets/images/papers/glips-paper-figure.webp',
+  '/assets/images/papers/pgmn-paper-figure.webp'
 ];
 self.addEventListener('install',event=>{
   self.skipWaiting();

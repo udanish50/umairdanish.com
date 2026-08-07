@@ -342,3 +342,18 @@ body[data-page="home"] {
 @media (prefers-reduced-motion: reduce) {
   .accepted-paper-v9,.accepted-paper-media img,.architecture-v9-tab,.architecture-v9-panel,.top-cited-card { transition: none !important; }
 }
+
+
+/* V10 top-cited paper imagery */
+.top-cited-card .work-visual{overflow:hidden;isolation:isolate}
+.top-cited-card .work-visual img.paper-figure-image{object-fit:cover;object-position:center;background:#fff;filter:saturate(.94) contrast(.99);transition:transform .45s cubic-bezier(.2,.75,.2,1),filter .3s ease}
+.top-cited-card:hover .work-visual img.paper-figure-image{transform:scale(1.025);filter:saturate(1) contrast(1)}
+.paper-visual-source{position:absolute;right:12px;bottom:12px;z-index:3;max-width:calc(100% - 80px);padding:6px 9px;border-radius:999px;background:rgba(246,247,251,.92);border:1px solid rgba(66,74,104,.12);box-shadow:0 6px 20px rgba(27,35,62,.08);color:#687188;font-size:8px;font-weight:850;letter-spacing:.035em;text-transform:uppercase;backdrop-filter:blur(8px)}
+.paper-visual-source--actual{color:#4f328f;background:rgba(255,255,255,.94)}
+@media(max-width:820px){.paper-visual-source{right:9px;bottom:9px;padding:5px 8px;font-size:7.5px}.top-cited-card .work-visual img.paper-figure-image{object-position:center}}
+
+
+/* V10.1 paper-figure integrity: show full research figures rather than cropping diagrams. */
+.top-cited-card .work-visual img.paper-figure-image{object-fit:contain!important;object-position:center!important;padding:10px;background:#fff}
+.top-cited-card .work-visual:has(img.paper-figure-image){background:#fff}
+@media(max-width:820px){.top-cited-card .work-visual img.paper-figure-image{padding:7px}}
