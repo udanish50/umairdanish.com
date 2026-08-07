@@ -3,7 +3,7 @@
   const root = document.documentElement;
   const saved = localStorage.getItem('ud-theme');
   if (saved) root.dataset.theme = saved;
-  else if (matchMedia('(prefers-color-scheme: dark)').matches) root.dataset.theme = 'dark';
+  else root.dataset.theme = 'light';
 
   document.querySelectorAll('.theme-toggle').forEach(btn => btn.addEventListener('click', () => {
     root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';

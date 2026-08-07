@@ -1,4 +1,4 @@
-const CACHE='udanish-v8-fixed-20260805';
+const CACHE='udanish-v9-light-interactive-20260807';
 const SHELL=[
   '/',
   '/research.html',
@@ -9,9 +9,11 @@ const SHELL=[
   '/cv.html',
   '/contact.html',
   '/assets/css/site.css',
+  '/assets/css/home-v9.css',
   '/assets/js/site.js',
-  '/assets/css/collaborators-v5.css',
-  '/assets/js/collaborators-v5.js',
+  '/assets/css/collaborators-v9.css',
+  '/assets/js/collaborators-v9.js',
+  '/assets/js/home-v9.js',
   '/assets/js/impact.js',
   '/assets/js/publications.js',
   '/assets/data/publications.json',
