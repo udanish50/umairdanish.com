@@ -147,7 +147,8 @@
       "Accepted",
       "Journal of Creative Music Systems",
       "2026"
-    ]
+    ],
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -212,7 +213,8 @@
       "Published",
       "Machine Learning with Applications",
       "2026"
-    ]
+    ],
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -225,7 +227,8 @@
       "Published",
       "Frontiers in Applied Mathematics and Statistics",
       "2026"
-    ]
+    ],
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -238,7 +241,8 @@
       "Published",
       "IEEE Conference on AI, Science, Engineering, and Technology (AIxSET)",
       "2025"
-    ]
+    ],
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -251,7 +255,8 @@
       "Published",
       "International Conference on Advanced Machine Learning and Data Science",
       "2025"
-    ]
+    ],
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -264,7 +269,8 @@
       "Published",
       "IEEE Transactions on Human-Machine Systems",
       "2025"
-    ]
+    ],
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -277,7 +283,8 @@
       "Published",
       "Energy Reports",
       "2025"
-    ]
+    ],
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -290,7 +297,8 @@
       "Published",
       "Energy and AI",
       "2025"
-    ]
+    ],
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -303,7 +311,8 @@
       "Published",
       "17th International Conference on Advanced Computational Intelligence",
       "2025"
-    ]
+    ],
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -329,7 +338,8 @@
       "Published",
       "50th Annual Conference of the IEEE Industrial Electronics Society (IECON)",
       "2024"
-    ]
+    ],
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -342,7 +352,8 @@
       "Published",
       "50th Annual Conference of the IEEE Industrial Electronics Society (IECON)",
       "2024"
-    ]
+    ],
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -355,6 +366,7 @@
       "Published",
       "IEEE Transactions on Power Delivery",
       "2024"
-    ]
+    ],
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   }
 ]

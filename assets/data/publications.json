@@ -68,7 +68,7 @@
     "details": "Accepted",
     "doi": "",
     "summary": "Presents open-source Python research software for transforming MIDI event streams into reproducible measures and visual analytics for music-therapy research.",
-    "code": "https://github.com/udanish50/midipy/tree/main/midipy",
+    "code": "https://github.com/udanish50/midipy",
     "link": "",
     "award": "",
     "visual": "default.svg"
@@ -159,9 +159,13 @@
     "doi": "10.1016/j.mlwa.2026.100897",
     "summary": "Introduces a non-interventional framework for tracing predictive information through neural networks and translating internal representations into human-centered evidence.",
     "link": "https://doi.org/10.1016/j.mlwa.2026.100897",
-    "code": "",
+    "code": "https://github.com/udanish50/LinearLens",
     "award": "",
-    "visual": "linear-lens.svg"
+    "visual": "linear-lens.svg",
+    "pdf": "/assets/papers/linear-lens.pdf",
+    "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/Linear-Lens.pdf",
+    "pdf_local": true,
+    "pdf_license": "CC BY-NC-ND 4.0"
   },
   {
     "slug": "monotone-delta",
@@ -177,9 +181,13 @@
     "doi": "10.3389/fams.2026.1687194",
     "summary": "Develops an order-theoretic tournament-graph method for assessing internal consistency in structured comparative settings.",
     "link": "https://doi.org/10.3389/fams.2026.1687194",
-    "code": "",
+    "code": "https://github.com/udanish50/MonotoneDelta",
     "award": "",
-    "visual": "monotone-delta.svg"
+    "visual": "monotone-delta.svg",
+    "pdf": "/assets/papers/monotone-delta.pdf",
+    "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/Monotone-Delta.pdf",
+    "pdf_local": true,
+    "pdf_license": "CC BY 4.0"
   },
   {
     "slug": "distributional-feature-separability",
@@ -192,11 +200,11 @@
     "authors": "M. Aziz, M. U. Danish, and U. Rehman",
     "venue": "IEEE Conference on AI, Science, Engineering, and Technology (AIxSET)",
     "details": "pp. 127-133 - Best Paper Award",
-    "doi": "",
+    "doi": "10.1109/AIXSET65682.2025.00024",
     "award": "Best Paper Award",
     "summary": "Explains credit-model behavior through the distributional separation of features associated with model decisions.",
-    "link": "",
-    "code": "",
+    "link": "https://doi.org/10.1109/AIXSET65682.2025.00024",
+    "code": "https://github.com/udanish50/DFS",
     "visual": "default.svg"
   },
   {
@@ -210,10 +218,10 @@
     "authors": "M. Aziz, M. U. Danish, F. Iqbal, and U. Rehman",
     "venue": "International Conference on Advanced Machine Learning and Data Science",
     "details": "Tokyo, 2025",
-    "doi": "",
-    "link": "https://ieeexplore.ieee.org/document/11159472",
+    "doi": "10.1109/AMLDS63918.2025.11159472",
+    "link": "https://doi.org/10.1109/AMLDS63918.2025.11159472",
     "summary": "Uses finite-difference approximations to characterize how input changes affect neural-network credit predictions.",
-    "code": "",
+    "code": "https://github.com/udanish50/OLGA",
     "award": "",
     "visual": "default.svg"
   },
@@ -231,7 +239,7 @@
     "doi": "10.1109/THMS.2025.3527397",
     "summary": "Introduces a perceptual score that combines global and local evidence to evaluate the photorealistic quality of AI-generated images.",
     "link": "https://doi.org/10.1109/THMS.2025.3527397",
-    "code": "",
+    "code": "https://github.com/udanish50/GLIPS",
     "award": "",
     "visual": "papers/glips-paper-figure.webp",
     "visual_note": "Figure from the GLIPS preprint; displayed under CC BY 4.0."
@@ -250,10 +258,14 @@
     "doi": "10.1016/j.egyr.2024.12.038",
     "summary": "Develops a recurrent architecture based on Kolmogorov-Arnold representations for forecasting heterogeneous consumer loads.",
     "link": "https://doi.org/10.1016/j.egyr.2024.12.038",
-    "code": "",
+    "code": "https://github.com/udanish50/KARN",
     "award": "",
     "visual": "papers/karn-paper-figure.webp",
-    "visual_note": "Figure 1 from the paper; reproduced without substantive alteration under CC BY-NC-ND 4.0."
+    "visual_note": "Figure 1 from the paper; reproduced without substantive alteration under CC BY-NC-ND 4.0.",
+    "pdf": "/assets/papers/karn.pdf",
+    "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/KARN-published.pdf",
+    "pdf_local": true,
+    "pdf_license": "CC BY-NC-ND 4.0"
   },
   {
     "slug": "physics-guided-memory-network",
@@ -269,7 +281,7 @@
     "doi": "10.1016/j.egyai.2025.100538",
     "summary": "Combines learned temporal memory with physical guidance to improve the reliability of building-energy modeling.",
     "link": "https://doi.org/10.1016/j.egyai.2025.100538",
-    "code": "",
+    "code": "https://github.com/udanish50/PgMN",
     "award": "",
     "visual": "papers/pgmn-paper-figure.webp",
     "visual_note": "Graphical abstract from the paper; displayed under CC BY-NC 4.0."
@@ -285,10 +297,10 @@
     "authors": "M. U. Danish, A. A. Yousaf, M. Aziz, K. Grolinger, and U. Rehman",
     "venue": "17th International Conference on Advanced Computational Intelligence",
     "details": "2025",
-    "doi": "",
-    "link": "https://ieeexplore.ieee.org/document/11096224",
+    "doi": "10.1109/ICACI65340.2025.11096224",
+    "link": "https://doi.org/10.1109/ICACI65340.2025.11096224",
     "summary": "Presents a cognitive-inspired method for polynomial root finding with explicit multiplicity detection.",
-    "code": "",
+    "code": "https://github.com/udanish50/RootSolver",
     "award": "",
     "visual": "default.svg"
   },
@@ -324,9 +336,13 @@
     "doi": "10.1109/IECON55916.2024.10905705",
     "summary": "Develops an unsupervised deep-learning approach for deformable registration of medical images.",
     "link": "https://doi.org/10.1109/IECON55916.2024.10905705",
-    "code": "",
+    "code": "https://github.com/udanish50/ChebyRegNet",
     "award": "",
-    "visual": "default.svg"
+    "visual": "default.svg",
+    "pdf": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/ChebyRegNet__An_Unsupervised_Deep_Learning_Technique_for_Deformable_Medical_Image_Registration_.pdf",
+    "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/ChebyRegNet__An_Unsupervised_Deep_Learning_Technique_for_Deformable_Medical_Image_Registration_.pdf",
+    "pdf_local": false,
+    "pdf_host": "Western University"
   },
   {
     "slug": "graph-attention-convolutional-unet",
@@ -342,9 +358,13 @@
     "doi": "10.1109/IECON55916.2024.10905482",
     "summary": "Combines graph attention with a convolutional U-Net to segment flooded regions in imagery.",
     "link": "https://doi.org/10.1109/IECON55916.2024.10905482",
-    "code": "",
+    "code": "https://github.com/udanish50/GAC-UNET",
     "award": "",
-    "visual": "default.svg"
+    "visual": "default.svg",
+    "pdf": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/Flood_Area_Identification.pdf",
+    "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/Flood_Area_Identification.pdf",
+    "pdf_local": false,
+    "pdf_host": "Western University"
   },
   {
     "slug": "hypernetworks-learnable-kernels",
@@ -360,8 +380,12 @@
     "doi": "10.1109/TPWRD.2024.3486010",
     "summary": "Uses hypernetworks and learnable kernels to adapt energy forecasts across diverse consumer profiles.",
     "link": "https://doi.org/10.1109/TPWRD.2024.3486010",
-    "code": "",
+    "code": "https://github.com/udanish50/HyperEnergy",
     "award": "",
-    "visual": "hyperenergy.svg"
+    "visual": "hyperenergy.svg",
+    "pdf": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/HyperEnergy__-for-upload.pdf",
+    "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/HyperEnergy__-for-upload.pdf",
+    "pdf_local": false,
+    "pdf_host": "Western University"
   }
 ]

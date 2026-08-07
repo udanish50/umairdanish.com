@@ -24,3 +24,7 @@ The site uses semantic headings, visible keyboard focus, a skip link, responsive
 ## Latest content update
 
 Added the July 27, 2026 acceptance of “Dispersity Measures Within Sessions During Improvised Active Music Therapy with Clients with Parkinson’s Disease” in *Approaches: An Interdisciplinary Journal of Music Therapy*. The editor indicated that copyediting would follow; final bibliographic metadata remains intentionally unset until publication details are public.
+## Publication resources (V13)
+
+Publication records now expose publisher/journal or conference links, author-hosted PDF copies where available from Western University, and mapped research-code repositories. Large PDFs are linked but intentionally not precached by the service worker. DeepMEX is not attached to an archival publication entry because its public repository explicitly identifies the associated manuscript as under peer review and withholds bibliographic metadata.
+

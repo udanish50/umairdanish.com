@@ -1,4 +1,4 @@
-const CACHE='udanish-v12-max-seo-20260807';
+const CACHE='udanish-v13-publication-resources-20260807';
 const CORE=['/','/index.html','/research.html','/publications.html','/teaching.html','/about.html','/contact.html','/news.html','/collaborators.html','/cv.html','/assets/css/site.css','/assets/css/v11-academic.css','/assets/js/site.js','/assets/js/impact.js','/assets/js/publications.js','/assets/data/publications.json','/assets/data/search-index.json','/assets/images/formal-headshot.webp'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
