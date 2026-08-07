@@ -1,0 +1,25 @@
+# Muhammad Umair Danish
+
+> Canonical academic website for Dr. Muhammad Umair Danish (Muhammad Umair Danish, PhD), Postdoctoral Fellow in Applied AI at Western University.
+
+- Canonical website: https://umairdanish.com/
+- About: https://umairdanish.com/about.html
+- Research: https://umairdanish.com/research.html
+- Publications: https://umairdanish.com/publications.html
+- Teaching: https://umairdanish.com/teaching.html
+- Collaborators: https://umairdanish.com/collaborators.html
+- Academic CV: https://umairdanish.com/cv.html
+- Contact: https://umairdanish.com/contact.html
+- Google Scholar: https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ
+- ORCID: https://orcid.org/0009-0005-5728-3587
+- ResearchGate: https://www.researchgate.net/profile/Muhammad-Umair-Danish
+- Frontiers Loop: https://loop.frontiersin.org/people/3321195/overview
+
+## Research areas
+
+Explainable AI, mechanistic interpretability, interpretable machine learning, physics-guided machine learning, time-series forecasting, building energy modeling, human-AI interaction, AI evaluation, and applied machine learning.
+
+## Identity verification
+
+- Western University postdoctoral fellows listing: https://www.uwo.ca/research/funding/students-trainees/postdoctoral-fellows-listing.html
+- Western University doctoral public lecture: https://www.uwo.ca/events/2025/11/doctoral-public-lecture-muhammad-umair-danish.html

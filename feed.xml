@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Muhammad Umair Danish — Research Updates</title>
+<id>https://umairdanish.com/</id>
+<link href="https://umairdanish.com/feed.xml" rel="self"/>
+<link href="https://umairdanish.com/"/>
+<updated>2026-08-07T19:30:00-04:00</updated>
+<author><name>Muhammad Umair Danish</name><uri>https://umairdanish.com/</uri></author>
+<entry>
+<title>Cognitive Effects of Textual, Graphical, and Interactive Explanations in Explainable Artificial Intelligence</title>
+<id>https://umairdanish.com/publications/cognitive-effects-xai/</id>
+<link href="https://umairdanish.com/publications/cognitive-effects-xai/"/>
+<updated>2026-08-05T12:00:00-04:00</updated>
+<summary>Examines how textual, graphical, and interactive explanation modalities shape cognitive processing, understanding, and user experience in explainable-AI systems.</summary>
+</entry>
+<entry>
+<title>Human-Centered Explainable Artificial Intelligence and the Effects of Explanation Modalities on Trust, Understanding, and Decision Making</title>
+<id>https://umairdanish.com/publications/human-centered-xai-explanation-modalities/</id>
+<link href="https://umairdanish.com/publications/human-centered-xai-explanation-modalities/"/>
+<updated>2026-08-05T12:00:00-04:00</updated>
+<summary>Investigates how explanation modalities influence trust, understanding, and decision making, placing human outcomes at the centre of explainable-AI evaluation.</summary>
+</entry>
+<entry>
+<title>Dispersity Measures Within Sessions During Improvised Active Music Therapy with Clients with Parkinson’s Disease</title>
+<id>https://umairdanish.com/publications/dispersity-measures-music-therapy/</id>
+<link href="https://umairdanish.com/publications/dispersity-measures-music-therapy/"/>
+<updated>2026-01-01T12:00:00-04:00</updated>
+<summary>Examines within-session dispersity measures in improvised active music therapy with clients with Parkinson’s disease.</summary>
+</entry>
+<entry>
+<title>MidiPy: A Python Application for Processing MIDI Data in Improvised Active Music Therapy</title>
+<id>https://umairdanish.com/publications/midipy/</id>
+<link href="https://umairdanish.com/publications/midipy/"/>
+<updated>2026-01-01T12:00:00-04:00</updated>
+<summary>Presents open-source Python research software for transforming MIDI event streams into reproducible measures and visual analytics for music-therapy research.</summary>
+</entry>
+<entry>
+<title>Seeing Through Risk: A Symbolic Approximation of Prospect Theory</title>
+<id>https://umairdanish.com/publications/seeing-through-risk/</id>
+<link href="https://umairdanish.com/publications/seeing-through-risk/"/>
+<updated>2026-01-01T12:00:00-04:00</updated>
+<summary>Explores a symbolic approximation of Prospect Theory for interpretable modeling of risk-sensitive decisions.</summary>
+</entry>
+<entry>
+<title>Statistically-Guided Kernel Regression: Embedding Feature Relevance into Kernel Learning</title>
+<id>https://umairdanish.com/publications/statistically-guided-kernel-regression/</id>
+<link href="https://umairdanish.com/publications/statistically-guided-kernel-regression/"/>
+<updated>2026-01-01T12:00:00-04:00</updated>
+<summary>Embeds statistically estimated feature relevance directly into kernel learning for regression.</summary>
+</entry>
+<entry>
+<title>Any-Class Presence Likelihood for Robust Multi-Label Classification with Abundant Negative Data</title>
+<id>https://umairdanish.com/publications/any-class-presence-likelihood/</id>
+<link href="https://umairdanish.com/publications/any-class-presence-likelihood/"/>
+<updated>2026-01-01T12:00:00-04:00</updated>
+<summary>Improves multi-label classification when datasets contain many examples in which none of the target classes is present.</summary>
+</entry>
+<entry>
+<title>Conditional Denoising Diffusion Model for Missing Value Imputation in Smart Meter Data</title>
+<id>https://umairdanish.com/publications/conditional-diffusion-imputation/</id>
+<link href="https://umairdanish.com/publications/conditional-diffusion-imputation/"/>
+<updated>2026-01-01T12:00:00-04:00</updated>
+<summary>Applies conditional denoising diffusion to reconstruct missing smart-meter observations in high-resolution energy data.</summary>
+</entry>
+<entry>
+<title>Linear Lens: A Human-Centered, Non-Interventional Mechanistic Approach to Explainable AI</title>
+<id>https://umairdanish.com/publications/linear-lens/</id>
+<link href="https://umairdanish.com/publications/linear-lens/"/>
+<updated>2026-01-01T12:00:00-04:00</updated>
+<summary>Introduces a non-interventional framework for tracing predictive information through neural networks and translating internal representations into human-centered evidence.</summary>
+</entry>
+<entry>
+<title>Monotone Delta: An Order-Theoretic Tournament Graph Approach for Internal Consistency Assessment</title>
+<id>https://umairdanish.com/publications/monotone-delta/</id>
+<link href="https://umairdanish.com/publications/monotone-delta/"/>
+<updated>2026-01-01T12:00:00-04:00</updated>
+<summary>Develops an order-theoretic tournament-graph method for assessing internal consistency in structured comparative settings.</summary>
+</entry>
+</feed>

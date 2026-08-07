@@ -1,6 +1,6 @@
 {
-  "name": "Muhammad Umair Danish \u2014 Applied AI Research",
-  "short_name": "Umair Danish",
+  "name": "Muhammad Umair Danish — Academic Research",
+  "short_name": "Muhammad Danish",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -10,6 +10,17 @@
       "src": "/assets/images/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
-  ]
+  ],
+  "description": "Academic research website of Dr. Muhammad Umair Danish, Postdoctoral Fellow in Applied AI at Western University."
 }

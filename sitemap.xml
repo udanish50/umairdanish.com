@@ -1,32 +1,129 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://umairdanish.com/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/research.html</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications.html</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/teaching.html</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/about.html</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/contact.html</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/news.html</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/collaborators.html</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/cv.html</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/cognitive-effects-xai/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/human-centered-xai-explanation-modalities/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/dispersity-measures-music-therapy/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/midipy/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/seeing-through-risk/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/statistically-guided-kernel-regression/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/any-class-presence-likelihood/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/conditional-diffusion-imputation/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/linear-lens/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/monotone-delta/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/distributional-feature-separability/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/finite-difference-credit-xai/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/glips/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/kolmogorov-arnold-recurrent-network/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/physics-guided-memory-network/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/rootsolver/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/unified-ai-image-evaluation/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/chebyregnet/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/graph-attention-convolutional-unet/</loc><lastmod>2026-08-07</lastmod></url>
-<url><loc>https://umairdanish.com/publications/hypernetworks-learnable-kernels/</loc><lastmod>2026-08-07</lastmod></url>
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://umairdanish.com/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <image:image>
+      <image:loc>https://umairdanish.com/assets/images/formal-headshot.webp</image:loc>
+      <image:title>Muhammad Umair Danish, PhD</image:title>
+      <image:caption>Professional portrait of Dr. Muhammad Umair Danish, Postdoctoral Fellow in Applied AI at Western University</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://umairdanish.com/assets/images/social-card.jpg</image:loc>
+      <image:title>Muhammad Umair Danish — Applied AI Research</image:title>
+      <image:caption>Academic research profile of Muhammad Umair Danish</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/about.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/research.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/teaching.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/collaborators.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/news.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/cv.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/contact.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/cognitive-effects-xai/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/human-centered-xai-explanation-modalities/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/dispersity-measures-music-therapy/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/midipy/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/seeing-through-risk/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/statistically-guided-kernel-regression/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/any-class-presence-likelihood/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/conditional-diffusion-imputation/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/linear-lens/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/monotone-delta/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/distributional-feature-separability/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/finite-difference-credit-xai/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/glips/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/kolmogorov-arnold-recurrent-network/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/physics-guided-memory-network/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/rootsolver/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/unified-ai-image-evaluation/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/chebyregnet/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/graph-attention-convolutional-unet/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/publications/hypernetworks-learnable-kernels/</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
 </urlset>
