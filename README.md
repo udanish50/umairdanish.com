@@ -45,3 +45,6 @@ V13.4: homepage credibility strip now shows journal-paper and conference-paper t
 
 
 V13.5: homepage research-metrics strip replaces Scholar works with 4 Awards, matching the four awards/distinctions currently listed on the About page.
+
+
+V13.6: added a responsive live Global Reach visitor-map section to the About page using the user-provided Flag Counter txBY counter.
