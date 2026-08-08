@@ -42,3 +42,6 @@ V13.3: reduced mobile portrait scale and prevented cropping of editorial publica
 
 
 V13.4: homepage credibility strip now shows journal-paper and conference-paper totals instead of the Best Paper tile.
+
+
+V13.5: homepage research-metrics strip replaces Scholar works with 4 Awards, matching the four awards/distinctions currently listed on the About page.
