@@ -152,19 +152,6 @@
   },
   {
     "kind": "Publication",
-    "title": "Seeing Through Risk: A Symbolic Approximation of Prospect Theory",
-    "summary": "Explores a symbolic approximation of Prospect Theory for interpretable modeling of risk-sensitive decisions.",
-    "url": "/publications/seeing-through-risk/",
-    "tags": [
-      "Decision Science",
-      "Conference",
-      "Accepted",
-      "22nd IEEE International Colloquium on Signal Processing and Its Applications",
-      "2026"
-    ]
-  },
-  {
-    "kind": "Publication",
     "title": "Statistically-Guided Kernel Regression: Embedding Feature Relevance into Kernel Learning",
     "summary": "Embeds statistically estimated feature relevance directly into kernel learning for regression.",
     "url": "/publications/statistically-guided-kernel-regression/",

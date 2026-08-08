@@ -2,6 +2,7 @@
 .nojekyll
 404.html
 CNAME
+FILE_MANIFEST.txt
 README.md
 SEO-SEARCH-CONSOLE.md
 about.html
@@ -63,6 +64,7 @@ assets/images/waterloo-group.webp
 assets/js/impact.js
 assets/js/live-v14.js
 assets/js/publications.js
+assets/js/reactions-v14-3.js
 assets/js/site.js
 assets/papers/README.md
 assets/papers/karn.pdf
@@ -94,7 +96,6 @@ publications/midipy/index.html
 publications/monotone-delta/index.html
 publications/physics-guided-memory-network/index.html
 publications/rootsolver/index.html
-publications/seeing-through-risk/index.html
 publications/statistically-guided-kernel-regression/index.html
 publications/unified-ai-image-evaluation/index.html
 research.html

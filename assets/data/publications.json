@@ -74,24 +74,6 @@
     "visual": "default.svg"
   },
   {
-    "slug": "seeing-through-risk",
-    "year": 2026,
-    "type": "Conference",
-    "status": "Accepted",
-    "topic": "Decision Science",
-    "featured": false,
-    "title": "Seeing Through Risk: A Symbolic Approximation of Prospect Theory",
-    "authors": "A. A. Yousaf, U. Rehman, and M. U. Danish",
-    "venue": "22nd IEEE International Colloquium on Signal Processing and Its Applications",
-    "details": "Accepted",
-    "doi": "",
-    "summary": "Explores a symbolic approximation of Prospect Theory for interpretable modeling of risk-sensitive decisions.",
-    "link": "",
-    "code": "",
-    "award": "",
-    "visual": "default.svg"
-  },
-  {
     "slug": "statistically-guided-kernel-regression",
     "year": 2026,
     "type": "Conference",

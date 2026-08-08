@@ -41,7 +41,7 @@
     setAll('[data-impact-hindex]',number(m.h_index?.all,'5'));
     setAll('[data-impact-i10]',number(m.i10_index?.all,'5'));
     setAll('[data-impact-journals]',number(countPubs(publications,'Journal'),'10'));
-    setAll('[data-impact-conferences]',number(countPubs(publications,'Conference'),'10'));
+    setAll('[data-impact-conferences]',number(countPubs(publications,'Conference'),'9'));
     setAll('[data-impact-status]',data.status==='live'?'Google Scholar · daily':'Google Scholar snapshot');
     const stamp=new Date(data.updated_at||data.snapshot_at||Date.now());
     const valid=!Number.isNaN(stamp.getTime());
@@ -81,7 +81,7 @@
         const publicationsResponse = await fetch(PUB_URL+'?v='+Date.now(),{cache:'no-store'});
         const publications = publicationsResponse.ok ? await publicationsResponse.json() : [];
         setAll('[data-impact-journals]',number(countPubs(publications,'Journal'),'10'));
-        setAll('[data-impact-conferences]',number(countPubs(publications,'Conference'),'10'));
+        setAll('[data-impact-conferences]',number(countPubs(publications,'Conference'),'9'));
       }catch(_){/* ignore */}
       setAll('[data-impact-status]','Google Scholar snapshot');
       setAll('[data-impact-updated]','Verified Aug 2026');

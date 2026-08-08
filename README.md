@@ -56,3 +56,6 @@ Adds isolated, responsive live components without changing the established page 
 
 
 V14.1: removed the publication-count milestone from Academic Journey and added anonymous academic reader reactions to all publication detail pages.
+
+
+V14.3: moved reader reactions from publication detail pages into compact controls in the All Publications archive; removed the requested conference record from all website publication records and the downloadable CV; totals now reflect 19 published/accepted works and 9 conference papers.
