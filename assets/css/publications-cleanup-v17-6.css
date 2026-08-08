@@ -1,0 +1,7 @@
+/* Publications must never display the Reader Interest ranking. */
+body.publications-page .ud-trending-v15-1,
+body.publications-page [data-reader-interest-root],
+body.publications-page .reader-interest-research-v17-3,
+body.publications-page .reader-interest-v17-3 {
+  display: none !important;
+}
