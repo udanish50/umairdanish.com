@@ -266,7 +266,8 @@
     "code": "https://github.com/udanish50/PgMN",
     "award": "",
     "visual": "papers/pgmn-paper-figure.webp",
-    "visual_note": "Graphical abstract from the paper; displayed under CC BY-NC 4.0."
+    "visual_note": "Graphical abstract from the paper; displayed under CC BY-NC 4.0.",
+    "pdf": "/assets/papers/pgmn.pdf"
   },
   {
     "slug": "rootsolver",
