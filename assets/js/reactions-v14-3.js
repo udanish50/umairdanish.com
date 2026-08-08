@@ -1,10 +1,13 @@
 (() => {
   'use strict';
 
+  /* V14.8: missing counters render as zero; each count loads independently. */
+
   const API = 'https://api.counterapi.dev/v1/umairdanish-com-reader-reactions';
   const REACTIONS = ['insightful', 'useful', 'appreciated'];
   const initialized = new WeakSet();
   const MIGRATION_KEY = 'ud-reader-reactions:v14-6-migrated';
+  const BUILD = 'v14.8';
 
   function valueOf(data) {
     const raw = data?.value ?? data?.count ?? data?.data?.value ?? data?.data?.count;
@@ -56,7 +59,8 @@
 
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-  async function request(url, attempts = 3) {
+  async function request(url, attempts = 3, options = {}) {
+    const { notFoundAsZero = false } = options;
     let lastError;
     for (let attempt = 0; attempt < attempts; attempt += 1) {
       try {
@@ -65,6 +69,7 @@
           mode: 'cors',
           headers: { Accept: 'application/json' }
         });
+        if (response.status === 404 && notFoundAsZero) return { value: 0, missing: true };
         if (response.status === 429) throw new Error('Reaction service rate limit reached');
         if (!response.ok) throw new Error(`Reaction service returned ${response.status}`);
         const data = await response.json();
@@ -105,18 +110,23 @@
 
   async function loadCounts(root, slug) {
     root.classList.add('is-loading');
-    try {
-      const results = await Promise.all(
-        REACTIONS.map(reaction => request(endpoint(slug, reaction), 2))
-      );
-      REACTIONS.forEach((reaction, index) => setCount(root, reaction, valueOf(results[index])));
-      setStatus(root, '', 'shared');
-    } catch (_) {
-      REACTIONS.forEach(reaction => setCount(root, reaction, null));
-      setStatus(root, 'Counts temporarily unavailable', 'error');
-    } finally {
-      root.classList.remove('is-loading');
-    }
+    const results = await Promise.allSettled(
+      REACTIONS.map(reaction => request(endpoint(slug, reaction), 2, { notFoundAsZero: true }))
+    );
+
+    let available = 0;
+    REACTIONS.forEach((reaction, index) => {
+      const result = results[index];
+      if (result.status === 'fulfilled') {
+        setCount(root, reaction, valueOf(result.value));
+        available += 1;
+      } else {
+        setCount(root, reaction, null);
+      }
+    });
+
+    setStatus(root, '', available ? 'shared' : 'error');
+    root.classList.remove('is-loading');
   }
 
   async function react(root, slug, reaction) {
