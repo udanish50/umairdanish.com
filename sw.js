@@ -1,4 +1,4 @@
-const CACHE='udanish-v17-4-research-only-reader-interest-20260808';
+const CACHE='udanish-v17-5-clean-publications-research-20260808';
 const CORE=[
   '/assets/css/research-service-v17-3.css',
   '/assets/js/daily-knowledge-v16.js',
