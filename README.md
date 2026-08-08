@@ -53,3 +53,6 @@ V13.6: added a responsive live Global Reach visitor-map section to the About pag
 ## V14 live research intelligence
 
 Adds isolated, responsive live components without changing the established page design: a Google-Scholar citation leaderboard and live paper-view ranking on Publications; open-research-software statistics and GitHub activity on Research; and an academic journey timeline on About. Publication page views use a lightweight public CounterAPI counter, limited in-browser to one increment per paper per day. GitHub activity uses only public unauthenticated repository metadata. MidiPy version/download figures are requested from PyPI/PyPI Stats with graceful fallbacks.
+
+
+V14.1: removed the publication-count milestone from Academic Journey and added anonymous academic reader reactions to all publication detail pages.

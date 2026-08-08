@@ -107,7 +107,6 @@
     qsa('[data-v14-code-repos]').forEach(el=>el.textContent=String(codeRepos.length));
     const implementations=codeRepos.filter(u=>repoNameFromUrl(u).toLowerCase()!=='midipy').length;
     qsa('[data-v14-implementations]').forEach(el=>el.textContent=String(implementations));
-    qsa('[data-v14-publication-total]').forEach(el=>el.textContent=String(pubs.filter(p=>['Accepted','Published'].includes(p.status)).length));
     const pypi=await pypiData();
     qsa('[data-v14-midipy-version]').forEach(el=>el.textContent=pypi.version||'—');
     qsa('[data-v14-midipy-downloads]').forEach(el=>el.textContent=pypi.downloads===null?'—':pypi.downloads.toLocaleString());
@@ -129,7 +128,7 @@
 
   async function init(){
     incrementPaperView();
-    const needsData=qs('[data-v14-citation-list], [data-v14-trending-list], [data-v14-github-grid], [data-v14-code-repos], [data-v14-publication-total]');
+    const needsData=qs('[data-v14-citation-list], [data-v14-trending-list], [data-v14-github-grid], [data-v14-code-repos]');
     if(!needsData)return;
     let pubs=[];try{pubs=await fetchJSON(PUBS+'?v='+Date.now())}catch(_){return}
     citationLeaderboard(pubs);
