@@ -1,0 +1,125 @@
+/* =========================================================
+   DAILY KNOWLEDGE · V16
+   Deliberately restrained to the existing V11 academic design.
+   ========================================================= */
+
+.daily-knowledge {
+  border-bottom: 1px solid var(--border);
+  background: var(--soft2);
+  min-height: 112px;
+}
+
+.daily-knowledge-inner {
+  min-height: 92px;
+  display: grid;
+  grid-template-columns: 165px minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.daily-knowledge-label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.daily-knowledge-label > span {
+  color: var(--purple);
+  font-size: 10px;
+  line-height: 1.3;
+  letter-spacing: .15em;
+  font-weight: 700;
+}
+
+.daily-knowledge-label time {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.daily-knowledge-content {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: baseline;
+}
+
+.daily-knowledge-year {
+  font-family: var(--serif);
+  color: var(--text);
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.daily-knowledge-content p {
+  margin: 0;
+  max-width: 760px;
+  color: #444b58;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.daily-knowledge-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  color: var(--purple-dark);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 8px;
+}
+
+.daily-knowledge-link:hover {
+  background: var(--purple-soft);
+}
+
+.daily-knowledge-source {
+  padding-bottom: 10px;
+  margin-top: -8px;
+  color: var(--muted2, var(--muted));
+  font-size: 10px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .daily-knowledge { min-height: 0; }
+
+  .daily-knowledge-inner {
+    display: block;
+    min-height: 0;
+    padding-top: 21px;
+    padding-bottom: 13px;
+  }
+
+  .daily-knowledge-label { margin-bottom: 15px; }
+
+  .daily-knowledge-content {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .daily-knowledge-year { font-size: 25px; }
+
+  .daily-knowledge-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .daily-knowledge-link {
+    margin-top: 10px;
+    margin-left: -10px;
+  }
+
+  .daily-knowledge-source {
+    padding-bottom: 16px;
+    margin-top: 0;
+    text-align: left;
+  }
+}

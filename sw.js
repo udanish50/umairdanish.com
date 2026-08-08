@@ -1,5 +1,7 @@
-const CACHE='udanish-v15-1-seeded-trending-20260808';
+const CACHE='udanish-v16-3-papers-daily-knowledge-20260808';
 const CORE=[
+  '/assets/js/daily-knowledge-v16.js',
+  '/assets/css/daily-knowledge-v16.css',
   '/assets/css/trending-v15-1.css',
   '/assets/js/trending-v15-1.js','/','/index.html','/research.html','/publications.html','/teaching.html','/about.html','/contact.html','/news.html','/collaborators.html','/cv.html','/assets/css/site.css','/assets/css/v11-academic.css',
   '/assets/css/mobile-v13-1.css','/assets/css/live-v14.css','/assets/js/site.js','/assets/js/impact.js','/assets/js/publications.js','/assets/js/live-v14.js','/assets/js/reactions-v15.js','/assets/data/publications.json','/assets/data/search-index.json','/assets/images/formal-headshot.webp','/assets/papers/pgmn.pdf'];

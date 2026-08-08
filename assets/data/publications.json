@@ -224,7 +224,10 @@
     "code": "https://github.com/udanish50/GLIPS",
     "award": "",
     "visual": "papers/glips-paper-figure.webp",
-    "visual_note": "Figure from the GLIPS preprint; displayed under CC BY 4.0."
+    "visual_note": "Figure from the GLIPS preprint; displayed under CC BY 4.0.",
+    "pdf": "/assets/papers/glips-author-accepted-manuscript.pdf",
+    "pdf_kind": "Author accepted manuscript",
+    "pdf_note": "TechRxiv cover page removed; IEEE accepted-author manuscript retained unchanged."
   },
   {
     "slug": "kolmogorov-arnold-recurrent-network",
@@ -304,10 +307,12 @@
     "code": "https://github.com/udanish50/VisualVerity",
     "award": "",
     "visual": "default.svg",
-    "pdf": "/assets/papers/unified-ai-image-evaluation-preprint.pdf",
+    "pdf": "/assets/papers/unified-ai-image-evaluation-author-preprint.pdf",
     "pdf_source": "https://doi.org/10.36227/techrxiv.173894988.81604432/v1",
     "pdf_local": true,
-    "pdf_license": "CC BY 4.0 (TechRxiv preprint)"
+    "pdf_license": "CC BY 4.0 (TechRxiv preprint)",
+    "pdf_kind": "Author preprint",
+    "pdf_note": "TechRxiv cover page removed; manuscript pages retained unchanged. Publisher DOI retained."
   },
   {
     "slug": "chebyregnet",
