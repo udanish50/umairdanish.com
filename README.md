@@ -59,3 +59,12 @@ V14.1: removed the publication-count milestone from Academic Journey and added a
 
 
 V14.3: moved reader reactions from publication detail pages into compact controls in the All Publications archive; removed the requested conference record from all website publication records and the downloadable CV; totals now reflect 19 published/accepted works and 9 conference papers.
+
+
+V14.4: About biography rewritten in first person (I / my) with design and all other content preserved.
+
+
+V14.5: removed the duplicate Top Research Impact card section from Publications; the live Citation Leaderboard is now the single most-cited-work section.
+
+
+V14.6: fixed shared reader-reaction persistence. Local selection is now committed only after the remote shared counter confirms success; failures remain retryable and are visibly reported.

@@ -28,3 +28,10 @@
 @media(max-width:768px){.v143-reaction-strip{margin-top:11px}.v143-reaction-prompt{width:100%;margin-bottom:1px}.v143-reaction{min-height:32px;padding:5px 8px;font-size:10px}}
 @media(max-width:390px){.v143-reaction-actions{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.v143-reaction{width:100%;justify-content:center;padding-inline:5px}.v143-reaction>span:nth-child(2){font-size:9px}.v143-reaction strong{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.v143-reaction{transition:none}}
+
+/* V14.6 — reliable shared reaction feedback; additive only. */
+.v146-reaction-status{font-size:9px;line-height:1.25;color:#737b88;min-height:12px;white-space:nowrap}
+.v143-reaction-strip[data-reaction-state="error"] .v146-reaction-status{color:#9a4a4a}
+.v143-reaction-strip[data-reaction-state="saving"] .v146-reaction-status{color:#6b5a97}
+.v143-reaction:disabled{cursor:wait;opacity:.68;transform:none!important}
+@media(max-width:768px){.v146-reaction-status{width:100%;white-space:normal}}

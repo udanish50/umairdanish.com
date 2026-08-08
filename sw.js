@@ -1,4 +1,4 @@
-const CACHE='udanish-v14-5-remove-duplicate-impact-20260808';
+const CACHE='udanish-v14-6-reaction-persistence-20260808';
 const CORE=['/','/index.html','/research.html','/publications.html','/teaching.html','/about.html','/contact.html','/news.html','/collaborators.html','/cv.html','/assets/css/site.css','/assets/css/v11-academic.css',
   '/assets/css/mobile-v13-1.css','/assets/css/live-v14.css','/assets/js/site.js','/assets/js/impact.js','/assets/js/publications.js','/assets/js/live-v14.js','/assets/js/reactions-v14-3.js','/assets/data/publications.json','/assets/data/search-index.json','/assets/images/formal-headshot.webp'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
