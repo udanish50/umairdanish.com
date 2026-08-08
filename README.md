@@ -36,3 +36,6 @@ V13.1 preserves the desktop academic design and V13 publication resources while 
 ## Mobile refinement update
 
 V13.2 refines the mobile experience without altering the desktop design. The update reduces oversized mobile portraits and collaborator images, tightens mobile figure heights, improves footer and metric-note contrast, and bumps the service-worker cache version so the refreshed CSS appears reliably after deployment.
+
+
+V13.3: reduced mobile portrait scale and prevented cropping of editorial publication visuals.

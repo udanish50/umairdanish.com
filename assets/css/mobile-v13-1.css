@@ -298,3 +298,28 @@
   .collaborator-portrait{height:195px!important;min-height:195px!important}
   .home-collab-person{flex-basis:82%!important;min-height:190px!important}
 }
+
+/* V13.3 — smaller mobile portrait and uncropped publication visuals. */
+@media (max-width:900px){
+  .hero-portrait-v11{max-width:min(100%,300px)!important}
+  .hero-portrait-v11 img{aspect-ratio:4/5.25!important;object-position:center 18%!important}
+  .pi-image{width:min(100%,300px)!important;max-width:300px!important}
+  .pi-image>img{aspect-ratio:4/5.35!important;object-position:center 15%!important}
+}
+
+@media (max-width:768px){
+  .hero-portrait-v11{max-width:252px!important}
+  .hero-portrait-v11 figcaption{padding:10px 12px 12px!important}
+  .pi-image{max-width:260px!important}
+}
+
+@media (max-width:520px){
+  .hero-portrait-v11{max-width:228px!important}
+  .hero-portrait-v11 img{aspect-ratio:4/5.4!important}
+  .pi-image{max-width:236px!important}
+}
+
+@media (max-width:390px){
+  .hero-portrait-v11{max-width:208px!important}
+  .pi-image{max-width:218px!important}
+}
