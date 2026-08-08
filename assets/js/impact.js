@@ -1,5 +1,6 @@
 (() => {
   const DATA_URL='/assets/data/scholar-metrics.json';
+  const PUB_URL='/assets/data/publications.json';
   const normalize=s=>(s||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim();
   const tokens=s=>new Set(normalize(s).split(/\s+/).filter(Boolean));
   function similarity(a,b){
@@ -9,6 +10,10 @@
   }
   function setAll(sel,val){document.querySelectorAll(sel).forEach(el=>el.textContent=val)}
   function number(v,fallback='—'){const n=Number(v);return Number.isFinite(n)?n.toLocaleString():fallback}
+  function countPubs(publications,type){
+    if(!Array.isArray(publications))return null;
+    return publications.filter(p=>['Accepted','Published'].includes(p?.status) && p?.type===type).length;
+  }
   function drawChart(counts){
     const svg=document.querySelector('[data-impact-chart]'); if(!svg)return;
     if(!Array.isArray(counts)||!counts.length){
@@ -28,13 +33,15 @@
     let best=null,score=0; articles.forEach(a=>{const s=similarity(title,a.title);if(s>score){best=a;score=s}});
     return score>=0.72?best:null;
   }
-  function apply(data){
+  function apply(data,publications=[]){
     window.__scholarData=data;
     const m=data.metrics||{}; const articles=data.articles||[];
     setAll('[data-impact-citations]',number(m.citations?.all, '157'));
     setAll('[data-impact-works]',number(m.article_count, String(articles.length||17)));
     setAll('[data-impact-hindex]',number(m.h_index?.all,'5'));
     setAll('[data-impact-i10]',number(m.i10_index?.all,'5'));
+    setAll('[data-impact-journals]',number(countPubs(publications,'Journal'),'10'));
+    setAll('[data-impact-conferences]',number(countPubs(publications,'Conference'),'10'));
     setAll('[data-impact-status]',data.status==='live'?'Google Scholar · daily':'Google Scholar snapshot');
     const stamp=new Date(data.updated_at||data.snapshot_at||Date.now());
     const valid=!Number.isNaN(stamp.getTime());
@@ -61,10 +68,21 @@
   window.applyScholarMetrics=apply;
   async function load(){
     try{
-      const response=await fetch(DATA_URL+'?v='+Date.now(),{cache:'no-store'});
-      if(!response.ok)throw new Error('Scholar snapshot unavailable');
-      apply(await response.json());
+      const [scholarResponse, publicationsResponse] = await Promise.all([
+        fetch(DATA_URL+'?v='+Date.now(),{cache:'no-store'}),
+        fetch(PUB_URL+'?v='+Date.now(),{cache:'no-store'})
+      ]);
+      if(!scholarResponse.ok)throw new Error('Scholar snapshot unavailable');
+      const scholarData = await scholarResponse.json();
+      const publications = publicationsResponse.ok ? await publicationsResponse.json() : [];
+      apply(scholarData, publications);
     }catch(error){
+      try{
+        const publicationsResponse = await fetch(PUB_URL+'?v='+Date.now(),{cache:'no-store'});
+        const publications = publicationsResponse.ok ? await publicationsResponse.json() : [];
+        setAll('[data-impact-journals]',number(countPubs(publications,'Journal'),'10'));
+        setAll('[data-impact-conferences]',number(countPubs(publications,'Conference'),'10'));
+      }catch(_){/* ignore */}
       setAll('[data-impact-status]','Google Scholar snapshot');
       setAll('[data-impact-updated]','Verified Aug 2026');
     }

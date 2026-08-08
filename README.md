@@ -39,3 +39,6 @@ V13.2 refines the mobile experience without altering the desktop design. The upd
 
 
 V13.3: reduced mobile portrait scale and prevented cropping of editorial publication visuals.
+
+
+V13.4: homepage credibility strip now shows journal-paper and conference-paper totals instead of the Best Paper tile.
