@@ -32,3 +32,7 @@ Publication records now expose publisher/journal or conference links, author-hos
 
 V13.1 preserves the desktop academic design and V13 publication resources while adding a mobile-only refinement layer (`assets/css/mobile-v13-1.css`). The layer activates only at widths of 900 px and below and improves navigation, typography, publication cards, research sections, collaborator cards, publication-detail resources, contact actions, footers, safe-area handling, and narrow-screen overflow. Desktop layout and content are intentionally unchanged.
 
+
+## Mobile refinement update
+
+V13.2 refines the mobile experience without altering the desktop design. The update reduces oversized mobile portraits and collaborator images, tightens mobile figure heights, improves footer and metric-note contrast, and bumps the service-worker cache version so the refreshed CSS appears reliably after deployment.
