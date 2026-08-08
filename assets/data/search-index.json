@@ -355,5 +355,68 @@
       "2024"
     ],
     "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
+  },
+  {
+    "title": "Free Tools",
+    "url": "/tools/",
+    "type": "Tool",
+    "description": "Eight fast, private browser utilities.",
+    "keywords": "Free Tools Eight fast, private browser utilities."
+  },
+  {
+    "title": "QR Code Generator",
+    "url": "/tools/qr-code/",
+    "type": "Tool",
+    "description": "Create QR codes locally.",
+    "keywords": "QR Code Generator Create QR codes locally."
+  },
+  {
+    "title": "Unit Converter",
+    "url": "/tools/unit-converter/",
+    "type": "Tool",
+    "description": "Convert common units instantly.",
+    "keywords": "Unit Converter Convert common units instantly."
+  },
+  {
+    "title": "Percentage Calculator",
+    "url": "/tools/percentage-calculator/",
+    "type": "Tool",
+    "description": "Percentage, change and discount calculations.",
+    "keywords": "Percentage Calculator Percentage, change and discount calculations."
+  },
+  {
+    "title": "Word Counter",
+    "url": "/tools/word-counter/",
+    "type": "Tool",
+    "description": "Words, characters and reading time.",
+    "keywords": "Word Counter Words, characters and reading time."
+  },
+  {
+    "title": "Date Calculator",
+    "url": "/tools/date-calculator/",
+    "type": "Tool",
+    "description": "Age, date differences and date arithmetic.",
+    "keywords": "Date Calculator Age, date differences and date arithmetic."
+  },
+  {
+    "title": "Time-Zone Converter",
+    "url": "/tools/time-zone-converter/",
+    "type": "Tool",
+    "description": "Convert meeting times between cities.",
+    "keywords": "Time-Zone Converter Convert meeting times between cities."
+  },
+  {
+    "title": "Password Generator",
+    "url": "/tools/password-generator/",
+    "type": "Tool",
+    "description": "Generate passwords locally with Web Crypto.",
+    "keywords": "Password Generator Generate passwords locally with Web Crypto."
+  },
+  {
+    "title": "Text Cleaner",
+    "url": "/tools/text-cleaner/",
+    "type": "Tool",
+    "description": "Clean spacing, duplicates and text case.",
+    "keywords": "Text Cleaner Clean spacing, duplicates and text case."
   }
 ]

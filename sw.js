@@ -1,4 +1,4 @@
-const CACHE='udanish-v16-3-papers-daily-knowledge-20260808';
+const CACHE='udanish-v17-tools-20260808';
 const CORE=[
   '/assets/js/daily-knowledge-v16.js',
   '/assets/css/daily-knowledge-v16.css',
