@@ -1,5 +1,6 @@
-const CACHE='udanish-v17-2-navigation-20260808';
+const CACHE='udanish-v17-3-research-service-structure-20260808';
 const CORE=[
+  '/assets/css/research-service-v17-3.css',
   '/assets/js/daily-knowledge-v16.js',
   '/assets/css/daily-knowledge-v16.css',
   '/assets/css/trending-v15-1.css',

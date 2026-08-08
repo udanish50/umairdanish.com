@@ -1,0 +1,78 @@
+/* V17.3 — restrained research-service block; inherits the site's typography */
+.peer-review-service-v17-3 {
+  padding: clamp(2.75rem, 6vw, 4.5rem) 0;
+  border-top: 1px solid var(--line, #e1e5ec);
+  background: #fff;
+}
+.peer-review-service-v17-3 .peer-review-service-head {
+  max-width: 760px;
+  margin-bottom: 1.5rem;
+}
+.peer-review-service-v17-3 .peer-review-service-kicker {
+  margin: 0 0 .55rem;
+  color: var(--accent, #6336c7);
+  font: inherit;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.peer-review-service-v17-3 h2 {
+  margin: 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.65rem, 3.4vw, 2.35rem);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  color: var(--ink, #20232b);
+}
+.peer-review-service-v17-3 .peer-review-service-intro {
+  margin: .8rem 0 0;
+  max-width: 690px;
+  color: var(--muted, #667080);
+  line-height: 1.7;
+}
+.peer-review-service-v17-3 .peer-review-journal-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line, #e1e5ec);
+}
+.peer-review-service-v17-3 .peer-review-journal-list li {
+  position: relative;
+  padding: 1rem 1.1rem 1rem 1.65rem;
+  border-bottom: 1px solid var(--line, #e1e5ec);
+  color: var(--ink, #20232b);
+  line-height: 1.45;
+}
+.peer-review-service-v17-3 .peer-review-journal-list li:nth-child(odd) {
+  border-right: 1px solid var(--line, #e1e5ec);
+}
+.peer-review-service-v17-3 .peer-review-journal-list li::before {
+  content: "";
+  position: absolute;
+  left: .15rem;
+  top: 1.55rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent, #6336c7);
+}
+@media (max-width: 680px) {
+  .peer-review-service-v17-3 .peer-review-journal-list {
+    grid-template-columns: 1fr;
+  }
+  .peer-review-service-v17-3 .peer-review-journal-list li:nth-child(odd) {
+    border-right: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .peer-review-service-v17-3 *,
+  .peer-review-service-v17-3 *::before,
+  .peer-review-service-v17-3 *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
