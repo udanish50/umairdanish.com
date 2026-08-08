@@ -1,0 +1,25 @@
+.ud-trending-v15-1 { margin-top: 0; }
+.ud-trending-shell { border-top: 1px solid #d9dee7; padding-top: clamp(1.25rem, 3vw, 2rem); }
+.ud-trending-head { display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem; margin-bottom:1rem; }
+.ud-trending-kicker { margin:0 0 .42rem; font-size:.72rem; font-weight:700; letter-spacing:.12em; color:#52606d; }
+.ud-trending-head h2 { margin:0; font-size:clamp(1.45rem,3vw,2rem); letter-spacing:-.025em; }
+.ud-trending-intro { margin:.5rem 0 0; max-width:42rem; color:#5f6b76; }
+.ud-trending-month { flex:0 0 auto; border:1px solid #d9dee7; border-radius:999px; padding:.42rem .72rem; font-size:.82rem; color:#475467; background:#fff; }
+.ud-trending-list { list-style:none; margin:0; padding:0; border-top:1px solid #e6eaf0; }
+.ud-trending-row { display:grid; grid-template-columns:2.5rem minmax(0,1fr) auto; gap:.9rem; align-items:center; padding:.95rem 0; border-bottom:1px solid #e6eaf0; }
+.ud-trending-rank { font-variant-numeric:tabular-nums; color:#8a94a3; font-size:.78rem; }
+.ud-trending-paper { color:inherit; text-decoration:none; min-width:0; }
+.ud-trending-paper:hover .ud-trending-title { text-decoration:underline; text-underline-offset:.18em; }
+.ud-trending-title { display:block; font-weight:650; line-height:1.3; }
+.ud-trending-meta { display:block; margin-top:.2rem; color:#7a8491; font-size:.78rem; }
+.ud-trending-score { display:grid; justify-items:end; min-width:4rem; font-variant-numeric:tabular-nums; }
+.ud-trending-score strong { font-size:1.15rem; line-height:1; }
+.ud-trending-score small { margin-top:.25rem; color:#7a8491; font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; }
+.ud-trending-note { display:flex; gap:.55rem; align-items:flex-start; margin-top:.9rem; color:#697586; font-size:.78rem; line-height:1.5; }
+.ud-trending-live { flex:0 0 auto; border:1px solid #cbd2da; border-radius:999px; padding:.08rem .42rem; color:#697586; background:#fff; }
+.ud-trending-live.is-live { color:#176b45; border-color:#b7dec9; background:#f1fbf5; }
+@media (max-width:640px){
+  .ud-trending-head{display:block}.ud-trending-month{display:inline-block;margin-top:.8rem}
+  .ud-trending-row{grid-template-columns:2rem minmax(0,1fr) auto;gap:.65rem}
+  .ud-trending-note{display:block}.ud-trending-live{display:inline-block;margin-bottom:.35rem}
+}
