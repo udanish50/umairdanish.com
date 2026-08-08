@@ -2,10 +2,10 @@
 .nojekyll
 404.html
 CNAME
-FILE_MANIFEST.txt
 README.md
 SEO-SEARCH-CONSOLE.md
 about.html
+assets/css/live-v14.css
 assets/css/mobile-v13-1.css
 assets/css/site.css
 assets/css/v11-academic.css
@@ -61,6 +61,7 @@ assets/images/visuals/temporal.svg
 assets/images/waterloo-group.jpg
 assets/images/waterloo-group.webp
 assets/js/impact.js
+assets/js/live-v14.js
 assets/js/publications.js
 assets/js/site.js
 assets/papers/README.md
