@@ -81,7 +81,7 @@
     const label=qs('[data-v14-trending-month]');if(label)label.textContent=monthLabel();
     const counts=await mapLimit(pubs,5,p=>getCounter(p.slug));
     const ranked=pubs.map((p,i)=>({title:p.title,href:`/publications/${p.slug}/`,value:n(counts[i])})).filter(x=>x.value>0).sort((a,b)=>b.value-a.value).slice(0,5);
-    if(!ranked.length){root.innerHTML='<p class="v14-trending-empty">Live paper-view collection has started. This ranking will populate as readers visit publication pages.</p>';return}
+    if(!ranked.length){root.innerHTML='<p class="v14-trending-empty">Live tracking is active. The first real paper visit will appear here automatically.</p>';return}
     renderRows(root,ranked,'views');
   }
 

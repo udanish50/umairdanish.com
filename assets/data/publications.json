@@ -300,9 +300,13 @@
     "doi": "10.1007/s00530-025-01769-7",
     "summary": "Integrates human judgments and automated image-quality metrics into a unified framework for evaluating generated imagery.",
     "link": "https://doi.org/10.1007/s00530-025-01769-7",
-    "code": "",
+    "code": "https://github.com/udanish50/VisualVerity",
     "award": "",
-    "visual": "default.svg"
+    "visual": "default.svg",
+    "pdf": "/assets/papers/unified-ai-image-evaluation-preprint.pdf",
+    "pdf_source": "https://doi.org/10.36227/techrxiv.173894988.81604432/v1",
+    "pdf_local": true,
+    "pdf_license": "CC BY 4.0 (TechRxiv preprint)"
   },
   {
     "slug": "chebyregnet",

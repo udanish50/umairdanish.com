@@ -19,3 +19,9 @@ The following are linked from publication pages to the copies already hosted on 
 - GAC-UNET — https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/Flood_Area_Identification.pdf
 
 Publisher/DOI records remain separate and canonical.
+
+
+## Visual Verity / Unified Evaluation preprint
+
+- `unified-ai-image-evaluation-preprint.pdf` — TechRxiv preprint, CC BY 4.0, DOI `10.36227/techrxiv.173894988.81604432/v1`.
+- The website separately links to the final Multimedia Systems publisher record, DOI `10.1007/s00530-025-01769-7`.

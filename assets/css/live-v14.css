@@ -35,3 +35,7 @@
 .v143-reaction-strip[data-reaction-state="saving"] .v146-reaction-status{color:#6b5a97}
 .v143-reaction:disabled{cursor:wait;opacity:.68;transform:none!important}
 @media(max-width:768px){.v146-reaction-status{width:100%;white-space:normal}}
+
+/* V14.7 resource provenance — intentionally subtle. */
+.paper-resource-note{margin:10px 0 0;color:var(--muted);font-size:11px;line-height:1.45;max-width:640px}
+@media(max-width:520px){.paper-resource-note{font-size:10px;margin-top:8px}}

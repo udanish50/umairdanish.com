@@ -68,3 +68,8 @@ V14.5: removed the duplicate Top Research Impact card section from Publications;
 
 
 V14.6: fixed shared reader-reaction persistence. Local selection is now committed only after the remote shared counter confirms success; failures remain retryable and are visibly reported.
+
+
+### V14.7 — VisualVerity resources and cleaner trending copy
+
+Added the VisualVerity code repository and the CC BY 4.0 TechRxiv preprint PDF to the Unified Evaluation publication. Removed the redundant final disclosure sentence beneath Trending on This Site. Trending remains based on genuine page visits; no synthetic popularity counts are seeded.
