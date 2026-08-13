@@ -39,6 +39,21 @@
     ]
   },
   {
+    "kind": "Software",
+    "title": "Linear Lens",
+    "summary": "Non-interventional mechanistic interpretability for neuron and layer behavior, with QSM, semantic tracing, 45 public verification datasets, and browser analysis.",
+    "url": "/software/linear-lens/",
+    "tags": [
+      "Linear Lens",
+      "explainable AI",
+      "mechanistic interpretability",
+      "neuron",
+      "QSM",
+      "PyTorch",
+      "software"
+    ]
+  },
+  {
     "kind": "Page",
     "title": "Publications",
     "summary": "Top research impact, recent and accepted work, and the full publication archive.",

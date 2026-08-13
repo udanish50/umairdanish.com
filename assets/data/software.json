@@ -8,8 +8,36 @@
       "summary": "Bounded, asymmetric and invertible preprocessing for numeric machine-learning features, with public benchmark evidence and browser-verifiable datasets.",
       "url": "/software/core-norm/",
       "github": "https://github.com/udanish50/Core-Norm",
-      "tags": ["Preprocessing", "Normalization", "scikit-learn", "Robust ML"],
-      "evidence": ["12,150 saved evaluations", "25 public verification datasets", "Exact inverse"]
+      "tags": [
+        "Preprocessing",
+        "Normalization",
+        "scikit-learn",
+        "Robust ML"
+      ],
+      "evidence": [
+        "12,150 saved evaluations",
+        "25 public verification datasets",
+        "Exact inverse"
+      ]
+    },
+    {
+      "id": "linear-lens",
+      "name": "Linear Lens",
+      "status": "Peer-reviewed research software",
+      "summary": "Non-interventional, human-centered mechanistic interpretability for neuron roles, layer fingerprints, and semantic pathways, with browser-verifiable public evidence.",
+      "url": "/software/linear-lens/",
+      "github": "https://github.com/udanish50/LinearLens",
+      "tags": [
+        "Explainable AI",
+        "Mechanistic interpretability",
+        "PyTorch",
+        "Model auditing"
+      ],
+      "evidence": [
+        "45 public verification datasets",
+        "180 trained-model analyses",
+        "Peer-reviewed method"
+      ]
     }
   ]
 }

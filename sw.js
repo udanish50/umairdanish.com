@@ -1,5 +1,5 @@
-const CACHE='udanish-v20-1-core-norm-hci-20260813';
-const CORE=[
+const CACHE='udanish-v21-linear-lens-20260813';
+const CORE=['/software/linear-lens/','/assets/css/linear-lens-v21.css','/assets/js/linear-lens-engine.js','/assets/js/linear-lens-app.js',
   '/software.html','/software/core-norm/','/assets/css/software-v19.css','/assets/data/software.json','/assets/js/software-catalog.js','/assets/js/core-norm-evidence.js',
   '/assets/js/core-norm-engine.js','/assets/js/core-norm-app.js',
   '/assets/css/research-service-v17-3.css',

@@ -6,6 +6,7 @@
 - About: https://umairdanish.com/about.html
 - Research: https://umairdanish.com/research.html
 - Core-Norm software: https://umairdanish.com/software/core-norm/
+- Linear Lens software: https://umairdanish.com/software/linear-lens/
 - Software: https://umairdanish.com/software.html
 - Publications: https://umairdanish.com/publications.html
 - Teaching: https://umairdanish.com/teaching.html

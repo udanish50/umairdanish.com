@@ -85,3 +85,7 @@ Added **Software** as a standalone primary-navigation destination (`/software.ht
 ## V20.1 Core-Norm analysis and HCI refinement
 
 Refined the standalone Core-Norm software page around an Understand → Analyze → Compare → Verify workflow. Added plain-language definitions of central C and residual R, a fully annotated formula sequence and symbol guide, a worked inverse-preserving example, a prominent local CSV analysis workflow with per-feature diagnostics, uploaded-data scaler-behavior comparisons, an automatic GitHub-backed benchmark comparison across established normalization methods, and clearer separation between descriptive scaling behavior, mathematical verification, and predictive benchmark evidence. Accessibility refinements include explicit control labels, keyboard-visible focus, status regions, readable math typography, and progressive disclosure.
+
+## V21 Linear Lens software
+
+Adds Linear Lens as a second first-class Software product at `/software/linear-lens/`. The page explains the peer-reviewed non-interventional method with progressive disclosure, supports GitHub-hash-verified live analysis across 45 public verification datasets, provides a local CSV + exported dense-model analyzer, exposes the public evidence suite, and clearly separates live, archived, and published evidence.
