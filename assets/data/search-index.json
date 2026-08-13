@@ -13,6 +13,20 @@
     ]
   },
   {
+    "kind": "Research Software",
+    "title": "Core-Norm",
+    "summary": "Bounded, asymmetric and invertible preprocessing for numeric machine-learning features, with an interactive local browser demo and preliminary robustness benchmark.",
+    "url": "/research/core-norm/",
+    "tags": [
+      "Core-Norm",
+      "normalization",
+      "feature scaling",
+      "robust preprocessing",
+      "machine learning",
+      "research software"
+    ]
+  },
+  {
     "kind": "Page",
     "title": "Publications",
     "summary": "Top research impact, recent and accepted work, and the full publication archive.",

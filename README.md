@@ -73,3 +73,8 @@ V14.6: fixed shared reader-reaction persistence. Local selection is now committe
 ### V14.7 — VisualVerity resources and cleaner trending copy
 
 Added the VisualVerity code repository and the CC BY 4.0 TechRxiv preprint PDF to the Unified Evaluation publication. Removed the redundant final disclosure sentence beneath Trending on This Site. Trending remains based on genuine page visits; no synthetic popularity counts are seeded.
+
+
+## Core-Norm research software
+
+Added a dedicated research-software page at `/research/core-norm/` with a local browser implementation, fit/transform/inverse workflow, downloadable transformed data and fitted state, preliminary benchmark context, and direct linkage to the standalone Core-Norm GitHub repository. The release is additive and retains the existing V11 academic design system.

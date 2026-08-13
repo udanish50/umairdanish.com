@@ -1,0 +1,48 @@
+{
+  "classification": {
+    "Core-Norm": {
+      "clean": 0.8376388836044897,
+      "at20": 0.7099929936910409,
+      "robustness_auc": 0.7622513505367137,
+      "drop": 0.1276458899134488
+    },
+    "Quantile-Normal": {
+      "clean": 0.8346511408601147,
+      "at20": 0.6774893963963444,
+      "robustness_auc": 0.7383521144865024,
+      "drop": 0.1571617444637703
+    },
+    "Z-score": {
+      "clean": 0.8378502932490219,
+      "at20": 0.4755363191894132,
+      "robustness_auc": 0.5581473269609061,
+      "drop": 0.3623139740596087
+    }
+  },
+  "regression": {
+    "Core-Norm": {
+      "clean": 0.5950540585363349,
+      "at20": 0.2987930714470401,
+      "robustness_auc": 0.4172398574156174,
+      "drop": 0.2962609870892947
+    },
+    "Quantile-Normal": {
+      "clean": 0.5825383451570446,
+      "at20": 0.1320305069588081,
+      "robustness_auc": 0.31042579209074,
+      "drop": 0.4505078381982365
+    },
+    "Z-score": {
+      "clean": 0.5781777955021802,
+      "at20": -0.0963708286821205,
+      "robustness_auc": 0.064665305764986,
+      "drop": 0.6745486241843007
+    }
+  },
+  "evaluation_counts": {
+    "classification": 6804,
+    "regression": 5346,
+    "total": 12150
+  },
+  "status": "preliminary internal development benchmark"
+}
