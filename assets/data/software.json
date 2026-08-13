@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "software": [
+    {
+      "id": "core-norm",
+      "name": "Core-Norm",
+      "status": "Research software",
+      "summary": "Bounded, asymmetric and invertible preprocessing for numeric machine-learning features, with public benchmark evidence and browser-verifiable datasets.",
+      "url": "/software/core-norm/",
+      "github": "https://github.com/udanish50/Core-Norm",
+      "tags": ["Preprocessing", "Normalization", "scikit-learn", "Robust ML"],
+      "evidence": ["12,150 saved evaluations", "25 public verification datasets", "Exact inverse"]
+    }
+  ]
+}

@@ -75,6 +75,8 @@ V14.6: fixed shared reader-reaction persistence. Local selection is now committe
 Added the VisualVerity code repository and the CC BY 4.0 TechRxiv preprint PDF to the Unified Evaluation publication. Removed the redundant final disclosure sentence beneath Trending on This Site. Trending remains based on genuine page visits; no synthetic popularity counts are seeded.
 
 
-## Core-Norm research software
 
-Added a dedicated research-software page at `/research/core-norm/` with a local browser implementation, fit/transform/inverse workflow, downloadable transformed data and fitted state, preliminary benchmark context, and direct linkage to the standalone Core-Norm GitHub repository. The release is additive and retains the existing V11 academic design system.
+
+## V19.2 Software architecture
+
+Added **Software** as a standalone primary-navigation destination (`/software.html`) with a data-driven catalog (`assets/data/software.json`) designed for future software entries. Core-Norm moved from Research to `/software/core-norm/`. The Core-Norm page now fetches public verification datasets and all archived benchmark rows directly from `udanish50/Core-Norm` on GitHub, verifies dataset SHA-256 digests in the browser, runs forward/inverse property checks locally, and exposes a filterable full-run evidence explorer. The old Research URL is retained only as a redirect.

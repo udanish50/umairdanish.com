@@ -1,0 +1,5 @@
+(function(){'use strict';const root=document.querySelector('[data-software-catalog]');if(!root)return;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+fetch('/assets/data/software.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Software catalog unavailable');return r.json()}).then(data=>{
+ root.innerHTML=(data.software||[]).map(x=>`<article class="sw-card"><div class="sw-card-meta">${esc(x.status)}</div><h3>${esc(x.name)}</h3><p>${esc(x.summary)}</p><div class="sw-tags">${(x.tags||[]).map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="bx-summary">${(x.evidence||[]).map(t=>`<span class="bx-chip">${esc(t)}</span>`).join('')}</div><div class="sw-card-actions"><a class="cn-btn primary" href="${esc(x.url)}">Open software</a><a class="cn-btn" href="${esc(x.github)}" target="_blank" rel="noopener">GitHub ↗</a></div></article>`).join('') || '<div class="sw-empty">Software entries will appear here.</div>';
+}).catch(()=>{});})();

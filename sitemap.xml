@@ -135,7 +135,11 @@
   <url><loc>https://umairdanish.com/privacy/</loc></url>
   <url><loc>https://umairdanish.com/terms/</loc></url>
   <url>
-    <loc>https://umairdanish.com/research/core-norm/</loc>
+    <loc>https://umairdanish.com/software.html</loc>
+    <lastmod>2026-08-13</lastmod>
+  </url>
+  <url>
+    <loc>https://umairdanish.com/software/core-norm/</loc>
     <lastmod>2026-08-13</lastmod>
   </url>
 </urlset>

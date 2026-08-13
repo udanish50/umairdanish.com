@@ -13,17 +13,29 @@
     ]
   },
   {
-    "kind": "Research Software",
+    "kind": "Software",
+    "title": "Software",
+    "summary": "Open scientific and research software with inspectable code, live verification, benchmark evidence, and reproducibility resources.",
+    "url": "/software.html",
+    "tags": [
+      "software",
+      "open source",
+      "research software",
+      "scientific software"
+    ]
+  },
+  {
+    "kind": "Software",
     "title": "Core-Norm",
-    "summary": "Bounded, asymmetric and invertible preprocessing for numeric machine-learning features, with an interactive local browser demo and preliminary robustness benchmark.",
-    "url": "/research/core-norm/",
+    "summary": "Bounded, asymmetric and invertible numeric feature preprocessing with live GitHub-backed dataset verification and a full benchmark explorer.",
+    "url": "/software/core-norm/",
     "tags": [
       "Core-Norm",
       "normalization",
       "feature scaling",
       "robust preprocessing",
       "machine learning",
-      "research software"
+      "software"
     ]
   },
   {

@@ -5,7 +5,8 @@
 - Canonical website: https://umairdanish.com/
 - About: https://umairdanish.com/about.html
 - Research: https://umairdanish.com/research.html
-- Core-Norm research software: https://umairdanish.com/research/core-norm/
+- Core-Norm software: https://umairdanish.com/software/core-norm/
+- Software: https://umairdanish.com/software.html
 - Publications: https://umairdanish.com/publications.html
 - Teaching: https://umairdanish.com/teaching.html
 - Collaborators: https://umairdanish.com/collaborators.html
