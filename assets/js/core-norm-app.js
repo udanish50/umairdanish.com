@@ -8,125 +8,69 @@
     file: $('[data-cn-file]'), sample: $('[data-cn-sample]'), features: $('[data-cn-features]'),
     fraction: $('[data-cn-fraction]'), fractionLabel: $('[data-cn-fraction-label]'),
     run: $('[data-cn-run]'), status: $('[data-cn-status]'), preview: $('[data-cn-preview]'),
+    analysis: $('[data-cn-analysis]'), analysisLower: document.querySelector('[data-cn-analysis-lower]'),
+    diagnostics: document.querySelector('[data-cn-diagnostics]'), uploadCompare: document.querySelector('[data-cn-upload-compare]'),
     metrics: $('[data-cn-roundtrip]'), downloads: $('[data-cn-downloads]'),
     transformed: $('[data-cn-download-transformed]'), reconstructed: $('[data-cn-download-reconstructed]'),
     state: $('[data-cn-download-state]'), reset: $('[data-cn-reset]')
   };
 
   let dataset = null, result = null;
-
   const sampleCSV = `timestamp,temperature_c,humidity_pct,ghi_wm2,power_kw\n2026-03-06 09:10,7.8,78,118,1.2\n2026-03-06 09:20,8.6,75,226,1.9\n2026-03-06 09:30,9.4,72,355,2.8\n2026-03-06 09:40,10.3,69,510,4.0\n2026-03-06 09:50,11.1,65,675,5.1\n2026-03-06 10:00,11.8,62,808,6.0\n2026-03-06 10:10,12.4,60,918,6.8\n2026-03-06 10:20,12.9,58,1048,7.6\n2026-03-06 10:30,13.1,59,1410,8.9\n2026-03-06 10:40,12.7,64,735,5.8\n2026-03-06 10:50,12.5,66,702,5.5\n2026-03-06 11:00,12.2,68,655,5.1`;
 
   function parseCSV(text) {
     const rows=[]; let row=[], field='', quoted=false;
-    for (let i=0;i<text.length;i++) {
-      const ch=text[i], next=text[i+1];
-      if (quoted) {
-        if (ch==='"' && next==='"') { field+='"'; i++; }
-        else if (ch==='"') quoted=false;
-        else field+=ch;
-      } else {
-        if (ch==='"') quoted=true;
-        else if (ch===',') { row.push(field); field=''; }
-        else if (ch==='\n') { row.push(field.replace(/\r$/,'')); rows.push(row); row=[]; field=''; }
-        else field+=ch;
-      }
+    for (let i=0;i<text.length;i++) { const ch=text[i], next=text[i+1];
+      if (quoted) { if (ch==='"'&&next==='"'){field+='"';i++;} else if(ch==='"')quoted=false; else field+=ch; }
+      else if(ch==='"')quoted=true; else if(ch===','){row.push(field);field='';}
+      else if(ch==='\n'){row.push(field.replace(/\r$/,''));rows.push(row);row=[];field='';} else field+=ch;
     }
-    if (field.length || row.length) { row.push(field.replace(/\r$/,'')); rows.push(row); }
-    const clean=rows.filter(r=>r.some(v=>v.trim()!==''));
-    if (clean.length<2) throw new Error('CSV needs a header and at least one data row.');
-    const headers=clean[0].map((h,i)=>h.trim() || `column_${i+1}`);
-    const data=clean.slice(1).map(r=>headers.map((_,i)=>r[i] ?? ''));
-    return {headers, rows:data};
+    if(field.length||row.length){row.push(field.replace(/\r$/,''));rows.push(row);}
+    const clean=rows.filter(r=>r.some(v=>String(v).trim()!==''));
+    if(clean.length<2) throw new Error('CSV needs a header and at least one data row.');
+    const headers=clean[0].map((h,i)=>h.trim()||`column_${i+1}`);
+    return {headers,rows:clean.slice(1).map(r=>headers.map((_,i)=>r[i]??''))};
   }
+  function detectNumeric(ds){return ds.headers.map((_,j)=>{const vals=ds.rows.map(r=>r[j].trim()).filter(Boolean);const finiteCount=vals.filter(v=>Number.isFinite(Number(v))).length;return vals.length>0&&finiteCount===vals.length;});}
+  function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function fmt(v){if(v===null||!Number.isFinite(v))return '—';const a=Math.abs(v);return a!==0&&(a>=1e5||a<1e-4)?v.toExponential(3):Number(v.toFixed(5)).toString();}
+  function pct(v){return Number.isFinite(v)?`${(100*v).toFixed(1)}%`:'—';}
+  function say(msg,tone=''){els.status.textContent=msg;els.status.dataset.tone=tone;}
+  function toNumber(v){const s=String(v).trim();return s===''?null:Number(s);}
+  function finite(a){return a.filter(Number.isFinite);}
+  function quantile(values,q){const a=finite(values).slice().sort((x,y)=>x-y);if(!a.length)return NaN;if(a.length===1)return a[0];const p=(a.length-1)*q,l=Math.floor(p),h=Math.ceil(p),t=p-l;return a[l]*(1-t)+a[h]*t;}
+  function mean(values){const a=finite(values);return a.length?a.reduce((s,x)=>s+x,0)/a.length:NaN;}
+  function std(values){const a=finite(values),m=mean(a);return a.length?Math.sqrt(a.reduce((s,x)=>s+(x-m)**2,0)/a.length):NaN;}
+  function skew(values){const a=finite(values),m=mean(a),sd=std(a);if(a.length<3||!sd)return 0;return a.reduce((s,x)=>s+((x-m)/sd)**3,0)/a.length;}
+  function stats(values,total){const a=finite(values),q25=quantile(a,.25),med=quantile(a,.5),q75=quantile(a,.75),iqr=q75-q25,lo=q25-1.5*iqr,hi=q75+1.5*iqr;return {n:a.length,missing:1-a.length/Math.max(1,total),min:Math.min(...a),max:Math.max(...a),q25,median:med,q75,iqr,skew:skew(a),extreme:a.length?a.filter(x=>x<lo||x>hi).length/a.length:0};}
 
-  function detectNumeric(ds) {
-    return ds.headers.map((_,j)=>{
-      const vals=ds.rows.map(r=>r[j].trim()).filter(Boolean);
-      const finiteCount=vals.filter(v=>Number.isFinite(Number(v))).length;
-      return vals.length>0 && finiteCount===vals.length;
-    });
-  }
+  function setDataset(ds,label){dataset=ds;result=null;els.preview.innerHTML='';els.metrics.hidden=true;els.downloads.hidden=true;if(els.analysisLower)els.analysisLower.hidden=true;const numeric=detectNumeric(ds);els.features.innerHTML='';ds.headers.forEach((h,j)=>{const item=document.createElement('label');item.className='cn-feature-option';const input=document.createElement('input');input.type='checkbox';input.value=String(j);input.checked=numeric[j];input.disabled=!numeric[j];const text=document.createElement('span');text.innerHTML=`<strong>${escapeHTML(h)}</strong><small>${numeric[j]?'numeric · selected':'non-numeric · preserved'}</small>`;item.append(input,text);els.features.append(item);});els.run.disabled=!numeric.some(Boolean);const miss=ds.rows.reduce((s,r)=>s+r.filter(v=>String(v).trim()==='').length,0);els.analysis.innerHTML=`<div class="cn-overview"><div class="cn-metric"><strong>${ds.rows.length.toLocaleString()}</strong><span>rows</span></div><div class="cn-metric"><strong>${ds.headers.length}</strong><span>columns</span></div><div class="cn-metric"><strong>${numeric.filter(Boolean).length}</strong><span>numeric</span></div><div class="cn-metric"><strong>${miss.toLocaleString()}</strong><span>blank cells</span></div></div><div class="cn-insight"><strong>Next:</strong> confirm the numeric features and choose how much of the leading data should be treated as the fit/training portion, then select <strong>Analyze with Core-Norm</strong>.</div>`;say(`${label}: ${ds.rows.length.toLocaleString()} rows · ${numeric.filter(Boolean).length} numeric features detected.`,'ok');}
+  function selectedIndexes(){return [...els.features.querySelectorAll('input:checked')].map(x=>Number(x.value));}
 
-  function setDataset(ds, label) {
-    dataset=ds; result=null; els.preview.innerHTML=''; els.metrics.hidden=true; els.downloads.hidden=true;
-    const numeric=detectNumeric(ds);
-    els.features.innerHTML='';
-    ds.headers.forEach((h,j)=>{
-      const item=document.createElement('label'); item.className='cn-feature-option';
-      const input=document.createElement('input'); input.type='checkbox'; input.value=String(j); input.checked=numeric[j]; input.disabled=!numeric[j];
-      const text=document.createElement('span'); text.innerHTML=`<strong>${escapeHTML(h)}</strong><small>${numeric[j]?'numeric · selected':'non-numeric · preserved'}</small>`;
-      item.append(input,text); els.features.append(item);
-    });
-    els.run.disabled=!numeric.some(Boolean);
-    say(`${label}: ${ds.rows.length.toLocaleString()} rows · ${numeric.filter(Boolean).length} numeric features detected.`, 'ok');
-  }
+  function buildDiagnostics(matrix,names){return names.map((name,j)=>({name,...stats(matrix.map(r=>r[j]),matrix.length)}));}
+  function renderDiagnostics(diags){const rows=diags.map(d=>`<tr><th>${escapeHTML(d.name)}</th><td>${fmt(d.median)}</td><td>${fmt(d.iqr)}</td><td>${fmt(d.skew)}</td><td>${pct(d.extreme)}</td><td>${pct(d.missing)}</td><td>${fmt(d.min)} → ${fmt(d.max)}</td></tr>`).join('');els.diagnostics.innerHTML=`<table class="ev-table"><caption class="sr-only">Uploaded feature diagnostics</caption><thead><tr><th>Feature</th><th>Median</th><th>IQR</th><th>Skewness</th><th>Tukey-extreme rate</th><th>Missing</th><th>Observed range</th></tr></thead><tbody>${rows}</tbody></table><p class="ev-note"><strong>How to read this:</strong> IQR is the middle 50% spread. Skewness near 0 is roughly symmetric; positive values indicate a longer upper tail and negative values a longer lower tail. “Tukey-extreme rate” counts values outside Q1 − 1.5·IQR or Q3 + 1.5·IQR; it is a descriptive flag, not proof that a value is erroneous.</p>`;}
 
-  function selectedIndexes() { return [...els.features.querySelectorAll('input:checked')].map(x=>Number(x.value)); }
-  function toNumber(v) { const s=String(v).trim(); return s===''?null:Number(s); }
-  function escapeHTML(s) { return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-  function fmt(v) { if (v===null || !Number.isFinite(v)) return '—'; const a=Math.abs(v); return a!==0 && (a>=1e5 || a<1e-4) ? v.toExponential(4) : Number(v.toFixed(6)).toString(); }
-  function say(msg, tone='') { els.status.textContent=msg; els.status.dataset.tone=tone; }
+  function standardFit(train){const p=train[0].length,m=[],s=[];for(let j=0;j<p;j++){const c=finite(train.map(r=>r[j]));m.push(mean(c));s.push(std(c)||1);}return {name:'Z-score',transform:x=>x.map(r=>r.map((v,j)=>Number.isFinite(v)?(v-m[j])/s[j]:null))};}
+  function minmaxFit(train){const p=train[0].length,lo=[],hi=[];for(let j=0;j<p;j++){const c=finite(train.map(r=>r[j]));lo.push(Math.min(...c));hi.push(Math.max(...c));}return {name:'Min-Max',transform:x=>x.map(r=>r.map((v,j)=>Number.isFinite(v)?(v-lo[j])/((hi[j]-lo[j])||1):null))};}
+  function robustFit(train){const p=train[0].length,m=[],iq=[];for(let j=0;j<p;j++){const c=finite(train.map(r=>r[j]));m.push(quantile(c,.5));iq.push((quantile(c,.75)-quantile(c,.25))||1);}return {name:'RobustScaler',transform:x=>x.map(r=>r.map((v,j)=>Number.isFinite(v)?(v-m[j])/iq[j]:null))};}
+  function winsorFit(train){const p=train[0].length,lo=[],hi=[],m=[],s=[];for(let j=0;j<p;j++){const c=finite(train.map(r=>r[j]));const l=quantile(c,.01),h=quantile(c,.99),cl=c.map(v=>Math.min(h,Math.max(l,v)));lo.push(l);hi.push(h);m.push(mean(cl));s.push(std(cl)||1);}return {name:'Winsorized Z-score',transform:x=>x.map(r=>r.map((v,j)=>Number.isFinite(v)?(Math.min(hi[j],Math.max(lo[j],v))-m[j])/s[j]:null)),clipped:x=>{let n=0,t=0;for(const r of x)for(let j=0;j<p;j++)if(Number.isFinite(r[j])){t++;if(r[j]<lo[j]||r[j]>hi[j])n++;}return t?n/t:0;}};}
+  function methodObserved(name,Z,extra=''){const vals=finite(Z.flat()),abs=vals.map(Math.abs);return {name,max:abs.length?Math.max(...abs):NaN,p99:quantile(abs,.99),range:vals.length?`${fmt(Math.min(...vals))} → ${fmt(Math.max(...vals))}`:'—',extra};}
+  function renderUploadComparison(matrix,fitRows,engine){const train=matrix.slice(0,fitRows),p=matrix[0].length;const core=engine.transform(matrix);const cvals=core.flatMap(z=>z.slice(0,p)).filter(Number.isFinite),rvals=core.flatMap(z=>z.slice(p)).filter(Number.isFinite);const tail=rvals.length?rvals.filter(x=>Math.abs(x)>0).length/rvals.length:0;const methods=[{name:'Core-Norm',max:Math.max(...cvals.map(Math.abs)),p99:quantile(cvals.map(Math.abs),.99),range:'C: [−1, 1] · R: (−1, 1)',extra:`${pct(tail)} of feature-cells use R; full (C,R) pair is invertible.`},standardFit(train),minmaxFit(train),robustFit(train),winsorFit(train)];const observed=[methods[0]];for(const m of methods.slice(1)){const Z=m.transform(matrix);let extra='Single coordinate; unbounded.';if(m.name==='Min-Max'){const vals=finite(Z.flat());const outside=vals.length?vals.filter(v=>v<0||v>1).length/vals.length:0;extra=`${pct(outside)} fall outside [0,1] after fitting on the selected training fraction.`;}if(m.name==='RobustScaler')extra='Median/IQR based; single coordinate remains unbounded.';if(m.name==='Z-score')extra='Mean/std based; a large extreme can create a large |z|.';if(m.name==='Winsorized Z-score')extra=`${pct(m.clipped(matrix))} are clipped to fit-time 1st/99th-percentile limits before Z-scaling.`;observed.push(methodObserved(m.name,Z,extra));}
+  els.uploadCompare.innerHTML=`<div class="ev-table-wrap"><table><thead><tr><th>Method</th><th>Observed max magnitude</th><th>99th-percentile magnitude</th><th>Observed output range</th><th>What happened on this CSV?</th></tr></thead><tbody>${observed.map(o=>`<tr><th class="${o.name==='Core-Norm'?'method-core':''}">${escapeHTML(o.name)}</th><td>${fmt(o.max)}</td><td>${fmt(o.p99)}</td><td>${escapeHTML(o.range)}</td><td class="cn-method-observation">${escapeHTML(o.extra)}</td></tr>`).join('')}</tbody></table></div><p class="ev-note">These uploaded-data comparisons describe <strong>scaling behavior</strong>, not downstream predictive accuracy. Predictive comparisons against Yeo-Johnson and Quantile-Normal are available in the archived benchmark section below.</p>`;}
 
-  function csvEscape(v) { const s=v==null?'':String(v); return /[",\n\r]/.test(s)?`"${s.replace(/"/g,'""')}"`:s; }
-  function toCSV(headers, rows) { return [headers.map(csvEscape).join(','), ...rows.map(r=>r.map(csvEscape).join(','))].join('\n')+'\n'; }
-  function download(name, content, type='text/csv;charset=utf-8') { const blob=new Blob([content],{type}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.append(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},0); }
+  function renderMainAnalysis(diags,fitRows,maxErr,meanErr,encoded,p){const skewed=diags.filter(d=>Math.abs(d.skew)>=1).length;const extreme=diags.filter(d=>d.extreme>=.03).length;const tails=encoded.flatMap(z=>z.slice(p)).filter(Number.isFinite);const tailRate=tails.length?tails.filter(v=>Math.abs(v)>0).length/tails.length:0;els.analysis.innerHTML=`<div class="cn-overview"><div class="cn-metric"><strong>${fitRows.toLocaleString()}</strong><span>fit rows</span></div><div class="cn-metric"><strong>${diags.length}</strong><span>features analyzed</span></div><div class="cn-metric"><strong>${pct(tailRate)}</strong><span>cells using R</span></div><div class="cn-metric"><strong>${fmt(maxErr)}</strong><span>max inverse error</span></div></div><div class="cn-insight-list"><div class="cn-insight"><strong>${skewed} feature${skewed===1?'':'s'}</strong> ${skewed===1?'has':'have'} |skewness| ≥ 1 in this file.</div><div class="cn-insight"><strong>${extreme} feature${extreme===1?'':'s'}</strong> ${extreme===1?'has':'have'} at least 3% Tukey-extreme observations.</div><div class="cn-insight"><strong>${pct(tailRate)} of transformed feature-cells</strong> needed a non-zero residual R. The others were represented entirely by C.</div><div class="cn-insight"><strong>Round-trip check:</strong> maximum |x − inverse(Core-Norm(x))| = ${fmt(maxErr)}; mean error = ${fmt(meanErr)}.</div></div><h4 class="cn-analysis-heading">First rows of the Core-Norm representation</h4><p class="ev-note">Each selected input feature produces a central coordinate C first and a residual coordinate R second. R = 0 means that observation did not cross the learned tail boundary for that feature.</p>`;}
 
-  function run() {
-    try {
-      if (!dataset) throw new Error('Load a CSV or the sample first.');
-      const idx=selectedIndexes(); if (!idx.length) throw new Error('Select at least one numeric feature.');
-      const matrix=dataset.rows.map(r=>idx.map(j=>toNumber(r[j])));
-      const fraction=Number(els.fraction.value)/100;
-      const fitRows=Math.max(4,Math.min(matrix.length,Math.ceil(matrix.length*fraction)));
-      if (fitRows<4) throw new Error('At least four fit rows are required.');
-      const engine=new CoreNormEngine().fit(matrix.slice(0,fitRows));
-      const encoded=engine.transform(matrix), restored=engine.inverse(encoded);
-      let maxErr=0, sumErr=0, nErr=0;
-      for (let i=0;i<matrix.length;i++) for (let j=0;j<idx.length;j++) if (Number.isFinite(matrix[i][j])) {
-        const e=Math.abs(matrix[i][j]-restored[i][j]); maxErr=Math.max(maxErr,e); sumErr+=e; nErr++;
-      }
-      result={idx,matrix,engine,encoded,restored,fitRows,maxErr,meanErr:nErr?sumErr/nErr:0};
-      renderPreview();
-      $('[data-cn-fit-rows]').textContent=fitRows.toLocaleString();
-      $('[data-cn-max-error]').textContent=fmt(maxErr);
-      $('[data-cn-mean-error]').textContent=fmt(result.meanErr);
-      els.metrics.hidden=false; els.downloads.hidden=false;
-      say(`Core-Norm fitted on the first ${fitRows.toLocaleString()} rows and transformed all ${matrix.length.toLocaleString()} rows locally in your browser.`, 'ok');
-    } catch (err) { say(err.message || String(err), 'error'); }
-  }
+  function csvEscape(v){const s=v==null?'':String(v);return /[",\n\r]/.test(s)?`"${s.replace(/"/g,'""')}"`:s;}
+  function toCSV(headers,rows){return [headers.map(csvEscape).join(','),...rows.map(r=>r.map(csvEscape).join(','))].join('\n')+'\n';}
+  function download(name,content,type='text/csv;charset=utf-8'){const blob=new Blob([content],{type});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},0);}
 
-  function renderPreview() {
-    const names=result.idx.map(j=>dataset.headers[j]); const p=names.length;
-    const headers=['Row', ...names.map(n=>`${n} · central`), ...names.map(n=>`${n} · residual`)];
-    const rows=result.encoded.slice(0,8).map((z,i)=>[String(i+1), ...z.map(fmt)]);
-    els.preview.innerHTML=`<div class="cn-table-scroll"><table><thead><tr>${headers.map(h=>`<th>${escapeHTML(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((v,j)=>`<${j?'td':'th'}>${escapeHTML(v)}</${j?'td':'th'}>`).join('')}</tr>`).join('')}</tbody></table></div>`;
-  }
-
-  function transformedDownload() {
-    if (!result) return; const selected=new Set(result.idx); const names=result.idx.map(j=>dataset.headers[j]);
-    const headers=dataset.headers.filter((_,j)=>!selected.has(j)).concat(names.map(n=>`${n}__central`), names.map(n=>`${n}__residual`));
-    const rows=dataset.rows.map((r,i)=>r.filter((_,j)=>!selected.has(j)).concat(result.encoded[i].map(v=>v==null?'':String(v))));
-    download('core-norm-transformed.csv',toCSV(headers,rows));
-  }
-
-  function reconstructedDownload() {
-    if (!result) return; const map=new Map(result.idx.map((j,k)=>[j,k]));
-    const rows=dataset.rows.map((r,i)=>r.map((v,j)=>map.has(j)?(result.restored[i][map.get(j)]??''):v));
-    download('core-norm-reconstructed.csv',toCSV(dataset.headers,rows));
-  }
-
-  function stateDownload() {
-    if (!result) return; const names=result.idx.map(j=>dataset.headers[j]);
-    download('core-norm-state.json',JSON.stringify(result.engine.state(names),null,2)+'\n','application/json;charset=utf-8');
-  }
+  function run(){try{if(!dataset)throw new Error('Load a CSV or the sample first.');const idx=selectedIndexes();if(!idx.length)throw new Error('Select at least one numeric feature.');const matrix=dataset.rows.map(r=>idx.map(j=>toNumber(r[j])));const fraction=Number(els.fraction.value)/100;const fitRows=Math.max(4,Math.min(matrix.length,Math.ceil(matrix.length*fraction)));const engine=new CoreNormEngine().fit(matrix.slice(0,fitRows));const encoded=engine.transform(matrix),restored=engine.inverse(encoded);let maxErr=0,sumErr=0,nErr=0;for(let i=0;i<matrix.length;i++)for(let j=0;j<idx.length;j++)if(Number.isFinite(matrix[i][j])){const e=Math.abs(matrix[i][j]-restored[i][j]);maxErr=Math.max(maxErr,e);sumErr+=e;nErr++;}const meanErr=nErr?sumErr/nErr:0;result={idx,matrix,engine,encoded,restored,fitRows,maxErr,meanErr};const names=idx.map(j=>dataset.headers[j]),diags=buildDiagnostics(matrix,names);renderMainAnalysis(diags,fitRows,maxErr,meanErr,encoded,idx.length);renderPreview();renderDiagnostics(diags);renderUploadComparison(matrix,fitRows,engine);if(els.analysisLower)els.analysisLower.hidden=false;$('[data-cn-fit-rows]').textContent=fitRows.toLocaleString();$('[data-cn-max-error]').textContent=fmt(maxErr);$('[data-cn-mean-error]').textContent=fmt(meanErr);els.metrics.hidden=false;els.downloads.hidden=false;say(`Analysis complete: ${matrix.length.toLocaleString()} rows transformed locally; ${idx.length} features analyzed.`,'ok');}catch(err){say(err.message||String(err),'error');}}
+  function renderPreview(){const names=result.idx.map(j=>dataset.headers[j]),p=names.length;const headers=['Row',...names.map(n=>`${n} · C`),...names.map(n=>`${n} · R`)];const rows=result.encoded.slice(0,8).map((z,i)=>[String(i+1),...z.map(fmt)]);els.preview.innerHTML=`<div class="cn-table-scroll"><table><caption class="sr-only">First Core-Norm transformed rows</caption><thead><tr>${headers.map(h=>`<th>${escapeHTML(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((v,j)=>`<${j?'td':'th'}>${escapeHTML(v)}</${j?'td':'th'}>`).join('')}</tr>`).join('')}</tbody></table></div>`;}
+  function transformedDownload(){if(!result)return;const selected=new Set(result.idx),names=result.idx.map(j=>dataset.headers[j]);const headers=dataset.headers.filter((_,j)=>!selected.has(j)).concat(names.map(n=>`${n}__central_C`),names.map(n=>`${n}__residual_R`));const rows=dataset.rows.map((r,i)=>r.filter((_,j)=>!selected.has(j)).concat(result.encoded[i].map(v=>v==null?'':String(v))));download('core-norm-transformed.csv',toCSV(headers,rows));}
+  function reconstructedDownload(){if(!result)return;const map=new Map(result.idx.map((j,k)=>[j,k]));const rows=dataset.rows.map((r,i)=>r.map((v,j)=>map.has(j)?(result.restored[i][map.get(j)]??''):v));download('core-norm-reconstructed.csv',toCSV(dataset.headers,rows));}
+  function stateDownload(){if(!result)return;download('core-norm-state.json',JSON.stringify(result.engine.state(result.idx.map(j=>dataset.headers[j])),null,2)+'\n','application/json;charset=utf-8');}
 
   els.sample.addEventListener('click',()=>setDataset(parseCSV(sampleCSV),'Weather/energy sample loaded'));
-  els.file.addEventListener('change',async()=>{
-    try { const f=els.file.files[0]; if(!f)return; if(f.size>10*1024*1024) throw new Error('For this browser demo, choose a CSV smaller than 10 MB.'); setDataset(parseCSV(await f.text()),f.name); }
-    catch(err){ say(err.message||String(err),'error'); }
-  });
-  els.fraction.addEventListener('input',()=>{els.fractionLabel.textContent=`${els.fraction.value}%`;});
-  els.run.addEventListener('click',run); els.transformed.addEventListener('click',transformedDownload); els.reconstructed.addEventListener('click',reconstructedDownload); els.state.addEventListener('click',stateDownload);
-  els.reset.addEventListener('click',()=>{dataset=null;result=null;els.file.value='';els.features.innerHTML='<p class="cn-empty">Load data to detect numeric features.</p>';els.preview.innerHTML='';els.metrics.hidden=true;els.downloads.hidden=true;els.run.disabled=true;say('No data loaded.');});
-})( );
+  els.file.addEventListener('change',async()=>{try{const f=els.file.files[0];if(!f)return;if(f.size>10*1024*1024)throw new Error('Choose a CSV smaller than 10 MB for this browser demo.');setDataset(parseCSV(await f.text()),f.name);}catch(err){say(err.message||String(err),'error');}});
+  els.fraction.addEventListener('input',()=>{els.fractionLabel.textContent=`${els.fraction.value}%`;});els.run.addEventListener('click',run);els.transformed.addEventListener('click',transformedDownload);els.reconstructed.addEventListener('click',reconstructedDownload);els.state.addEventListener('click',stateDownload);els.reset.addEventListener('click',()=>{dataset=null;result=null;els.file.value='';els.features.innerHTML='<p class="cn-empty">Load data to detect numeric features.</p>';els.preview.innerHTML='';els.metrics.hidden=true;els.downloads.hidden=true;if(els.analysisLower)els.analysisLower.hidden=true;els.run.disabled=true;els.analysis.innerHTML='<div class="cn-results-placeholder compact"><div><strong>Ready for a CSV</strong><span>After loading data, this panel will explain the feature distributions and compare scaling behavior.</span></div></div>';say('No data loaded.');});
+})();

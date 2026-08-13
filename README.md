@@ -80,3 +80,8 @@ Added the VisualVerity code repository and the CC BY 4.0 TechRxiv preprint PDF t
 ## V19.2 Software architecture
 
 Added **Software** as a standalone primary-navigation destination (`/software.html`) with a data-driven catalog (`assets/data/software.json`) designed for future software entries. Core-Norm moved from Research to `/software/core-norm/`. The Core-Norm page now fetches public verification datasets and all archived benchmark rows directly from `udanish50/Core-Norm` on GitHub, verifies dataset SHA-256 digests in the browser, runs forward/inverse property checks locally, and exposes a filterable full-run evidence explorer. The old Research URL is retained only as a redirect.
+
+
+## V20.1 Core-Norm analysis and HCI refinement
+
+Refined the standalone Core-Norm software page around an Understand → Analyze → Compare → Verify workflow. Added plain-language definitions of central C and residual R, a fully annotated formula sequence and symbol guide, a worked inverse-preserving example, a prominent local CSV analysis workflow with per-feature diagnostics, uploaded-data scaler-behavior comparisons, an automatic GitHub-backed benchmark comparison across established normalization methods, and clearer separation between descriptive scaling behavior, mathematical verification, and predictive benchmark evidence. Accessibility refinements include explicit control labels, keyboard-visible focus, status regions, readable math typography, and progressive disclosure.

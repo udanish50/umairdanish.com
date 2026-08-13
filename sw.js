@@ -1,4 +1,4 @@
-const CACHE='udanish-v19-software-20260813';
+const CACHE='udanish-v20-1-core-norm-hci-20260813';
 const CORE=[
   '/software.html','/software/core-norm/','/assets/css/software-v19.css','/assets/data/software.json','/assets/js/software-catalog.js','/assets/js/core-norm-evidence.js',
   '/assets/js/core-norm-engine.js','/assets/js/core-norm-app.js',
