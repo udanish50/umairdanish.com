@@ -29,5 +29,34 @@ const icons={
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function card(x){const id=String(x.id||"").toLowerCase(),icon=icons[id]||'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5z"/></svg>',name=esc(x.name||"Research software"),summary=esc(x.summary||""),url=esc(x.url||"/software.html"),gh=esc(x.github||"https://github.com/udanish50");return `<article class="hc-software-card" data-id="${esc(id)}"><span class="hc-software-icon">${icon}</span><div class="hc-software-copy"><h3><a href="${url}">${name}</a></h3><p>${summary}</p><div class="hc-software-links"><a href="${url}">Open</a><a href="${gh}" target="_blank" rel="noopener">GitHub ↗</a></div></div></article>`}
 async function loadSoftware(){const host=document.querySelector("[data-home-software]");if(!host)return;try{const r=await fetch("/assets/data/software.json?home=v24",{cache:"no-store"});if(!r.ok)throw new Error("catalog");const d=await r.json(),list=Array.isArray(d.software)?d.software:[],p=["core-norm","linear-lens","openmetriclab","aimemgraph"],sorted=[...list].sort((a,b)=>{const ai=p.indexOf(String(a.id||"")),bi=p.indexOf(String(b.id||""));return(ai<0?99:ai)-(bi<0?99:bi)}).slice(0,4);if(sorted.length)host.innerHTML=sorted.map(card).join("")}catch(_){}}
-loadScholarMetrics();loadSoftware();
+
+async function loadDailyKnowledge(){
+ const dayEl=document.getElementById("hc-knowledge-day"),monthEl=document.getElementById("hc-knowledge-month"),yearEl=document.getElementById("hc-knowledge-year"),titleEl=document.getElementById("hc-knowledge-title"),textEl=document.getElementById("hc-knowledge-text"),linkEl=document.getElementById("hc-knowledge-link");
+ if(!titleEl)return;
+ const now=new Date(),month=String(now.getMonth()+1).padStart(2,"0"),day=String(now.getDate()).padStart(2,"0");
+ if(dayEl)dayEl.textContent=String(now.getDate());
+ if(monthEl)monthEl.textContent=now.toLocaleDateString(undefined,{month:"short"});
+ try{
+  const r=await fetch(`https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${month}/${day}`,{headers:{"accept":"application/json"}});
+  if(!r.ok)throw new Error("Wikipedia feed");
+  const d=await r.json(),events=Array.isArray(d.events)?d.events:[];
+  if(!events.length)throw new Error("No events");
+  const idx=(now.getFullYear()+now.getMonth()+now.getDate())%events.length,event=events[idx],page=Array.isArray(event.pages)?event.pages[0]:null;
+  if(yearEl)yearEl.textContent=event.year??"";
+  titleEl.textContent=event.text||"Historical event";
+  if(textEl)textEl.textContent=page?.extract||"Explore the historical event and its context on Wikipedia.";
+  if(linkEl&&page?.content_urls?.desktop?.page)linkEl.href=page.content_urls.desktop.page;
+ }catch(_){
+  if(yearEl)yearEl.textContent="On this day:";
+  titleEl.textContent="Explore today's historical events";
+  if(textEl)textEl.textContent="Wikipedia's live historical feed is temporarily unavailable. The source link remains available.";
+ }
+}
+document.querySelectorAll("[data-copy-email]").forEach(btn=>btn.addEventListener("click",async()=>{
+ const email=btn.getAttribute("data-copy-email")||"",status=btn.closest(".hc-collaboration-body")?.querySelector(".hc-copy-status");
+ try{await navigator.clipboard.writeText(email);if(status)status.textContent="Email copied to clipboard."}
+ catch(_){if(status)status.textContent=email}
+}));
+
+loadScholarMetrics();loadSoftware();loadDailyKnowledge();
 })();

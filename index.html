@@ -12,9 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/home-command-v24.css?v=24.1">
+  <link rel="stylesheet" href="/assets/css/home-command-v24.css?v=24.2">
 </head>
-<body class="home-v24" data-home-v24 data-home-revision="24.1">
+<body class="home-v24" data-home-v24 data-home-revision="24.2">
 <a class="hc-skip" href="#main">Skip to main content</a>
 
 <header class="hc-header" data-hc-header>
@@ -89,26 +89,51 @@
       </div>
     </section>
 
+    <section class="hc-panel hc-knowledge-panel" aria-labelledby="knowledge-title">
+      <div class="hc-knowledge-label">
+        <span class="hc-kicker-soft">Daily Knowledge</span>
+        <strong>On this day</strong>
+      </div>
+      <div class="hc-knowledge-body">
+        <div class="hc-knowledge-date" aria-hidden="true">
+          <span id="hc-knowledge-day">—</span>
+          <small id="hc-knowledge-month">Today</small>
+        </div>
+        <div class="hc-knowledge-copy">
+          <h2 id="knowledge-title"><span id="hc-knowledge-year">—</span> <span id="hc-knowledge-title">Loading today's historical note…</span></h2>
+          <p id="hc-knowledge-text">A short historical event is loaded from Wikipedia's “On this day” feed.</p>
+          <div class="hc-knowledge-foot">
+            <a id="hc-knowledge-link" href="https://en.wikipedia.org/wiki/Wikipedia:On_this_day/Today" target="_blank" rel="noopener">Read on Wikipedia ↗</a>
+            <small>Source: Wikipedia · CC BY-SA 4.0</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="hc-panel hc-research-panel" aria-labelledby="selected-research-title">
       <div class="hc-section-bar"><h2 id="selected-research-title">Selected Research</h2><a href="/publications.html">View all publications <span aria-hidden="true">→</span></a></div>
+      <div class="hc-section-intro">
+        <strong>Research with measurable scholarly impact.</strong>
+        <p>Three representative publications selected for citation impact and relevance to the current research direction.</p>
+      </div>
       <div class="hc-paper-grid">
         <article class="hc-paper-card">
           <div class="hc-paper-meta"><span>Energy</span><span>Time-Series</span><span>2025</span></div>
-          <h3><a href="/publications/kolmogorov-arnold-recurrent-network/">Kolmogorov–Arnold Recurrent Network for Short-Term Load Forecasting</a></h3>
-          <p>A KAN-based recurrent architecture for accurate multi-step electricity load forecasting across diverse consumers.</p>
-          <div class="hc-paper-foot"><span class="hc-citation-pill">Cited by <b data-paper-citations="karn">55</b></span><span class="hc-paper-links"><a href="https://doi.org/10.1016/j.egyr.2024.12.038" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/udanish50/KARN" target="_blank" rel="noopener">Code ↗</a></span></div>
+          <h3><a href="/publications/kolmogorov-arnold-recurrent-network/">Kolmogorov-Arnold Recurrent Network for Short-Term Load Forecasting Across Diverse Consumers</a></h3>
+          <p><strong>Contribution:</strong> Develops a recurrent architecture based on Kolmogorov-Arnold representations for forecasting heterogeneous consumer loads.</p>
+          <div class="hc-paper-foot"><span class="hc-citation-pill">Cited by <b data-paper-citations="karn">55</b></span><span class="hc-paper-links"><a href="https://doi.org/10.1016/j.egyr.2024.12.038" target="_blank" rel="noopener">Paper ↗</a><a href="/assets/papers/karn.pdf" target="_blank" rel="noopener">PDF ↓</a><a href="https://github.com/udanish50/KARN" target="_blank" rel="noopener">Code ↗</a><a href="/publications/kolmogorov-arnold-recurrent-network/">Details →</a></span></div>
         </article>
         <article class="hc-paper-card">
           <div class="hc-paper-meta"><span>Vision</span><span>AI Evaluation</span><span>2025</span></div>
-          <h3><a href="/publications/glips/">GLIPS: Global-Local Image Perceptual Score for AI-Generated Images</a></h3>
-          <p>A perceptual framework combining global and local evidence to assess photorealistic quality in generated imagery.</p>
-          <div class="hc-paper-foot"><span class="hc-citation-pill">Cited by <b data-paper-citations="glips">35</b></span><span class="hc-paper-links"><a href="https://doi.org/10.1109/THMS.2025.3527397" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/udanish50/GLIPS" target="_blank" rel="noopener">Code ↗</a></span></div>
+          <h3><a href="/publications/glips/">Global-Local Image Perceptual Score (GLIPS): Evaluating Photorealistic Quality of AI-Generated Images</a></h3>
+          <p><strong>Contribution:</strong> Introduces a perceptual score that combines global and local evidence to evaluate the photorealistic quality of AI-generated images.</p>
+          <div class="hc-paper-foot"><span class="hc-citation-pill">Cited by <b data-paper-citations="glips">35</b></span><span class="hc-paper-links"><a href="https://doi.org/10.1109/THMS.2025.3527397" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/udanish50/GLIPS" target="_blank" rel="noopener">Code ↗</a><a href="/publications/glips/">Details →</a></span></div>
         </article>
         <article class="hc-paper-card">
           <div class="hc-paper-meta"><span>Human-Centered AI</span><span>Evaluation</span><span>2025</span></div>
-          <h3><a href="/publications/unified-ai-image-evaluation/">Unified Evaluation Framework for AI-Generated Images</a></h3>
-          <p>A multidimensional framework integrating human perception and automated measures for generated-image evaluation.</p>
-          <div class="hc-paper-foot"><span class="hc-citation-pill">Cited by <b data-paper-citations="unified">21</b></span><span class="hc-paper-links"><a href="https://doi.org/10.1007/s00530-025-01769-7" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/udanish50/VisualVerity" target="_blank" rel="noopener">Code ↗</a></span></div>
+          <h3><a href="/publications/unified-ai-image-evaluation/">Towards a Unified Evaluation Framework: Integrating Human Perception and Metrics for AI-Generated Images</a></h3>
+          <p><strong>Contribution:</strong> Integrates human judgments and automated image-quality metrics into a unified framework for evaluating generated imagery.</p>
+          <div class="hc-paper-foot"><span class="hc-citation-pill">Cited by <b data-paper-citations="unified">21</b></span><span class="hc-paper-links"><a href="https://doi.org/10.1007/s00530-025-01769-7" target="_blank" rel="noopener">Paper ↗</a><a href="/assets/papers/unified-ai-image-evaluation-preprint.pdf" target="_blank" rel="noopener">PDF ↓</a><a href="https://github.com/udanish50/VisualVerity" target="_blank" rel="noopener">Code ↗</a><a href="/publications/unified-ai-image-evaluation/">Details →</a></span></div>
         </article>
       </div>
     </section>
@@ -116,20 +141,27 @@
     <div class="hc-middle-grid">
       <section class="hc-panel hc-areas-panel" aria-labelledby="areas-title">
         <div class="hc-section-bar"><h2 id="areas-title">Research Areas</h2><a href="/research.html">View all areas <span aria-hidden="true">→</span></a></div>
+        <div class="hc-section-intro hc-section-intro-compact">
+          <strong>Four connected research directions.</strong>
+          <p>Each area addresses a distinct part of building machine-learning systems that can be understood, evaluated, and applied responsibly.</p>
+        </div>
         <div class="hc-area-grid">
-          <a class="hc-area-card" href="/research.html"><span class="hc-area-icon purple"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4a3 3 0 0 0-3 3v1a3 3 0 0 0-1 5.8V15a3 3 0 0 0 3 3h1m6-14a3 3 0 0 1 3 3v1a3 3 0 0 1 1 5.8V15a3 3 0 0 1-3 3h-1M9 8h6M9 12h6M9 16h6M12 4v16"/></svg></span><strong>Explainable &amp;<br>Interpretable AI</strong><small>Transparent models, mechanistic interpretability, and trustworthy decisions.</small></a>
-          <a class="hc-area-card" href="/research.html"><span class="hc-area-icon teal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.2"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/></svg></span><strong>Physics-Guided<br>Machine Learning</strong><small>Domain knowledge and physical structure embedded into data-driven models.</small></a>
-          <a class="hc-area-card" href="/research.html"><span class="hc-area-icon orange"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9M9 19V5M14 19v-7M19 19V3"/></svg></span><strong>Time-Series &amp;<br>Energy Intelligence</strong><small>Forecasting, missing-data modeling, and adaptive temporal learning.</small></a>
-          <a class="hc-area-card" href="/research.html"><span class="hc-area-icon pink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 7 3v5c0 4.5-2.8 7.8-7 10-4.2-2.2-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><strong>Responsible &amp;<br>Applied AI</strong><small>Human-centered evaluation, fairness, safety, and real-world impact.</small></a>
+          <a class="hc-area-card" href="/research.html"><span class="hc-area-icon purple"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4a3 3 0 0 0-3 3v1a3 3 0 0 0-1 5.8V15a3 3 0 0 0 3 3h1m6-14a3 3 0 0 1 3 3v1a3 3 0 0 1 1 5.8V15a3 3 0 0 1-3 3h-1M9 8h6M9 12h6M9 16h6M12 4v16"/></svg></span><strong>Explainable &amp;<br>Interpretable AI</strong><small>Mechanistic and model-level methods for understanding learned representations and predictions.</small></a>
+          <a class="hc-area-card" href="/research.html"><span class="hc-area-icon teal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.2"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/></svg></span><strong>Physics-Guided<br>Machine Learning</strong><small>Learning systems that incorporate physical structure, constraints, and domain knowledge.</small></a>
+          <a class="hc-area-card" href="/research.html"><span class="hc-area-icon orange"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9M9 19V5M14 19v-7M19 19V3"/></svg></span><strong>Time-Series &amp;<br>Energy Intelligence</strong><small>Forecasting, missing-data modeling, and adaptive learning for heterogeneous energy systems.</small></a>
+          <a class="hc-area-card" href="/research.html"><span class="hc-area-icon pink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 7 3v5c0 4.5-2.8 7.8-7 10-4.2-2.2-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><strong>Responsible &amp;<br>Applied AI</strong><small>Human-centered evaluation and reliable machine learning across perception, finance, imaging, and other applied domains.</small></a>
         </div>
       </section>
 
       <section class="hc-panel hc-milestones-panel" aria-labelledby="milestones-title">
         <div class="hc-section-bar"><h2 id="milestones-title">Recent Milestones</h2><a href="/news.html">View timeline <span aria-hidden="true">→</span></a></div>
+        <div class="hc-section-intro hc-section-intro-compact">
+          <strong>Current research activity.</strong>
+        </div>
         <ol class="hc-timeline">
-          <li><span class="hc-timeline-node pink" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12h10M12 7v10"/></svg></span><div><span class="hc-new">NEW</span><strong>Two human-centered XAI papers accepted at IECON 2026</strong><small>Research on explanation modalities, trust, understanding, and decision making.</small></div><time datetime="2026-08">Aug 2026</time></li>
-          <li><span class="hc-timeline-node teal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7z"/></svg></span><div><strong>Music-therapy research article accepted in <em>Approaches</em></strong><small>Interdisciplinary work on dispersity measures in improvised active music therapy.</small></div><time datetime="2026-07-27">Jul 2026</time></li>
-          <li><span class="hc-timeline-node purple" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5z"/><path d="M7 12v4.5c2.7 2 7.3 2 10 0V12"/></svg></span><div><strong>PhD Convocation at Western University</strong><small>Electrical &amp; Computer Engineering · neural networks and interpretability for energy modeling.</small></div><time datetime="2026-06-09">Jun 2026</time></li>
+          <li><span class="hc-timeline-node pink" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12h10M12 7v10"/></svg></span><div><span class="hc-new">NEW</span><strong>Two human-centered XAI papers accepted at IECON 2026</strong><small>The accepted papers examine cognitive effects of explanation modalities and their influence on trust, understanding, and decision making.</small></div><time datetime="2026-08">Aug 2026</time></li>
+          <li><span class="hc-timeline-node teal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7z"/></svg></span><div><strong>Music-therapy research article accepted in <em>Approaches</em></strong><small>“Dispersity Measures Within Sessions During Improvised Active Music Therapy with Clients with Parkinson’s Disease” was accepted for publication; the editor indicated that copyediting would follow.</small></div><time datetime="2026-07-27">Jul 2026</time></li>
+          <li><span class="hc-timeline-node purple" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5z"/><path d="M7 12v4.5c2.7 2 7.3 2 10 0V12"/></svg></span><div><strong>PhD Convocation at Western University</strong><small>Celebrated the completion of a PhD in Electrical and Computer Engineering, with a dissertation on neural networks and their interpretability for building-energy modeling.</small></div><time datetime="2026-06-09">Jun 2026</time></li>
         </ol>
       </section>
     </div>
@@ -140,16 +172,76 @@
 <article class="hc-software-card" data-id="linear-lens"><span class="hc-software-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5h5"/></svg></span><div class="hc-software-copy"><h3><a href="/software/linear-lens/">Linear Lens</a></h3><p>Non-interventional, human-centered mechanistic interpretability for neuron roles, layer fingerprints, and semantic pathways, with browser-verifiable public evidence.</p><div class="hc-software-links"><a href="/software/linear-lens/">Open</a><a href="https://github.com/udanish50/LinearLens" target="_blank" rel="noopener">GitHub ↗</a></div></div></article>
 <article class="hc-software-card" data-id="openmetriclab"><span class="hc-software-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19v-5M10 19V9M15 19v-8M20 19V5"/></svg></span><div class="hc-software-copy"><h3><a href="/software/openmetriclab/">OpenMetricLab</a></h3><p>Local-first actual-vs-prediction evaluation for regression, classification, segmentation, and image registration with visual diagnostics and reproducible examples.</p><div class="hc-software-links"><a href="/software/openmetriclab/">Open</a><a href="https://github.com/udanish50/OpenMetricLab" target="_blank" rel="noopener">GitHub ↗</a></div></div></article></div>
     </section>
+
+    <div class="hc-bottom-grid">
+      <section class="hc-panel hc-collaboration-panel" aria-labelledby="collaboration-title">
+        <div class="hc-section-bar"><h2>Collaboration</h2><a href="/collaborators.html">Research collaborators <span aria-hidden="true">→</span></a></div>
+        <div class="hc-collaboration-body">
+          <span class="hc-collab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1.4A5 5 0 0 1 8 13.6h0a5 5 0 0 1 5 5V20M14 14.2a4.3 4.3 0 0 1 7 3.3V20"/></svg></span>
+          <div>
+            <span class="hc-kicker-soft">Collaboration</span>
+            <h2 id="collaboration-title">Interested in working together?</h2>
+            <p>Research collaboration, applied AI projects, academic opportunities, and technical discussion.</p>
+            <div class="hc-collab-actions">
+              <a class="hc-btn hc-btn-primary" href="mailto:mdanish3@uwo.ca">Email Me</a>
+              <button class="hc-btn hc-copy-email" type="button" data-copy-email="mdanish3@uwo.ca">Copy email</button>
+              <a class="hc-btn hc-btn-secondary" href="/collaborators.html">Research collaborators →</a>
+            </div>
+            <p class="hc-copy-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="hc-panel hc-global-panel" aria-labelledby="global-title">
+        <div class="hc-section-bar"><h2>Global Reach</h2><a href="https://info.flagcounter.com/txBY" target="_blank" rel="noopener">View live visitor statistics <span aria-hidden="true">↗</span></a></div>
+        <div class="hc-global-body">
+          <div class="hc-global-copy">
+            <span class="hc-kicker-soft">Global Reach</span>
+            <h2 id="global-title">Visitors from around the world.</h2>
+            <p>A live geographic view of visitors reaching this website.</p>
+          </div>
+          <figure class="hc-visitor-card">
+            <div class="hc-visitor-widget">
+              <a href="https://info.flagcounter.com/txBY" target="_blank" rel="noopener">View live visitor statistics <span aria-hidden="true">↗</span></a>
+            </div>
+            <figcaption>Live geographic visitor counter · served by Flag Counter.</figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
   </div>
 </main>
 
 <footer class="hc-footer">
-  <div class="hc-shell hc-footer-inner">
-    <p>Building trustworthy AI for a smarter, more sustainable future.</p>
-    <nav aria-label="Academic profiles"><a href="https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ" target="_blank" rel="noopener">Google Scholar</a><a href="https://github.com/udanish50" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/muhammad-umair-danish-849045203/" target="_blank" rel="noopener">LinkedIn</a><a href="https://orcid.org/0009-0005-5728-3587" target="_blank" rel="noopener">ORCID</a></nav>
-    <p>© 2026 Muhammad Umair Danish</p>
+  <div class="hc-shell hc-footer-full">
+    <div class="hc-footer-identity">
+      <strong>Muhammad Umair Danish, PhD</strong>
+      <span>Applied AI · Explainable AI · Machine Learning</span>
+      <p>Building trustworthy AI for a smarter, more sustainable future.</p>
+    </div>
+    <nav class="hc-footer-site-nav" aria-label="Footer navigation">
+      <a href="/research.html">Research</a>
+      <a href="/publications.html">Publications</a>
+      <a href="/software.html">Software</a>
+      <a href="/teaching.html">Teaching</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/news.html">News</a>
+      <a href="/collaborators.html">Collaborators</a>
+      <a href="/assets/docs/Muhammad_Umair_Danish_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+    <div class="hc-footer-meta">
+      <nav aria-label="Academic profiles">
+        <a href="https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://github.com/udanish50" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/muhammad-umair-danish-849045203/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://orcid.org/0009-0005-5728-3587" target="_blank" rel="noopener">ORCID</a>
+      </nav>
+      <a class="hc-footer-email" href="mailto:mdanish3@uwo.ca">mdanish3@uwo.ca</a>
+      <small>© 2026 Muhammad Umair Danish</small>
+    </div>
   </div>
 </footer>
-<script src="/assets/js/home-command-v24.js?v=24.1" defer></script>
+<script src="/assets/js/home-command-v24.js?v=24.2" defer></script>
 </body>
 </html>
