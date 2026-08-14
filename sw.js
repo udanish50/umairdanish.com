@@ -1,4 +1,4 @@
-const CACHE='udanish-v21-5-linear-lens-katex-20260813';
+const CACHE='udanish-v22-openmetriclab-20260814';
 const CORE=['/software/linear-lens/','/assets/css/linear-lens-v21.css','/assets/js/linear-lens-engine.js','/assets/js/linear-lens-app.js',
   '/software.html','/software/core-norm/','/assets/css/software-v19.css','/assets/data/software.json','/assets/js/software-catalog.js','/assets/js/core-norm-evidence.js',
   '/assets/js/core-norm-engine.js','/assets/js/core-norm-app.js',

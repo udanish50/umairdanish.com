@@ -38,6 +38,25 @@
         "180 trained-model analyses",
         "Peer-reviewed method"
       ]
+    },
+    {
+      "id": "openmetriclab",
+      "name": "OpenMetricLab",
+      "status": "Open scientific software",
+      "summary": "Local-first actual-vs-prediction evaluation for regression, classification, segmentation, and image registration with visual diagnostics and reproducible examples.",
+      "url": "/software/openmetriclab/",
+      "github": "https://github.com/udanish50/OpenMetricLab",
+      "tags": [
+        "Model evaluation",
+        "Metrics",
+        "Segmentation",
+        "Registration"
+      ],
+      "evidence": [
+        "Public example suite",
+        "Browser-local analysis",
+        "Python reference implementation"
+      ]
     }
   ]
 }

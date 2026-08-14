@@ -54,6 +54,20 @@
     ]
   },
   {
+    "kind": "Software",
+    "title": "OpenMetricLab",
+    "summary": "Actual-vs-prediction evaluation for regression, classification, segmentation, and registration with browser-local visual diagnostics.",
+    "url": "/software/openmetriclab/",
+    "tags": [
+      "metrics",
+      "evaluation",
+      "regression",
+      "classification",
+      "segmentation",
+      "registration"
+    ]
+  },
+  {
     "kind": "Page",
     "title": "Publications",
     "summary": "Top research impact, recent and accepted work, and the full publication archive.",
