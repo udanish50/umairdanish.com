@@ -54,7 +54,7 @@
       ],
       "evidence": [
         "Public example suite",
-        "Native metric engine",
+        "Reproducible metric definitions",
         "Browser-local analysis",
         "NumPy-only Python runtime"
       ]
