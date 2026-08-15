@@ -1,0 +1,48 @@
+name: Responsive regression
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'assets/css/**'
+      - 'assets/js/**'
+      - 'quality/responsive/**'
+      - '.github/workflows/responsive-regression.yml'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  responsive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install responsive test dependencies
+        working-directory: quality/responsive
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        working-directory: quality/responsive
+        run: npx playwright install --with-deps chromium
+      - name: Test every real page at all 11 viewports
+        working-directory: quality/responsive
+        run: npm run test:full
+      - name: Capture representative visual artifacts
+        if: always()
+        working-directory: quality/responsive
+        run: npm run capture
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: responsive-report-and-screenshots
+          path: |
+            quality/responsive/playwright-report
+            quality/responsive/test-results
+            quality/responsive/artifacts
+          if-no-files-found: ignore
+          retention-days: 14

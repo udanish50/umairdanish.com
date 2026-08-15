@@ -1,0 +1,15 @@
+{
+  "name": "umairdanish-responsive-regression",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test tests/responsive.spec.mjs",
+    "test:full": "RESPONSIVE_FULL=1 playwright test tests/responsive.spec.mjs",
+    "capture": "playwright test tests/capture.spec.mjs",
+    "visual:update": "VISUAL_BASELINES=1 playwright test tests/visual.spec.mjs --update-snapshots",
+    "visual:test": "VISUAL_BASELINES=1 playwright test tests/visual.spec.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
