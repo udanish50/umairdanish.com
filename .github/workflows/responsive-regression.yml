@@ -29,7 +29,7 @@ jobs:
       - name: Install Chromium
         working-directory: quality/responsive
         run: npx playwright install --with-deps chromium
-      - name: Test every real page at all 11 viewports
+      - name: Test responsive matrix and appearance modes
         working-directory: quality/responsive
         run: npm run test:full
       - name: Capture representative visual artifacts
