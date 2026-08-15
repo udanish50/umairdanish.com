@@ -38,6 +38,44 @@ test('System is the first-visit default and follows the OS',async({browser})=>{
   await context.close();
 });
 
+test('Homepage has exactly one visible appearance control and no legacy moon toggle',async({page})=>{
+  await isolateExternalNetwork(page);
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto('/',{waitUntil:'domcontentloaded'});
+  const report=await page.evaluate(()=>{
+    const visible=el=>{
+      if(!el)return false;
+      const s=getComputedStyle(el),r=el.getBoundingClientRect();
+      return s.display!=='none'&&s.visibility!=='hidden'&&r.width>0&&r.height>0;
+    };
+    const triggers=[...document.querySelectorAll('.v282-appearance-trigger')].filter(visible);
+    const old=[...document.querySelectorAll('.hc-theme-toggle')].filter(visible);
+    const desktop=document.querySelector('.v282-appearance--home-desktop');
+    const chevron=desktop?.querySelector('.v282-trigger-chevron');
+    const icon=desktop?.querySelector('.v282-trigger-icon svg');
+    const cr=chevron?.getBoundingClientRect();
+    const ir=icon?.getBoundingClientRect();
+    return {
+      triggers:triggers.length,
+      oldVisible:old.length,
+      legacyInDom:document.querySelectorAll('.hc-theme-toggle').length,
+      chevronDisplay:chevron?getComputedStyle(chevron).display:null,
+      chevronWidth:cr?Math.round(cr.width):0,
+      chevronHeight:cr?Math.round(cr.height):0,
+      iconWidth:ir?Math.round(ir.width):0,
+      iconHeight:ir?Math.round(ir.height):0
+    };
+  });
+  expect(report.triggers).toBe(1);
+  expect(report.oldVisible).toBe(0);
+  expect(report.legacyInDom).toBe(0);
+  expect(report.chevronDisplay).toBe('none');
+  expect(report.chevronWidth).toBe(0);
+  expect(report.chevronHeight).toBe(0);
+  expect(report.iconWidth).toBeLessThanOrEqual(24);
+  expect(report.iconHeight).toBeLessThanOrEqual(24);
+});
+
 test('Appearance control is before Collaborate on desktop homepage',async({page})=>{
   await isolateExternalNetwork(page);
   await page.setViewportSize({width:1440,height:900});

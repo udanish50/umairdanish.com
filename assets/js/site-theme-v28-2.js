@@ -204,9 +204,9 @@
     });
 
     if (document.querySelector("[data-v282-appearance]") && oldHomeToggle) {
-      oldHomeToggle.hidden = true;
-      oldHomeToggle.setAttribute("aria-hidden", "true");
-      oldHomeToggle.tabIndex = -1;
+      // The V28 appearance selector fully supersedes the legacy binary moon/sun button.
+      // Remove it from the runtime DOM so there is exactly one appearance control.
+      oldHomeToggle.remove();
     }
 
     syncControls(storedMode());
