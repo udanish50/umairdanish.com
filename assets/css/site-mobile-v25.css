@@ -1,0 +1,98 @@
+/* V25 — site-wide mobile HCI refinement. Desktop is intentionally unchanged. */
+@media (max-width:900px){
+  html{overflow-x:clip;-webkit-text-size-adjust:100%;scroll-padding-top:74px}
+  body{max-width:100%;overflow-x:clip;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+  body:not(.home-v24){font-size:15.5px;line-height:1.62}
+  body:not(.home-v24) :is(img,svg,video,canvas,iframe){max-width:100%}
+  body:not(.home-v24) :is(h1,h2,h3,h4,p,li,a,strong,small,span){overflow-wrap:anywhere}
+  body:not(.home-v24) .container{width:min(calc(100% - 28px),760px);max-width:none;margin-inline:auto}
+
+  /* Header/navigation */
+  body:not(.home-v24) .site-header{position:sticky;top:0;z-index:1200;padding:max(8px,env(safe-area-inset-top)) 0 8px;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(18px) saturate(145%);-webkit-backdrop-filter:blur(18px) saturate(145%);box-shadow:0 6px 22px rgba(21,28,50,.055)}
+  body:not(.home-v24) .nav-shell{min-height:52px;gap:10px}
+  body:not(.home-v24) .brand{min-width:0;gap:9px}
+  body:not(.home-v24) .brand-mark{width:40px;height:40px;flex:0 0 40px;border-radius:12px}
+  body:not(.home-v24) .brand-text{min-width:0}
+  body:not(.home-v24) .brand-text strong{display:block;max-width:42vw;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  body:not(.home-v24) .brand-text small{display:none!important}
+  body:not(.home-v24) .menu-toggle{width:46px;height:46px;display:grid;place-items:center;flex:0 0 46px}
+  body:not(.home-v24) .nav.open{top:calc(64px + env(safe-area-inset-top));left:12px;right:12px;padding:10px;border-radius:18px;max-height:calc(100dvh - 82px - env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain}
+  body:not(.home-v24) .nav.open :is(.nav-link,.nav-contact,.icon-button){min-height:46px;display:flex;align-items:center;padding:11px 13px;font-size:14px;border-radius:11px}
+
+  /* Readability/hierarchy */
+  body:not(.home-v24) .page-hero{padding:38px 0 36px}
+  body:not(.home-v24) .page-hero h1{font-size:clamp(36px,10vw,48px);line-height:1.02;letter-spacing:-.038em;text-wrap:balance}
+  body:not(.home-v24) .page-hero p{font-size:15.5px;line-height:1.62;max-width:62ch}
+  body:not(.home-v24) .section{padding:52px 0}
+  body:not(.home-v24) .section-head{margin-bottom:23px}
+  body:not(.home-v24) .section-head h2{font-size:clamp(30px,8.5vw,40px);line-height:1.06;text-wrap:balance}
+  body:not(.home-v24) .section-head>p{font-size:14.5px;line-height:1.62}
+
+  /* Cards/grids */
+  body:not(.home-v24) :is(.accepted-grid,.work-grid,.architecture-grid,.rigor-grid,.teaching-principles,.award-grid,.skills-grid,.course-grid,.news-feature-grid,.photo-essay-grid,.contact-grid,.related-grid,.paper-hero-grid,.paper-content-grid,.assessment-layout,.cv-summary-grid){grid-template-columns:1fr!important;gap:14px}
+  body:not(.home-v24) :is(.accepted-card,.programme-card,.news-feature,.collaborator-card,.paper-cover,.contact-card,.course-card){border-radius:20px}
+  body:not(.home-v24) .accepted-card{min-height:0;padding:22px}
+  body:not(.home-v24) .accepted-card h3{font-size:24px;line-height:1.13}
+  body:not(.home-v24) .programme-card,body:not(.home-v24) .programme-card:nth-child(even){grid-template-columns:1fr!important}
+  body:not(.home-v24) .programme-card>div{padding:20px}
+  body:not(.home-v24) .programme-card h3{font-size:27px}
+
+  /* Publications */
+  body:not(.home-v24) .publication-item{grid-template-columns:1fr!important;gap:9px;padding:20px 0}
+  body:not(.home-v24) :is(.pub-title,.publication-item h3){font-size:21px;line-height:1.18;text-wrap:pretty}
+  body:not(.home-v24) .pub-year{font-size:22px}
+  body:not(.home-v24) .pub-side{grid-column:auto;text-align:left;justify-items:start}
+  body:not(.home-v24) .pub-toolbar{position:static;padding:10px;border-radius:16px}
+  body:not(.home-v24) .publication-live-panel{grid-template-columns:repeat(3,minmax(0,1fr))}
+  body:not(.home-v24) .publication-live-panel>div{padding:13px 6px}
+  body:not(.home-v24) .publication-live-panel strong{font-size:22px}
+  body:not(.home-v24) .filter-scroll{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+  body:not(.home-v24) .filter-scroll::-webkit-scrollbar{display:none}
+  body:not(.home-v24) .filter-button{flex:0 0 auto;min-height:42px;scroll-snap-align:start}
+
+  /* Publication detail */
+  body:not(.home-v24) .paper-intro h1{font-size:clamp(34px,9.3vw,44px);line-height:1.04}
+  body:not(.home-v24) .paper-summary{font-size:18px;line-height:1.5}
+  body:not(.home-v24) .paper-cover{max-width:100%;overflow:hidden}
+  body:not(.home-v24) .paper-cover img{max-height:52vh;object-fit:contain}
+  body:not(.home-v24) .paper-content-grid{gap:22px}
+
+  /* Controls/touch */
+  body:not(.home-v24) :is(.button,button,.map-tab,.filter-button,.collab-filter){min-height:44px}
+  body:not(.home-v24) :is(a,button,input,select,textarea):focus-visible{outline:3px solid #7c63ec;outline-offset:3px;border-radius:8px}
+  body:not(.home-v24) input,body:not(.home-v24) select,body:not(.home-v24) textarea{font-size:16px;max-width:100%}
+
+  /* Media/tables */
+  body:not(.home-v24) .media-grid{grid-template-columns:1fr;gap:12px}
+  body:not(.home-v24) .media-card,body:not(.home-v24) .media-card:nth-child(n+2),body:not(.home-v24) .media-card:last-child{height:auto;min-height:220px}
+  body:not(.home-v24) .media-card img{width:100%;height:100%;min-height:220px;object-fit:cover}
+  body:not(.home-v24) :is(.table-wrap,.table-scroll,[class*="table-wrap"]){max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+  /* Footer */
+  body:not(.home-v24) .footer-top{grid-template-columns:1fr!important;gap:22px}
+  body:not(.home-v24) .footer-links{grid-template-columns:1fr 1fr;gap:12px 18px}
+  body:not(.home-v24) .footer-links a{min-height:36px;display:flex;align-items:center}
+  body:not(.home-v24) .footer-bottom{display:block;font-size:11.5px;line-height:1.55}
+}
+
+@media (max-width:480px){
+  body:not(.home-v24) .container{width:calc(100% - 22px)}
+  body:not(.home-v24) .brand-text strong{max-width:46vw;font-size:12px}
+  body:not(.home-v24) .page-hero{padding:30px 0 32px}
+  body:not(.home-v24) .page-hero h1{font-size:clamp(34px,10.2vw,42px)}
+  body:not(.home-v24) .section{padding:46px 0}
+  body:not(.home-v24) .section-head h2{font-size:32px}
+  body:not(.home-v24) .publication-live-panel{grid-template-columns:1fr 1fr}
+  body:not(.home-v24) .publication-live-panel>div:last-child{grid-column:1/-1}
+  body:not(.home-v24) .footer-links{grid-template-columns:1fr}
+  body:not(.home-v24) .paper-intro h1{font-size:34px}
+  body:not(.home-v24) .paper-summary{font-size:17px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+@media (prefers-contrast:more){
+  body:not(.home-v24) :is(.accepted-card,.programme-card,.publication-item,.news-feature,.collaborator-card,.button,input,select,textarea){border-width:2px!important}
+}
