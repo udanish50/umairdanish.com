@@ -58,5 +58,25 @@ document.querySelectorAll("[data-copy-email]").forEach(btn=>btn.addEventListener
  catch(_){if(status)status.textContent=email}
 }));
 
-loadScholarMetrics();loadSoftware();loadDailyKnowledge();
+
+function initResearchAreaDisclosure(){
+ const areas=[...document.querySelectorAll(".hc-area-card")];
+ areas.forEach(area=>area.addEventListener("toggle",()=>{
+   if(!area.open)return;
+   areas.forEach(other=>{if(other!==area&&other.open)other.open=false});
+ }));
+}
+function initVisitorMap(){
+ const widget=document.querySelector("[data-visitor-widget]");
+ if(!widget)return;
+ const img=widget.querySelector("img");
+ const fallback=widget.querySelector("[data-map-fallback]");
+ if(!img){if(fallback)fallback.hidden=false;return}
+ img.classList.add("hc-live-visitor-map");
+ const showFallback=()=>{img.hidden=true;if(fallback)fallback.hidden=false};
+ img.addEventListener("error",showFallback,{once:true});
+ if(img.complete&&img.naturalWidth===0)showFallback();
+}
+
+loadScholarMetrics();loadSoftware();loadDailyKnowledge();initResearchAreaDisclosure();initVisitorMap();
 })();
