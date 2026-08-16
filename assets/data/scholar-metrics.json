@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-08-15T10:41:59Z",
+  "updated_at": "2026-08-16T10:42:34Z",
   "metrics": {
     "citations": {
-      "all": 159,
-      "since_year": 158,
+      "all": 161,
+      "since_year": 160,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -29,11 +29,11 @@
     },
     {
       "year": 2025,
-      "citations": 79
+      "citations": 80
     },
     {
       "year": 2026,
-      "citations": 65
+      "citations": 66
     }
   ],
   "articles": [
@@ -120,7 +120,7 @@
     },
     {
       "title": "Kolmogorov–Arnold recurrent network for short term load forecasting across diverse consumers",
-      "citations": 56,
+      "citations": 57,
       "year": "2025",
       "publication": "Energy Reports 13, 713-727, 2025",
       "authors": "MU Danish, K Grolinger",
@@ -156,7 +156,7 @@
     },
     {
       "title": "Graph attention convolutional u-net: A semantic segmentation model for identifying flooded areas",
-      "citations": 16,
+      "citations": 17,
       "year": "2024",
       "publication": "IECON 2024-50th Annual Conference of the IEEE Industrial Electronics Society …, 2024",
       "authors": "MU Danish, M Buwaneswaran, T Fonseka, K Grolinger",
@@ -200,6 +200,7 @@
     "name": "Muhammad Umair Danish",
     "affiliations": "The University of Western Ontario",
     "email": "Verified email at uwo.ca",
+    "website": "http://umairdanish.com/",
     "interests": [
       {
         "title": "Deep Learning",
