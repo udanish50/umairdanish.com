@@ -15,6 +15,7 @@
   <script id="v282-theme-boot">(()=>{try{const k='ud-appearance',a=new Set(['system','light','dark','night']);let m=localStorage.getItem(k);if(!a.has(m))m='system';const e=m==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):m;document.documentElement.dataset.themeMode=m;document.documentElement.dataset.theme=e;document.documentElement.style.colorScheme=e==='light'?'light':'dark';localStorage.setItem('theme',e==='night'?'dark':e)}catch(_){}})();</script>
   <link rel="stylesheet" href="/assets/css/site-responsive-v28-2.css?v=28.2.4">
   <link rel="stylesheet" href="/assets/css/home-human-v31.css?v=31.0.0">
+  <link rel="stylesheet" href="/assets/css/home-live-v33.css?v=33.0.0">
 </head>
 <body class="home-human-v31" data-page="home">
 <a class="hh-skip" href="#main">Skip to main content</a>
@@ -34,6 +35,7 @@
       <a href="/software.html">Software</a>
       <a href="/teaching.html">Teaching</a>
       <a href="/about.html">About</a>
+      <a href="/collaborators.html">Collaborators</a>
       <a href="/contact.html">Contact</a>
     </nav>
     <div class="hh-header-actions hc-header-actions"><a class="hh-collab-button hc-header-collab" href="/contact.html">Collaborate <span aria-hidden="true">↗</span></a></div>
@@ -81,6 +83,22 @@
     </div>
   </section>
 
+    <section class="hh-impact hh-live-impact" aria-labelledby="impact-title" data-live-metrics>
+    <div class="hh-shell">
+      <div class="hh-impact-head">
+        <div><span class="hh-live-metric-kicker">LIVE research metrics</span><h2 id="impact-title">Research in numbers.</h2></div>
+        <span class="hh-snapshot" data-live-metrics-status>LIVE · loading latest values…</span>
+      </div>
+      <div class="hh-impact-grid">
+        <a href="https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ" target="_blank" rel="noopener"><strong data-live-metric="citations">157</strong><span>Citations</span></a>
+        <a href="https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ" target="_blank" rel="noopener"><strong data-live-metric="hindex">5</strong><span>h-index</span></a>
+        <a href="/publications.html"><strong data-live-metric="journals">10</strong><span>Journal papers</span></a>
+        <a href="/publications.html"><strong data-live-metric="conferences">9</strong><span>Conference papers</span></a>
+        <a href="/about.html"><strong data-live-metric="awards">4</strong><span>Awards</span></a>
+      </div>
+    </div>
+  </section>
+
   <section class="hh-about-strip" aria-labelledby="human-title">
     <div class="hh-shell hh-human-grid">
       <div class="hh-human-intro">
@@ -93,21 +111,6 @@
         <article><span class="hh-value-no">01</span><h3>Understand before trusting.</h3><p>Explainability should reveal evidence, assumptions, and failure modes—not just produce a prettier explanation.</p></article>
         <article><span class="hh-value-no">02</span><h3>Work on real systems.</h3><p>I focus on problems where models meet physical processes, people, operational constraints, and imperfect data.</p></article>
         <article><span class="hh-value-no">03</span><h3>Leave something usable.</h3><p>Where possible, I turn research into open software, reproducible examples, and tools others can inspect themselves.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="hh-impact" aria-labelledby="impact-title">
-    <div class="hh-shell">
-      <div class="hh-impact-head">
-        <div><span class="hh-section-kicker">Research snapshot</span><h2 id="impact-title">A few numbers, with context.</h2></div>
-        <span class="hh-snapshot" id="hh-scholar-note">Google Scholar snapshot · not live</span>
-      </div>
-      <div class="hh-impact-grid">
-        <a href="https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ" target="_blank" rel="noopener"><strong data-scholar="citations">157</strong><span>Citations</span></a>
-        <a href="https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ" target="_blank" rel="noopener"><strong data-scholar="hindex">5</strong><span>h-index</span></a>
-        <a href="/publications.html"><strong>19</strong><span>Research papers</span></a>
-        <a href="/about.html"><strong>4</strong><span>Awards</span></a>
       </div>
     </div>
   </section>
@@ -175,6 +178,19 @@
     </div>
   </section>
 
+    <section class="hh-team-section" aria-labelledby="team-title">
+    <div class="hh-shell">
+      <a class="hh-team-panel" href="/collaborators.html">
+        <div>
+          <span class="hh-section-kicker">Research network</span>
+          <h2 id="team-title">Collaborators &amp; team.</h2>
+          <p>Research is collaborative. Meet the people I work with across explainable AI, machine learning, energy systems, human-centered AI, and interdisciplinary projects.</p>
+        </div>
+        <div class="hh-team-cta">Meet collaborators <span aria-hidden="true">→</span></div>
+      </a>
+    </div>
+  </section>
+
   <section class="hh-connect" aria-labelledby="connect-title">
     <div class="hh-shell hh-connect-grid">
       <div><span class="hh-section-kicker">Let’s connect</span><h2 id="connect-title">Good research gets better through conversation.</h2><p>I am open to research collaborations, applied AI projects, academic opportunities, and conversations about interpretable machine learning and research software.</p></div>
@@ -186,12 +202,13 @@
 <footer class="hh-footer">
   <div class="hh-shell hh-footer-grid">
     <div><strong>Muhammad Umair Danish, PhD</strong><p>Applied AI · Explainable AI · Machine Learning</p></div>
-    <nav aria-label="Footer navigation"><a href="/research.html">Research</a><a href="/publications.html">Publications</a><a href="/software.html">Software</a><a href="/teaching.html">Teaching</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav>
+    <nav aria-label="Footer navigation"><a href="/research.html">Research</a><a href="/publications.html">Publications</a><a href="/software.html">Software</a><a href="/teaching.html">Teaching</a><a href="/about.html">About</a><a href="/collaborators.html">Collaborators</a><a href="/contact.html">Contact</a></nav>
     <div class="hh-footer-end"><a href="mailto:mdanish3@uwo.ca">mdanish3@uwo.ca</a><small>© 2026 Muhammad Umair Danish</small></div>
   </div>
 </footer>
 
 <script src="/assets/js/home-human-v31.js?v=31.0.0" defer></script>
 <script src="/assets/js/site-theme-v28-2.js?v=28.2.4" defer></script>
+<script src="/assets/js/home-live-v33.js?v=33.0.0" defer></script>
 </body>
 </html>
