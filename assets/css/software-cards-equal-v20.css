@@ -1,0 +1,34 @@
+/*
+ * Software catalogue equal-card layout hotfix
+ * Muhammad Umair Danish — umairdanish.com
+ *
+ * The global responsive layer intentionally sets intrinsic grids to
+ * align-items:start and cards to height:auto. That is useful for editorial
+ * content, but it makes the Software catalogue visually uneven. This scoped
+ * override restores equal-height software cards only on the catalogue page.
+ */
+body[data-page="software"] .sw-grid {
+  align-items: stretch !important;
+  grid-auto-rows: 1fr;
+}
+body[data-page="software"] .sw-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+body[data-page="software"] .sw-card-actions {
+  margin-top: auto !important;
+}
+body[data-page="software"] .sw-card-actions > a {
+  align-self: flex-end;
+}
+@media (max-width: 700px) {
+  body[data-page="software"] .sw-grid {
+    grid-auto-rows: auto;
+    align-items: start !important;
+  }
+  body[data-page="software"] .sw-card {
+    height: auto !important;
+  }
+}
