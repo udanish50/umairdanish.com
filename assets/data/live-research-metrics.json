@@ -1,10 +1,10 @@
 {
-  "citations": 157,
+  "citations": 162,
   "hindex": 5,
   "journals": 10,
   "conferences": 9,
   "awards": 4,
-  "updated_at": "2026-08-20T00:00:00Z",
+  "updated_at": "2026-08-20T12:50:33Z",
   "source_ok": true,
-  "source": "Google Scholar profile + website publication record"
+  "source": "assets/data/scholar-metrics.json"
 }
