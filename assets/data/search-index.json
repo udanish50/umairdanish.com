@@ -178,8 +178,8 @@
   },
   {
     "kind": "Publication",
-    "title": "Dispersity Measures Within Sessions During Improvised Active Music Therapy with Clients with Parkinson\u2019s Disease",
-    "summary": "Examines within-session dispersity measures in improvised active music therapy with clients with Parkinson\u2019s disease.",
+    "title": "Dispersity Measures Within Sessions During Improvised Active Music Therapy with Clients with Parkinson’s Disease",
+    "summary": "Examines within-session dispersity measures in improvised active music therapy with clients with Parkinson’s disease.",
     "url": "/publications/dispersity-measures-music-therapy/",
     "tags": [
       "Music Therapy Analytics",
@@ -187,7 +187,7 @@
       "Accepted",
       "Approaches: An Interdisciplinary Journal of Music Therapy",
       "2026",
-      "Parkinson\u2019s disease",
+      "Parkinson’s disease",
       "Demian Kogutek"
     ]
   },
@@ -203,7 +203,7 @@
       "Journal of Creative Music Systems",
       "2026"
     ],
-    "description": " \u00b7 Resources: code, GitHub, research software"
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -256,7 +256,7 @@
       "Machine Learning with Applications",
       "2026"
     ],
-    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -270,7 +270,7 @@
       "Frontiers in Applied Mathematics and Statistics",
       "2026"
     ],
-    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -284,7 +284,7 @@
       "IEEE Conference on AI, Science, Engineering, and Technology (AIxSET)",
       "2025"
     ],
-    "description": " \u00b7 Resources: code, GitHub, research software"
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -298,7 +298,7 @@
       "International Conference on Advanced Machine Learning and Data Science",
       "2025"
     ],
-    "description": " \u00b7 Resources: code, GitHub, research software"
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -312,7 +312,7 @@
       "IEEE Transactions on Human-Machine Systems",
       "2025"
     ],
-    "description": " \u00b7 Resources: code, GitHub, research software"
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -326,7 +326,7 @@
       "Energy Reports",
       "2025"
     ],
-    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -340,7 +340,7 @@
       "Energy and AI",
       "2025"
     ],
-    "description": " \u00b7 Resources: code, GitHub, research software"
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -354,7 +354,7 @@
       "17th International Conference on Advanced Computational Intelligence",
       "2025"
     ],
-    "description": " \u00b7 Resources: code, GitHub, research software"
+    "description": " · Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -381,7 +381,7 @@
       "50th Annual Conference of the IEEE Industrial Electronics Society (IECON)",
       "2024"
     ],
-    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -395,7 +395,7 @@
       "50th Annual Conference of the IEEE Industrial Electronics Society (IECON)",
       "2024"
     ],
-    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -409,7 +409,7 @@
       "IEEE Transactions on Power Delivery",
       "2024"
     ],
-    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "title": "Free Tools",
@@ -492,7 +492,7 @@
   {
     "kind": "Software",
     "title": "StructureDoctor",
-    "summary": "Find expensive structure choices\u2014list membership, front removals, full sorts, dense graph storage\u2014and get safer alternatives with complexity impact.",
+    "summary": "Find expensive structure choices—list membership, front removals, full sorts, dense graph storage—and get safer alternatives with complexity impact.",
     "url": "/software/structure-doctor/",
     "tags": [
       "data structures",
@@ -537,7 +537,7 @@
   {
     "kind": "Software",
     "title": "RefactorDS",
-    "summary": "Apply inspectable, rule-based transformations such as list-queue \u2192 deque, full-sort \u2192 min/max, and repeated membership \u2192 set lookup.",
+    "summary": "Apply inspectable, rule-based transformations such as list-queue → deque, full-sort → min/max, and repeated membership → set lookup.",
     "url": "/software/refactor-ds/",
     "tags": [
       "refactoring",
@@ -547,6 +547,66 @@
       "data structures",
       "algorithms",
       "complexity"
+    ]
+  },
+  {
+    "kind": "Software",
+    "title": "MatMulX",
+    "summary": "Matrix multiplication intelligence with operation analysis, zero-skipping diagnostics, 64 public datasets/reference datasets, and browser-local user uploads.",
+    "url": "/software/matmulx/",
+    "tags": [
+      "MatMulX",
+      "Matrix multiplication",
+      "Complexity",
+      "Public data",
+      "Browser-local",
+      "matrix software",
+      "public datasets"
+    ]
+  },
+  {
+    "kind": "Software",
+    "title": "MatrixMorph",
+    "summary": "Visual transpose, normalization, slicing, Hadamard, and Kronecker transformations over 64 public datasets/reference datasets or user-supplied matrices.",
+    "url": "/software/matrixmorph/",
+    "tags": [
+      "MatrixMorph",
+      "Transformations",
+      "Hadamard",
+      "Kronecker",
+      "Matrix workflows",
+      "matrix software",
+      "public datasets"
+    ]
+  },
+  {
+    "kind": "Software",
+    "title": "SparseScope",
+    "summary": "Sparsity, structural-pattern, and dense-versus-CSR storage intelligence across 64 public datasets/reference datasets and user-supplied numerical matrices.",
+    "url": "/software/sparsescope/",
+    "tags": [
+      "SparseScope",
+      "Sparse matrices",
+      "CSR",
+      "Memory",
+      "Structure",
+      "matrix software",
+      "public datasets"
+    ]
+  },
+  {
+    "kind": "Software",
+    "title": "MatrixTrace",
+    "summary": "Cell-by-cell matrix multiplication debugger that exposes the exact scalar products forming each selected output value on public or user-owned data.",
+    "url": "/software/matrixtrace/",
+    "tags": [
+      "MatrixTrace",
+      "Matrix trace",
+      "Debugging",
+      "Explainability",
+      "Public data",
+      "matrix software",
+      "public datasets"
     ]
   }
 ]

@@ -82,7 +82,7 @@
       "id": "structure-doctor",
       "name": "StructureDoctor",
       "status": "Open algorithmic software",
-      "summary": "Find expensive structure choices\u2014list membership, front removals, full sorts, dense graph storage\u2014and get safer alternatives with complexity impact.",
+      "summary": "Find expensive structure choices—list membership, front removals, full sorts, dense graph storage—and get safer alternatives with complexity impact.",
       "url": "/software/structure-doctor/",
       "github": "https://github.com/udanish50/StructureDoctor",
       "tags": [
@@ -139,7 +139,7 @@
       "id": "refactor-ds",
       "name": "RefactorDS",
       "status": "Open algorithmic software",
-      "summary": "Apply inspectable, rule-based transformations such as list-queue \u2192 deque, full-sort \u2192 min/max, and repeated membership \u2192 set lookup.",
+      "summary": "Apply inspectable, rule-based transformations such as list-queue → deque, full-sort → min/max, and repeated membership → set lookup.",
       "url": "/software/refactor-ds/",
       "github": "https://github.com/udanish50/RefactorDS",
       "tags": [
@@ -152,6 +152,86 @@
         "34 deterministic regression fixtures",
         "28 public benchmark sources",
         "Browser-local analysis"
+      ]
+    },
+    {
+      "id": "matmulx",
+      "name": "MatMulX",
+      "status": "Open matrix intelligence software",
+      "summary": "Matrix multiplication intelligence with operation analysis, zero-skipping diagnostics, 64 public datasets/reference datasets, and browser-local user uploads.",
+      "url": "/software/matmulx/",
+      "github": "https://github.com/udanish50/MatMulX",
+      "tags": [
+        "Matrix multiplication",
+        "Complexity",
+        "Public data",
+        "Browser-local"
+      ],
+      "evidence": [
+        "64 public datasets",
+        "4 public-source ecosystems",
+        "512 public-data assertions",
+        "CSV/JSON/MTX uploads"
+      ]
+    },
+    {
+      "id": "matrixmorph",
+      "name": "MatrixMorph",
+      "status": "Open matrix manipulation software",
+      "summary": "Visual transpose, normalization, slicing, Hadamard, and Kronecker transformations over 64 public datasets/reference datasets or user-supplied matrices.",
+      "url": "/software/matrixmorph/",
+      "github": "https://github.com/udanish50/MatrixMorph",
+      "tags": [
+        "Transformations",
+        "Hadamard",
+        "Kronecker",
+        "Matrix workflows"
+      ],
+      "evidence": [
+        "64 public datasets",
+        "Reproducible matrix views",
+        "Browser-local processing",
+        "CSV/JSON/MTX uploads"
+      ]
+    },
+    {
+      "id": "sparsescope",
+      "name": "SparseScope",
+      "status": "Open sparse-matrix software",
+      "summary": "Sparsity, structural-pattern, and dense-versus-CSR storage intelligence across 64 public datasets/reference datasets and user-supplied numerical matrices.",
+      "url": "/software/sparsescope/",
+      "github": "https://github.com/udanish50/SparseScope",
+      "tags": [
+        "Sparse matrices",
+        "CSR",
+        "Memory",
+        "Structure"
+      ],
+      "evidence": [
+        "64 public datasets",
+        "Dense-vs-CSR estimates",
+        "Structure diagnostics",
+        "Browser-local uploads"
+      ]
+    },
+    {
+      "id": "matrixtrace",
+      "name": "MatrixTrace",
+      "status": "Open explainable matrix software",
+      "summary": "Cell-by-cell matrix multiplication debugger that exposes the exact scalar products forming each selected output value on public or user-owned data.",
+      "url": "/software/matrixtrace/",
+      "github": "https://github.com/udanish50/MatrixTrace",
+      "tags": [
+        "Matrix trace",
+        "Debugging",
+        "Explainability",
+        "Public data"
+      ],
+      "evidence": [
+        "64 public datasets",
+        "Exact cell-level traces",
+        "Reproducible examples",
+        "Browser-local uploads"
       ]
     }
   ]
