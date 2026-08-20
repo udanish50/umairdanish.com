@@ -2,7 +2,8 @@ name: Refresh Google Scholar metrics
 
 on:
   schedule:
-    - cron: "17 10 * * *"
+    # Daily at 13:17 UTC (09:17 EDT / 08:17 EST in Ontario).
+    - cron: "17 13 * * *"
   workflow_dispatch:
 
 permissions:
@@ -21,7 +22,7 @@ jobs:
 
     steps:
       - name: Check out website
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           persist-credentials: true
@@ -192,6 +193,16 @@ jobs:
           print(f"Scholar works: {works}")
           print(f"Citation-history points: {len(graph)}")
           print(f"Updated at: {data.get('updated_at', 'unknown')}")
+
+          live_path = Path("assets/data/live-research-metrics.json")
+          if not live_path.exists():
+              raise SystemExit("live-research-metrics.json was not synchronized.")
+          live = json.loads(live_path.read_text(encoding="utf-8"))
+          if live.get("citations") != citations or live.get("hindex") != h_index:
+              raise SystemExit(
+                  "Homepage live metrics do not match the canonical Scholar snapshot."
+              )
+          print("Homepage live metrics match the canonical Scholar snapshot.")
           PY
 
       - name: Commit updated metrics
@@ -200,7 +211,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- assets/data/scholar-metrics.json; then
+          if [ -z "$(git status --porcelain -- assets/data/scholar-metrics.json assets/data/live-research-metrics.json)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Google Scholar metrics are unchanged."
             exit 0
@@ -210,7 +221,7 @@ jobs:
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/data/scholar-metrics.json
+          git add assets/data/scholar-metrics.json assets/data/live-research-metrics.json
           git commit -m "Refresh Google Scholar metrics"
 
           git pull --rebase origin main

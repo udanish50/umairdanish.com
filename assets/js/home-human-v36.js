@@ -45,42 +45,63 @@
     });
   });
 
-  /* LIVE research metrics: scheduled GitHub workflow maintains this JSON. */
-  async function liveMetrics(){
-    const status=q('[data-live-status]');
-    const apply=(d)=>{
-      const keys=['citations','hindex','journals','conferences','awards'];
-      for(const k of keys){
-        const v=Number(d?.[k]);
-        if(Number.isFinite(v)) q(`[data-live-metric="${k}"]`)?.replaceChildren(document.createTextNode(v.toLocaleString()));
-      }
-      if(status){
-        const stamp=d?.updated_at?new Date(d.updated_at):null;
-        status.textContent=stamp&&!Number.isNaN(stamp.valueOf())
-          ?`LIVE · refreshed ${stamp.toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}`
-          :'LIVE · automatically refreshed';
-      }
-    };
-    try{
-      const r=await fetch(`/assets/data/live-research-metrics.json?ts=${Date.now()}`,{cache:'no-store'});
-      if(!r.ok)throw new Error('live metrics unavailable');
-      const d=await r.json(); apply(d);
-    }catch(_){
-      try{
-        const r=await fetch(`/assets/data/scholar-metrics.json?ts=${Date.now()}`,{cache:'no-store'});
-        if(!r.ok)throw new Error('scholar snapshot unavailable');
-        const d=await r.json(),m=d.metrics||{};
-        apply({citations:m.citations?.all,hindex:m.h_index?.all,journals:10,conferences:9,awards:4,updated_at:d.updated_at||d.snapshot_at});
-        if(status)status.textContent=`Latest verified values · live refresh temporarily unavailable`;
-      }catch(__){if(status)status.textContent='LIVE data temporarily unavailable · showing latest verified values';}
+  /* One canonical Scholar source for every citation shown on the homepage. */
+  let scholarPromise=null;
+  const getScholar=()=>{
+    if(!scholarPromise){
+      scholarPromise=fetch(`/assets/data/scholar-metrics.json?ts=${Date.now()}`,{cache:'no-store'})
+        .then(r=>{if(!r.ok)throw new Error('Scholar snapshot unavailable');return r.json();});
     }
+    return scholarPromise;
+  };
+
+  function putMetric(key,value){
+    const n=Number(value),el=q(`[data-live-metric="${key}"]`);
+    if(el&&Number.isFinite(n))el.textContent=n.toLocaleString();
   }
 
-  /* Publication citation badges from the same Scholar evidence file. */
+  async function liveMetrics(){
+    const status=q('[data-live-status]');
+    let scholar=null;
+    try{
+      scholar=await getScholar();
+      const m=scholar?.metrics||{};
+      putMetric('citations',m.citations?.all);
+      putMetric('hindex',m.h_index?.all);
+      const stamp=scholar?.updated_at?new Date(scholar.updated_at):null;
+      if(status){
+        status.textContent=stamp&&!Number.isNaN(stamp.valueOf())
+          ?`LIVE · Google Scholar refreshed ${stamp.toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}`
+          :'LIVE · Google Scholar auto-refresh';
+      }
+    }catch(_){
+      if(status)status.textContent='Latest verified Scholar values · automatic refresh temporarily unavailable';
+    }
+
+    /* Publication totals come from the same first-party publication archive shown on this site. */
+    try{
+      const r=await fetch(`/assets/data/publications.json?ts=${Date.now()}`,{cache:'no-store'});
+      if(!r.ok)throw new Error('publication record unavailable');
+      const pubs=await r.json(),rows=Array.isArray(pubs)?pubs:Array.isArray(pubs?.publications)?pubs.publications:[];
+      putMetric('journals',rows.filter(x=>String(x?.type||'').toLowerCase()==='journal').length);
+      putMetric('conferences',rows.filter(x=>String(x?.type||'').toLowerCase()==='conference').length);
+    }catch(_){}
+
+    /* Recognition count is read from the About page; the visible fallback remains 4 if markup is unavailable. */
+    try{
+      const r=await fetch(`/about.html?metrics=v36.1&ts=${Date.now()}`,{cache:'no-store'});
+      if(!r.ok)throw new Error('about unavailable');
+      const html=await r.text(),doc=new DOMParser().parseFromString(html,'text/html');
+      const section=[...doc.querySelectorAll('section')].find(x=>/selected awards and distinctions/i.test(x.textContent||''));
+      const count=section?.querySelectorAll('.simple-list > div').length||0;
+      if(count>0)putMetric('awards',count);
+    }catch(_){}
+  }
+
+  /* Publication citation badges use that exact same Scholar response — no second/stale metric source. */
   async function paperCitations(){
     try{
-      const r=await fetch(`/assets/data/scholar-metrics.json?papers=v36&ts=${Date.now()}`,{cache:'no-store'});if(!r.ok)return;
-      const d=await r.json(),arts=Array.isArray(d.articles)?d.articles:[];
+      const d=await getScholar(),arts=Array.isArray(d?.articles)?d.articles:[];
       const patterns={
         karn:/Kolmogorov.*Arnold recurrent network/i,
         glips:/Global-local image perceptual score|GLIPS/i,

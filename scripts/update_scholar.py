@@ -22,6 +22,8 @@ from typing import Any
 
 AUTHOR_ID = "vDmY-KUAAAAJ"
 OUTPUT = Path("assets/data/scholar-metrics.json")
+LIVE_OUTPUT = Path("assets/data/live-research-metrics.json")
+PUBLICATIONS_OUTPUT = Path("assets/data/publications.json")
 ENDPOINT = "https://serpapi.com/search.json"
 
 
@@ -381,6 +383,51 @@ def main() -> int:
         )
 
         temporary.replace(OUTPUT)
+
+        # Synchronize the legacy homepage live-metrics file from this canonical
+        # Scholar result. This prevents two different citation totals from ever
+        # being shown by different pages or cached clients.
+        journals = 10
+        conferences = 9
+        try:
+            publication_rows = json.loads(
+                PUBLICATIONS_OUTPUT.read_text(encoding="utf-8")
+            )
+            if isinstance(publication_rows, dict):
+                publication_rows = publication_rows.get("publications", [])
+            if isinstance(publication_rows, list):
+                journals = sum(
+                    1 for item in publication_rows
+                    if isinstance(item, dict)
+                    and str(item.get("type", "")).strip().lower() == "journal"
+                )
+                conferences = sum(
+                    1 for item in publication_rows
+                    if isinstance(item, dict)
+                    and str(item.get("type", "")).strip().lower() == "conference"
+                )
+        except Exception as exc:
+            print(
+                f"Warning: publication totals could not be derived: {exc}",
+                file=sys.stderr,
+            )
+
+        live_payload = {
+            "citations": citations["all"],
+            "hindex": h_index["all"],
+            "journals": journals,
+            "conferences": conferences,
+            "awards": 4,
+            "updated_at": now,
+            "source_ok": True,
+            "source": "assets/data/scholar-metrics.json",
+        }
+        live_temporary = LIVE_OUTPUT.with_suffix(".tmp")
+        live_temporary.write_text(
+            json.dumps(live_payload, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        live_temporary.replace(LIVE_OUTPUT)
 
         print(
             "Updated Google Scholar snapshot: "
