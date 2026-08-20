@@ -58,6 +58,101 @@
         "Browser-local analysis",
         "NumPy-only Python runtime"
       ]
+    },
+    {
+      "id": "algolens",
+      "name": "AlgoLens",
+      "status": "Open algorithmic software",
+      "summary": "Paste or upload code and receive an inspectable asymptotic estimate, loop/recurrence evidence, space model, confidence, and limitations.",
+      "url": "/software/algolens/",
+      "github": "https://github.com/udanish50/AlgoLens",
+      "tags": [
+        "Big-O",
+        "Static analysis",
+        "AST-like reasoning",
+        "Local-first"
+      ],
+      "evidence": [
+        "34 deterministic regression fixtures",
+        "28 public benchmark sources",
+        "Browser-local analysis"
+      ]
+    },
+    {
+      "id": "structure-doctor",
+      "name": "StructureDoctor",
+      "status": "Open algorithmic software",
+      "summary": "Find expensive structure choices\u2014list membership, front removals, full sorts, dense graph storage\u2014and get safer alternatives with complexity impact.",
+      "url": "/software/structure-doctor/",
+      "github": "https://github.com/udanish50/StructureDoctor",
+      "tags": [
+        "Data structures",
+        "Optimization",
+        "Code review",
+        "Local-first"
+      ],
+      "evidence": [
+        "34 deterministic regression fixtures",
+        "28 public benchmark sources",
+        "Browser-local analysis"
+      ]
+    },
+    {
+      "id": "edgecase-forge",
+      "name": "EdgeCaseForge",
+      "status": "Open algorithmic software",
+      "summary": "Inspect code structure and generate worst-path test ideas: absent targets, dense graphs, recursion depth, pathological ordering, and scale sweeps.",
+      "url": "/software/edgecase-forge/",
+      "github": "https://github.com/udanish50/EdgeCaseForge",
+      "tags": [
+        "Testing",
+        "Worst case",
+        "Algorithms",
+        "Adversarial inputs"
+      ],
+      "evidence": [
+        "34 deterministic regression fixtures",
+        "28 public benchmark sources",
+        "Browser-local analysis"
+      ]
+    },
+    {
+      "id": "algotwin",
+      "name": "AlgoTwin",
+      "status": "Open algorithmic software",
+      "summary": "Compare inferred time/space growth, inspect evidence, estimate constant-factor cost, and find an approximate theoretical crossover point.",
+      "url": "/software/algotwin/",
+      "github": "https://github.com/udanish50/AlgoTwin",
+      "tags": [
+        "Complexity comparison",
+        "Trade-offs",
+        "Performance",
+        "Algorithms"
+      ],
+      "evidence": [
+        "34 deterministic regression fixtures",
+        "28 public benchmark sources",
+        "Browser-local analysis"
+      ]
+    },
+    {
+      "id": "refactor-ds",
+      "name": "RefactorDS",
+      "status": "Open algorithmic software",
+      "summary": "Apply inspectable, rule-based transformations such as list-queue \u2192 deque, full-sort \u2192 min/max, and repeated membership \u2192 set lookup.",
+      "url": "/software/refactor-ds/",
+      "github": "https://github.com/udanish50/RefactorDS",
+      "tags": [
+        "Refactoring",
+        "Data structures",
+        "Optimization",
+        "Explainable code"
+      ],
+      "evidence": [
+        "34 deterministic regression fixtures",
+        "28 public benchmark sources",
+        "Browser-local analysis"
+      ]
     }
   ]
 }

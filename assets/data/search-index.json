@@ -178,8 +178,8 @@
   },
   {
     "kind": "Publication",
-    "title": "Dispersity Measures Within Sessions During Improvised Active Music Therapy with Clients with Parkinson’s Disease",
-    "summary": "Examines within-session dispersity measures in improvised active music therapy with clients with Parkinson’s disease.",
+    "title": "Dispersity Measures Within Sessions During Improvised Active Music Therapy with Clients with Parkinson\u2019s Disease",
+    "summary": "Examines within-session dispersity measures in improvised active music therapy with clients with Parkinson\u2019s disease.",
     "url": "/publications/dispersity-measures-music-therapy/",
     "tags": [
       "Music Therapy Analytics",
@@ -187,7 +187,7 @@
       "Accepted",
       "Approaches: An Interdisciplinary Journal of Music Therapy",
       "2026",
-      "Parkinson’s disease",
+      "Parkinson\u2019s disease",
       "Demian Kogutek"
     ]
   },
@@ -203,7 +203,7 @@
       "Journal of Creative Music Systems",
       "2026"
     ],
-    "description": " · Resources: code, GitHub, research software"
+    "description": " \u00b7 Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -256,7 +256,7 @@
       "Machine Learning with Applications",
       "2026"
     ],
-    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -270,7 +270,7 @@
       "Frontiers in Applied Mathematics and Statistics",
       "2026"
     ],
-    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -284,7 +284,7 @@
       "IEEE Conference on AI, Science, Engineering, and Technology (AIxSET)",
       "2025"
     ],
-    "description": " · Resources: code, GitHub, research software"
+    "description": " \u00b7 Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -298,7 +298,7 @@
       "International Conference on Advanced Machine Learning and Data Science",
       "2025"
     ],
-    "description": " · Resources: code, GitHub, research software"
+    "description": " \u00b7 Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -312,7 +312,7 @@
       "IEEE Transactions on Human-Machine Systems",
       "2025"
     ],
-    "description": " · Resources: code, GitHub, research software"
+    "description": " \u00b7 Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -326,7 +326,7 @@
       "Energy Reports",
       "2025"
     ],
-    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -340,7 +340,7 @@
       "Energy and AI",
       "2025"
     ],
-    "description": " · Resources: code, GitHub, research software"
+    "description": " \u00b7 Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -354,7 +354,7 @@
       "17th International Conference on Advanced Computational Intelligence",
       "2025"
     ],
-    "description": " · Resources: code, GitHub, research software"
+    "description": " \u00b7 Resources: code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -381,7 +381,7 @@
       "50th Annual Conference of the IEEE Industrial Electronics Society (IECON)",
       "2024"
     ],
-    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -395,7 +395,7 @@
       "50th Annual Conference of the IEEE Industrial Electronics Society (IECON)",
       "2024"
     ],
-    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "kind": "Publication",
@@ -409,7 +409,7 @@
       "IEEE Transactions on Power Delivery",
       "2024"
     ],
-    "description": " · Resources: PDF, author-hosted paper, code, GitHub, research software"
+    "description": " \u00b7 Resources: PDF, author-hosted paper, code, GitHub, research software"
   },
   {
     "title": "Free Tools",
@@ -473,5 +473,80 @@
     "type": "Tool",
     "description": "Clean spacing, duplicates and text case.",
     "keywords": "Text Cleaner Clean spacing, duplicates and text case."
+  },
+  {
+    "kind": "Software",
+    "title": "AlgoLens",
+    "summary": "Paste or upload code and receive an inspectable asymptotic estimate, loop/recurrence evidence, space model, confidence, and limitations.",
+    "url": "/software/algolens/",
+    "tags": [
+      "big-o",
+      "static analysis",
+      "ast-like reasoning",
+      "local-first",
+      "data structures",
+      "algorithms",
+      "complexity"
+    ]
+  },
+  {
+    "kind": "Software",
+    "title": "StructureDoctor",
+    "summary": "Find expensive structure choices\u2014list membership, front removals, full sorts, dense graph storage\u2014and get safer alternatives with complexity impact.",
+    "url": "/software/structure-doctor/",
+    "tags": [
+      "data structures",
+      "optimization",
+      "code review",
+      "local-first",
+      "data structures",
+      "algorithms",
+      "complexity"
+    ]
+  },
+  {
+    "kind": "Software",
+    "title": "EdgeCaseForge",
+    "summary": "Inspect code structure and generate worst-path test ideas: absent targets, dense graphs, recursion depth, pathological ordering, and scale sweeps.",
+    "url": "/software/edgecase-forge/",
+    "tags": [
+      "testing",
+      "worst case",
+      "algorithms",
+      "adversarial inputs",
+      "data structures",
+      "algorithms",
+      "complexity"
+    ]
+  },
+  {
+    "kind": "Software",
+    "title": "AlgoTwin",
+    "summary": "Compare inferred time/space growth, inspect evidence, estimate constant-factor cost, and find an approximate theoretical crossover point.",
+    "url": "/software/algotwin/",
+    "tags": [
+      "complexity comparison",
+      "trade-offs",
+      "performance",
+      "algorithms",
+      "data structures",
+      "algorithms",
+      "complexity"
+    ]
+  },
+  {
+    "kind": "Software",
+    "title": "RefactorDS",
+    "summary": "Apply inspectable, rule-based transformations such as list-queue \u2192 deque, full-sort \u2192 min/max, and repeated membership \u2192 set lookup.",
+    "url": "/software/refactor-ds/",
+    "tags": [
+      "refactoring",
+      "data structures",
+      "optimization",
+      "explainable code",
+      "data structures",
+      "algorithms",
+      "complexity"
+    ]
   }
 ]

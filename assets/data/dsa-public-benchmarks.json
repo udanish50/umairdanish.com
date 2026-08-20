@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "name": "CodeComplex",
+      "task": "Ground-truth time-complexity labels",
+      "url": "https://github.com/sybaik1/CodeComplex-Data",
+      "role": "accuracy"
+    },
+    {
+      "name": "CoRCoD",
+      "task": "Ground-truth runtime-complexity labels",
+      "url": "https://github.com/midas-research/corcod-dataset",
+      "role": "accuracy"
+    },
+    {
+      "name": "HumanEval",
+      "task": "Python function synthesis",
+      "url": "https://github.com/openai/human-eval",
+      "role": "compatibility"
+    },
+    {
+      "name": "MBPP",
+      "task": "Python programming problems",
+      "url": "https://huggingface.co/datasets/google-research-datasets/mbpp",
+      "role": "compatibility"
+    },
+    {
+      "name": "APPS",
+      "task": "Competitive programming solutions",
+      "url": "https://github.com/hendrycks/apps",
+      "role": "compatibility"
+    },
+    {
+      "name": "CodeContests",
+      "task": "Competitive programming corpus",
+      "url": "https://github.com/google-deepmind/code_contests",
+      "role": "compatibility"
+    },
+    {
+      "name": "Project CodeNet",
+      "task": "Multi-language code and runtime metadata",
+      "url": "https://github.com/IBM/Project_CodeNet",
+      "role": "compatibility"
+    },
+    {
+      "name": "DS-1000",
+      "task": "Data-science code problems",
+      "url": "https://github.com/xlang-ai/DS-1000",
+      "role": "compatibility"
+    },
+    {
+      "name": "EvalPlus / HumanEval+",
+      "task": "Expanded code correctness tests",
+      "url": "https://github.com/evalplus/evalplus",
+      "role": "compatibility"
+    },
+    {
+      "name": "MBPP+",
+      "task": "Expanded MBPP correctness tests",
+      "url": "https://github.com/evalplus/evalplus",
+      "role": "compatibility"
+    },
+    {
+      "name": "HumanEval Pro",
+      "task": "Self-invoking code generation",
+      "url": "https://github.com/CodeEval-Pro/CodeEval-Pro",
+      "role": "compatibility"
+    },
+    {
+      "name": "MBPP Pro",
+      "task": "Self-invoking code generation",
+      "url": "https://github.com/CodeEval-Pro/CodeEval-Pro",
+      "role": "compatibility"
+    },
+    {
+      "name": "BigCodeBench",
+      "task": "Practical code generation",
+      "url": "https://github.com/bigcode-project/bigcodebench",
+      "role": "compatibility"
+    },
+    {
+      "name": "LiveCodeBench",
+      "task": "Contamination-aware coding benchmark",
+      "url": "https://github.com/LiveCodeBench/LiveCodeBench",
+      "role": "compatibility"
+    },
+    {
+      "name": "NaturalCodeBench",
+      "task": "Natural real-world coding queries",
+      "url": "https://github.com/THUDM/NaturalCodeBench",
+      "role": "compatibility"
+    },
+    {
+      "name": "CRUXEval",
+      "task": "Code execution reasoning",
+      "url": "https://github.com/facebookresearch/cruxeval",
+      "role": "compatibility"
+    },
+    {
+      "name": "CodeXGLUE",
+      "task": "Code intelligence tasks",
+      "url": "https://github.com/microsoft/CodeXGLUE",
+      "role": "compatibility"
+    },
+    {
+      "name": "CodeSearchNet",
+      "task": "Multi-language code search corpus",
+      "url": "https://github.com/github/CodeSearchNet",
+      "role": "compatibility"
+    },
+    {
+      "name": "MultiPL-E",
+      "task": "Multi-language HumanEval translation",
+      "url": "https://github.com/nuprl/MultiPL-E",
+      "role": "compatibility"
+    },
+    {
+      "name": "QuixBugs",
+      "task": "Algorithmic bugs in Python/Java",
+      "url": "https://github.com/jkoppel/QuixBugs",
+      "role": "compatibility"
+    },
+    {
+      "name": "BugsInPy",
+      "task": "Real Python bugs",
+      "url": "https://github.com/soarsmu/BugsInPy",
+      "role": "compatibility"
+    },
+    {
+      "name": "Defects4J",
+      "task": "Real Java bugs",
+      "url": "https://github.com/rjust/defects4j",
+      "role": "compatibility"
+    },
+    {
+      "name": "Juliet Test Suite",
+      "task": "Static-analysis test cases",
+      "url": "https://samate.nist.gov/SARD/test-suites/112",
+      "role": "compatibility"
+    },
+    {
+      "name": "SWE-bench",
+      "task": "Repository-level software tasks",
+      "url": "https://github.com/swe-bench/SWE-bench",
+      "role": "compatibility"
+    },
+    {
+      "name": "RepoBench",
+      "task": "Repository-level code completion",
+      "url": "https://github.com/Leolty/repobench",
+      "role": "compatibility"
+    },
+    {
+      "name": "CrossCodeEval",
+      "task": "Cross-file code completion",
+      "url": "https://github.com/amazon-science/cceval",
+      "role": "compatibility"
+    },
+    {
+      "name": "The Stack",
+      "task": "Large permissively licensed source-code corpus",
+      "url": "https://huggingface.co/datasets/bigcode/the-stack",
+      "role": "compatibility"
+    },
+    {
+      "name": "GitHub Code",
+      "task": "Large multi-language GitHub corpus",
+      "url": "https://huggingface.co/datasets/codeparrot/github-code",
+      "role": "compatibility"
+    }
+  ]
+}
