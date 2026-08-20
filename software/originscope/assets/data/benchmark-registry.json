@@ -1,0 +1,29 @@
+{
+  "dataset": "MLLM-Generated-Image-Detection-Dataset",
+  "repository": "zr-zhang/MLLM-Generated-Image-Detection-Dataset",
+  "paper": "A Benchmark Dataset for MLLM-Generated Image Detection: GPT Image2 & Nano Banana2",
+  "arxiv": "2608.01258",
+  "full_rows": 4356,
+  "full_size_gb": 3.32,
+  "license": "Apache-2.0 with dataset-card research-use restrictions",
+  "generators": [
+    "GPT Image2",
+    "Nano Banana2"
+  ],
+  "regimes": [
+    "Hybrid",
+    "Structure",
+    "Texture"
+  ],
+  "originscope_development_subset": {
+    "images": 90,
+    "matched_groups": 30,
+    "groups_per_regime": 10,
+    "labels": {
+      "real": 30,
+      "ai": 60
+    }
+  },
+  "evaluation_note": "OriginScope reports group-held-out development metrics; real/GPT/Nano variants of the same matched scene remain in the same fold. These are not claimed as universal benchmark accuracy.",
+  "dataset_card_note": "The upstream Hugging Face dataset card currently lists 4,356 rows and 3.32 GB; the repository may change over time."
+}

@@ -1,0 +1,11 @@
+[
+  {"id":"hybrid-real-108","file":"assets/samples/hybrid-real-108.jpg","regime":"Hybrid","label":"REAL","source":"Real","group":"108"},
+  {"id":"hybrid-gpt-108","file":"assets/samples/hybrid-gpt-108.jpg","regime":"Hybrid","label":"AI","source":"GPT Image2","group":"108"},
+  {"id":"hybrid-nano-108","file":"assets/samples/hybrid-nano-108.jpg","regime":"Hybrid","label":"AI","source":"Nano Banana2","group":"108"},
+  {"id":"structure-real-108","file":"assets/samples/structure-real-108.jpg","regime":"Structure","label":"REAL","source":"Real","group":"108"},
+  {"id":"structure-gpt-108","file":"assets/samples/structure-gpt-108.jpg","regime":"Structure","label":"AI","source":"GPT Image2","group":"108"},
+  {"id":"structure-nano-108","file":"assets/samples/structure-nano-108.jpg","regime":"Structure","label":"AI","source":"Nano Banana2","group":"108"},
+  {"id":"texture-real-108","file":"assets/samples/texture-real-108.jpg","regime":"Texture","label":"REAL","source":"Real","group":"108"},
+  {"id":"texture-gpt-108","file":"assets/samples/texture-gpt-108.jpg","regime":"Texture","label":"AI","source":"GPT Image2","group":"108"},
+  {"id":"texture-nano-108","file":"assets/samples/texture-nano-108.jpg","regime":"Texture","label":"AI","source":"Nano Banana2","group":"108"}
+]

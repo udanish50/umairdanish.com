@@ -2,6 +2,25 @@
   "schema_version": 1,
   "software": [
     {
+      "id": "originscope",
+      "name": "OriginScope",
+      "status": "Research software",
+      "summary": "Evidence-first image-origin analysis with private browser inference or optional full forensic GPU analysis over an authorized SSH connection, plus metadata/provenance inspection and benchmark practice.",
+      "url": "/software/originscope/",
+      "github": "https://github.com/udanish50/OriginScope",
+      "tags": [
+        "Image forensics",
+        "AI-generated media",
+        "Provenance",
+        "Digital evidence"
+      ],
+      "evidence": [
+        "79.17% grouped balanced accuracy · full ProcessRoute development evaluation",
+        "95.56% grouped content-routing accuracy",
+        "Browser-local mode + cross-platform SSH GPU connector"
+      ]
+    },
+    {
       "id": "core-norm",
       "name": "Core-Norm",
       "status": "Research software",
