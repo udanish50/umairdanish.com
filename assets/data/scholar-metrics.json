@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-08-19T10:47:56Z",
+  "updated_at": "2026-08-20T10:49:32Z",
   "metrics": {
     "citations": {
-      "all": 160,
-      "since_year": 159,
+      "all": 162,
+      "since_year": 161,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -29,11 +29,11 @@
     },
     {
       "year": 2025,
-      "citations": 79
+      "citations": 80
     },
     {
       "year": 2026,
-      "citations": 66
+      "citations": 67
     }
   ],
   "articles": [
@@ -138,7 +138,7 @@
     },
     {
       "title": "Global-local image perceptual score (GLIPS): Evaluating photorealistic quality of ai-generated images",
-      "citations": 35,
+      "citations": 36,
       "year": "2025",
       "publication": "IEEE Transactions on Human-Machine Systems 55 (2), 223-233, 2025",
       "authors": "M Aziz, U Rehman, MU Danish, K Grolinger",
@@ -165,7 +165,7 @@
     },
     {
       "title": "Leveraging hypernetworks and learnable kernels for consumer energy forecasting across diverse consumer types",
-      "citations": 19,
+      "citations": 20,
       "year": "2024",
       "publication": "IEEE Transactions on Power Delivery 40 (1), 75-87, 2024",
       "authors": "MU Danish, K Grolinger",
