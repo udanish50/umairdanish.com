@@ -3,16 +3,16 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-08-20T14:00:17Z",
+  "updated_at": "2026-08-21T13:58:42Z",
   "metrics": {
     "citations": {
-      "all": 162,
-      "since_year": 161,
+      "all": 163,
+      "since_year": 162,
       "since_label": "Since 2021"
     },
     "h_index": {
-      "all": 5,
-      "since_year": 5,
+      "all": 6,
+      "since_year": 6,
       "since_label": "Since 2021"
     },
     "i10_index": {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 67
+      "citations": 68
     }
   ],
   "articles": [
@@ -93,7 +93,7 @@
     },
     {
       "title": "Physics-guided memory network for building energy modeling",
-      "citations": 5,
+      "citations": 6,
       "year": "2025",
       "publication": "Energy and AI 21, 100538, 2025",
       "authors": "MU Danish, K Ali, K Siddiqui, K Grolinger",
