@@ -3,7 +3,7 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-08-23T13:46:34Z",
+  "updated_at": "2026-08-24T14:02:55Z",
   "metrics": {
     "citations": {
       "all": 166,
@@ -20,7 +20,7 @@
       "since_year": 5,
       "since_label": "Since 2021"
     },
-    "article_count": 17
+    "article_count": 18
   },
   "citation_graph": [
     {
@@ -171,6 +171,15 @@
       "authors": "MU Danish, K Grolinger",
       "citation_id": "vDmY-KUAAAAJ:R3hNpaxXUhUC",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:R3hNpaxXUhUC"
+    },
+    {
+      "title": "Deep Mechanistic Explanations (DeepMex) to Unpack the Inner Operations of Memory Networks for Energy Forecasting",
+      "citations": 0,
+      "year": "",
+      "publication": "Available at SSRN 7292119, 0",
+      "authors": "MU Danish, U Rehman, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:ns9cj8rnVeAC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:ns9cj8rnVeAC"
     },
     {
       "title": "Machine Learning with Applications",
