@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-08-24T14:02:55Z",
+  "updated_at": "2026-08-25T14:04:37Z",
   "metrics": {
     "citations": {
-      "all": 166,
-      "since_year": 165,
+      "all": 167,
+      "since_year": 166,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -25,7 +25,7 @@
   "citation_graph": [
     {
       "year": 2024,
-      "citations": 13
+      "citations": 14
     },
     {
       "year": 2025,
@@ -111,7 +111,7 @@
     },
     {
       "title": "Towards a unified evaluation framework: integrating human perception and metrics for AI-generated images: M. Aziz et al.",
-      "citations": 21,
+      "citations": 22,
       "year": "2025",
       "publication": "Multimedia Systems 31 (3), 180, 2025",
       "authors": "M Aziz, U Rehman, MU Danish, S Ali, AZ Abbasi",
