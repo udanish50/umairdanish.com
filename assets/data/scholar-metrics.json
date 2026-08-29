@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-08-28T23:03:04Z",
+  "updated_at": "2026-08-29T17:08:15Z",
   "metrics": {
     "citations": {
-      "all": 167,
-      "since_year": 166,
+      "all": 168,
+      "since_year": 167,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 71
+      "citations": 72
     }
   ],
   "articles": [
@@ -156,7 +156,7 @@
     },
     {
       "title": "Graph attention convolutional u-net: A semantic segmentation model for identifying flooded areas",
-      "citations": 17,
+      "citations": 18,
       "year": "2024",
       "publication": "IECON 2024-50th Annual Conference of the IEEE Industrial Electronics Society …, 2024",
       "authors": "MU Danish, M Buwaneswaran, T Fonseka, K Grolinger",
