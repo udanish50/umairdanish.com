@@ -1,4 +1,4 @@
-const CACHE='udanish-home-v25-dsa-20260819';
+const CACHE='udanish-home-v25-dsa-20260901';
 const CORE=['/software/algolens/','/software/structure-doctor/','/software/edgecase-forge/','/software/algotwin/','/software/refactor-ds/','/assets/css/dsa-suite-v1.css','/assets/js/dsa-suite-engine.js','/assets/js/dsa-suite-app.js','/assets/js/dsa-suite-data.js','/software/linear-lens/','/assets/css/linear-lens-v21.css','/assets/js/linear-lens-engine.js','/assets/js/linear-lens-app.js',
   '/software.html','/software/core-norm/','/assets/css/software-v19.css','/assets/data/software.json','/assets/js/software-catalog.js','/assets/js/core-norm-evidence.js',
   '/assets/js/core-norm-engine.js','/assets/js/core-norm-app.js',
