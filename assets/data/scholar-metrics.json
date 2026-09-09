@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-09-08T17:15:37Z",
+  "updated_at": "2026-09-09T17:09:46Z",
   "metrics": {
     "citations": {
-      "all": 171,
-      "since_year": 170,
+      "all": 173,
+      "since_year": 172,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -29,11 +29,11 @@
     },
     {
       "year": 2025,
-      "citations": 82
+      "citations": 83
     },
     {
       "year": 2026,
-      "citations": 73
+      "citations": 74
     }
   ],
   "articles": [
@@ -120,7 +120,7 @@
     },
     {
       "title": "Kolmogorov–Arnold recurrent network for short term load forecasting across diverse consumers",
-      "citations": 60,
+      "citations": 61,
       "year": "2025",
       "publication": "Energy Reports 13, 713-727, 2025",
       "authors": "MU Danish, K Grolinger",
@@ -165,7 +165,7 @@
     },
     {
       "title": "Leveraging hypernetworks and learnable kernels for consumer energy forecasting across diverse consumer types",
-      "citations": 21,
+      "citations": 22,
       "year": "2024",
       "publication": "IEEE Transactions on Power Delivery 40 (1), 75-87, 2024",
       "authors": "MU Danish, K Grolinger",
