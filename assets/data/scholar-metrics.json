@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-09-11T17:01:58Z",
+  "updated_at": "2026-09-12T16:19:15Z",
   "metrics": {
     "citations": {
-      "all": 172,
-      "since_year": 171,
+      "all": 177,
+      "since_year": 176,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 74
+      "citations": 79
     }
   ],
   "articles": [
@@ -93,7 +93,7 @@
     },
     {
       "title": "Physics-guided memory network for building energy modeling",
-      "citations": 7,
+      "citations": 8,
       "year": "2025",
       "publication": "Energy and AI 21, 100538, 2025",
       "authors": "MU Danish, K Ali, K Siddiqui, K Grolinger",
@@ -120,7 +120,7 @@
     },
     {
       "title": "Kolmogorov–Arnold recurrent network for short term load forecasting across diverse consumers",
-      "citations": 60,
+      "citations": 61,
       "year": "2025",
       "publication": "Energy Reports 13, 713-727, 2025",
       "authors": "MU Danish, K Grolinger",
@@ -138,7 +138,7 @@
     },
     {
       "title": "Global-local image perceptual score (GLIPS): Evaluating photorealistic quality of ai-generated images",
-      "citations": 36,
+      "citations": 37,
       "year": "2025",
       "publication": "IEEE Transactions on Human-Machine Systems 55 (2), 223-233, 2025",
       "authors": "M Aziz, U Rehman, MU Danish, K Grolinger",
@@ -147,7 +147,7 @@
     },
     {
       "title": "Chebyregnet: An unsupervised deep learning technique for deformable medical image registration",
-      "citations": 2,
+      "citations": 3,
       "year": "2024",
       "publication": "IECON 2024-50th Annual Conference of the IEEE Industrial Electronics Society …, 2024",
       "authors": "MU Danish, M Noorchenarboo, A Narayan, K Grolinger",
@@ -156,7 +156,7 @@
     },
     {
       "title": "Graph attention convolutional u-net: A semantic segmentation model for identifying flooded areas",
-      "citations": 17,
+      "citations": 18,
       "year": "2024",
       "publication": "IECON 2024-50th Annual Conference of the IEEE Industrial Electronics Society …, 2024",
       "authors": "MU Danish, M Buwaneswaran, T Fonseka, K Grolinger",
