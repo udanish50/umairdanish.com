@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-09-19T16:30:33Z",
+  "updated_at": "2026-09-20T16:48:07Z",
   "metrics": {
     "citations": {
-      "all": 179,
-      "since_year": 178,
+      "all": 181,
+      "since_year": 180,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 81
+      "citations": 83
     }
   ],
   "articles": [
@@ -93,7 +93,7 @@
     },
     {
       "title": "Physics-guided memory network for building energy modeling",
-      "citations": 8,
+      "citations": 9,
       "year": "2025",
       "publication": "Energy and AI 21, 100538, 2025",
       "authors": "MU Danish, K Ali, K Siddiqui, K Grolinger",
@@ -147,7 +147,7 @@
     },
     {
       "title": "Global-local image perceptual score (GLIPS): Evaluating photorealistic quality of ai-generated images",
-      "citations": 38,
+      "citations": 39,
       "year": "2025",
       "publication": "IEEE Transactions on Human-Machine Systems 55 (2), 223-233, 2025",
       "authors": "M Aziz, U Rehman, MU Danish, K Grolinger",
