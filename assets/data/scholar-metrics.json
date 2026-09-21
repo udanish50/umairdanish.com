@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-09-20T16:48:07Z",
+  "updated_at": "2026-09-21T18:42:53Z",
   "metrics": {
     "citations": {
-      "all": 181,
-      "since_year": 180,
+      "all": 180,
+      "since_year": 179,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -29,7 +29,7 @@
     },
     {
       "year": 2025,
-      "citations": 82
+      "citations": 81
     },
     {
       "year": 2026,
@@ -147,7 +147,7 @@
     },
     {
       "title": "Global-local image perceptual score (GLIPS): Evaluating photorealistic quality of ai-generated images",
-      "citations": 39,
+      "citations": 38,
       "year": "2025",
       "publication": "IEEE Transactions on Human-Machine Systems 55 (2), 223-233, 2025",
       "authors": "M Aziz, U Rehman, MU Danish, K Grolinger",
