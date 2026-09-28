@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-09-27T17:44:24Z",
+  "updated_at": "2026-09-28T20:07:33Z",
   "metrics": {
     "citations": {
-      "all": 182,
-      "since_year": 181,
+      "all": 184,
+      "since_year": 183,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 85
+      "citations": 87
     }
   ],
   "articles": [
@@ -93,7 +93,7 @@
     },
     {
       "title": "Physics-guided memory network for building energy modeling",
-      "citations": 10,
+      "citations": 11,
       "year": "2025",
       "publication": "Energy and AI 21, 100538, 2025",
       "authors": "MU Danish, K Ali, K Siddiqui, K Grolinger",
@@ -174,7 +174,7 @@
     },
     {
       "title": "Leveraging hypernetworks and learnable kernels for consumer energy forecasting across diverse consumer types",
-      "citations": 22,
+      "citations": 23,
       "year": "2024",
       "publication": "IEEE Transactions on Power Delivery 40 (1), 75-87, 2024",
       "authors": "MU Danish, K Grolinger",
