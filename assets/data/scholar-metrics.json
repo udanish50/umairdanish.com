@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-10-03T17:17:32Z",
+  "updated_at": "2026-10-04T17:34:47Z",
   "metrics": {
     "citations": {
-      "all": 186,
-      "since_year": 185,
+      "all": 187,
+      "since_year": 186,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -33,13 +33,13 @@
     },
     {
       "year": 2026,
-      "citations": 89
+      "citations": 90
     }
   ],
   "articles": [
     {
       "title": "Conditional denoising diffusion model for missing value imputation in smart meter data",
-      "citations": 0,
+      "citations": 1,
       "year": "2026",
       "publication": "Engineering Applications of Artificial Intelligence 181, 115403, 2026",
       "authors": "M Buwaneswaran, MU Danish, K Grolinger",
