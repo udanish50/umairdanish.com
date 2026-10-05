@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-10-04T17:34:47Z",
+  "updated_at": "2026-10-05T21:11:56Z",
   "metrics": {
     "citations": {
-      "all": 187,
-      "since_year": 186,
+      "all": 189,
+      "since_year": 188,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 90
+      "citations": 92
     }
   ],
   "articles": [
@@ -93,7 +93,7 @@
     },
     {
       "title": "Physics-guided memory network for building energy modeling",
-      "citations": 11,
+      "citations": 12,
       "year": "2025",
       "publication": "Energy and AI 21, 100538, 2025",
       "authors": "MU Danish, K Ali, K Siddiqui, K Grolinger",
@@ -120,7 +120,7 @@
     },
     {
       "title": "Kolmogorov–Arnold recurrent network for short term load forecasting across diverse consumers",
-      "citations": 64,
+      "citations": 65,
       "year": "2025",
       "publication": "Energy Reports 13, 713-727, 2025",
       "authors": "MU Danish, K Grolinger",
