@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-10-10T17:51:44Z",
+  "updated_at": "2026-10-11T18:04:56Z",
   "metrics": {
     "citations": {
-      "all": 190,
-      "since_year": 189,
+      "all": 191,
+      "since_year": 190,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -20,7 +20,7 @@
       "since_year": 6,
       "since_label": "Since 2021"
     },
-    "article_count": 16
+    "article_count": 17
   },
   "citation_graph": [
     {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 92
+      "citations": 93
     }
   ],
   "articles": [
@@ -137,6 +137,15 @@
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:_kc_bZDykSQC"
     },
     {
+      "title": "AI-SSIM: Human-Centric Image Assessment through Pseudo-Reference Generation and Logical Consistency Analysis in AI-Generated Visuals",
+      "citations": 0,
+      "year": "2025",
+      "publication": "",
+      "authors": "MU Danish, M Aziz, K Grolinger, U Rehman",
+      "citation_id": "vDmY-KUAAAAJ:NaGl4SEjCO4C",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:NaGl4SEjCO4C"
+    },
+    {
       "title": "Global-local image perceptual score (GLIPS): Evaluating photorealistic quality of ai-generated images",
       "citations": 40,
       "year": "2025",
@@ -165,7 +174,7 @@
     },
     {
       "title": "Leveraging hypernetworks and learnable kernels for consumer energy forecasting across diverse consumer types",
-      "citations": 23,
+      "citations": 24,
       "year": "2024",
       "publication": "IEEE Transactions on Power Delivery 40 (1), 75-87, 2024",
       "authors": "MU Danish, K Grolinger",
