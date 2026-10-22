@@ -1,5 +1,21 @@
 [
   {
+    "title": "PhoniPy",
+    "kind": "Software",
+    "url": "/software/phonipy/",
+    "summary": "Private voice analysis with immediate audio playback, pitch and harmonic-energy timelines, and ten documented measures of vocal stability and continuity.",
+    "tags": [
+      "PhoniPy",
+      "voice",
+      "audio",
+      "pitch",
+      "phonation",
+      "music therapy",
+      "Python",
+      "PyPI"
+    ]
+  },
+  {
     "kind": "Page",
     "title": "Research",
     "summary": "Explainable AI, physics-guided learning, time-series and energy intelligence, and responsible applied AI.",

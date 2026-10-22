@@ -2,6 +2,26 @@
   "schema_version": 1,
   "software": [
     {
+      "id": "phonipy",
+      "name": "PhoniPy",
+      "status": "Open voice-analysis software",
+      "summary": "Private voice analysis with immediate audio playback, pitch and harmonic-energy timelines, and ten documented measures of vocal stability and continuity.",
+      "url": "/software/phonipy/",
+      "github": "https://github.com/udanish50/PhoniPy",
+      "tags": [
+        "Voice analysis",
+        "Music therapy",
+        "Audio",
+        "Python"
+      ],
+      "evidence": [
+        "On-device processing",
+        "Immediate playback",
+        "No saved history",
+        "Available on PyPI"
+      ]
+    },
+    {
       "id": "originscope",
       "name": "OriginScope",
       "status": "Research software",
