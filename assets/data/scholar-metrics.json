@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-10-22T17:58:31Z",
+  "updated_at": "2026-10-23T17:52:49Z",
   "metrics": {
     "citations": {
-      "all": 200,
-      "since_year": 199,
+      "all": 202,
+      "since_year": 201,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -20,7 +20,7 @@
       "since_year": 6,
       "since_label": "Since 2021"
     },
-    "article_count": 20
+    "article_count": 21
   },
   "citation_graph": [
     {
@@ -33,10 +33,19 @@
     },
     {
       "year": 2026,
-      "citations": 98
+      "citations": 100
     }
   ],
   "articles": [
+    {
+      "title": "Autoencoder-Based clustered federated learning with importance-aware aggregation for sentiment analysis on non-iid data",
+      "citations": 2,
+      "year": "2026",
+      "publication": "Machine Learning with Applications 26, 101046, 2026",
+      "authors": "D Gholamiangonabadi, MU Danish, Z Chen, K Grolinger",
+      "citation_id": "vDmY-KUAAAAJ:70eg2SAEIzsC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:70eg2SAEIzsC"
+    },
     {
       "title": "Conditional denoising diffusion model for missing value imputation in smart meter data",
       "citations": 1,
@@ -220,7 +229,7 @@
   ],
   "public_access": {
     "link": "https://scholar.google.com/citations?view_op=list_mandates&hl=en&user=vDmY-KUAAAAJ",
-    "available": 8,
+    "available": 9,
     "not_available": 4
   },
   "author": {
