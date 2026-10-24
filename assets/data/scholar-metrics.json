@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-10-23T17:52:49Z",
+  "updated_at": "2026-10-24T16:35:14Z",
   "metrics": {
     "citations": {
-      "all": 202,
-      "since_year": 201,
+      "all": 203,
+      "since_year": 202,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -20,7 +20,7 @@
       "since_year": 6,
       "since_label": "Since 2021"
     },
-    "article_count": 21
+    "article_count": 24
   },
   "citation_graph": [
     {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 100
+      "citations": 101
     }
   ],
   "articles": [
@@ -56,6 +56,15 @@
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:GnPB-g6toBAC"
     },
     {
+      "title": "Statistically-Guided Kernel Regression: Embedding Feature Relevance into Kernel Learning",
+      "citations": 0,
+      "year": "2026",
+      "publication": "2026 2nd International Conference on Advanced Machine Learning and Data …, 2026",
+      "authors": "AA Yousaf, M Aziz, MU Danish, SA Safi, U Rehman",
+      "citation_id": "vDmY-KUAAAAJ:ldfaerwXgEUC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:ldfaerwXgEUC"
+    },
+    {
       "title": "Linear Lens: A human-centered, non-interventional mechanistic approach to explainable AI",
       "citations": 0,
       "year": "2026",
@@ -66,7 +75,7 @@
     },
     {
       "title": "Monotone Delta: An Order-Theoretic Tournament Graph Approach for Internal Consistency Assessment",
-      "citations": 3,
+      "citations": 4,
       "year": "2026",
       "publication": "Frontiers in Applied Mathematics and Statistics 12, 1687194, 2026",
       "authors": "MU Danish, U Rehman, K Grolinger",
@@ -207,6 +216,24 @@
       "authors": "MU Danish, K Grolinger",
       "citation_id": "vDmY-KUAAAAJ:R3hNpaxXUhUC",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:R3hNpaxXUhUC"
+    },
+    {
+      "title": "High-Throughput Discovery of Stable Magnetic Semiconductors for Spintronic ApplicationsUsing Explainable Machine Learning",
+      "citations": 0,
+      "year": "",
+      "publication": "Available at SSRN 7649073, 0",
+      "authors": "A Rauf, A Shakoor Sabir, M Danish",
+      "citation_id": "vDmY-KUAAAAJ:M05iB0D1s5AC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:M05iB0D1s5AC"
+    },
+    {
+      "title": "Calibrated Thermodynamics and Explainable Machine Learning for Cross-Family Screening of Thermochemical Energy Storage Materials",
+      "citations": 0,
+      "year": "",
+      "publication": "Available at SSRN 7592949, 0",
+      "authors": "A Rauf, A Shakoor Sabir, M Danish",
+      "citation_id": "vDmY-KUAAAAJ:2P1L_qKh6hAC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:2P1L_qKh6hAC"
     },
     {
       "title": "Learning and Data Science (AMLDS)",
