@@ -3,7 +3,7 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-10-26T19:19:57Z",
+  "updated_at": "2026-10-27T18:41:31Z",
   "metrics": {
     "citations": {
       "all": 204,
@@ -20,7 +20,7 @@
       "since_year": 6,
       "since_label": "Since 2021"
     },
-    "article_count": 24
+    "article_count": 25
   },
   "citation_graph": [
     {
@@ -216,6 +216,15 @@
       "authors": "MU Danish, K Grolinger",
       "citation_id": "vDmY-KUAAAAJ:R3hNpaxXUhUC",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:R3hNpaxXUhUC"
+    },
+    {
+      "title": "First principles investigation of coupled structural, electronic, optical and thermochemical properties of Ca₁₋ ₓ₋ ᵧMgₓSrᵧ (OH) ₂/Ca₁₋ ₓ₋ ᵧMgₓSrᵧO for thermochemical energy …",
+      "citations": 0,
+      "year": "",
+      "publication": "Ca₁₋ ₓ₋ ᵧMgₓSrᵧO for thermochemical energy storage, 0",
+      "authors": "A Rauf, A Shakoor Sabir, M Danish",
+      "citation_id": "vDmY-KUAAAAJ:g5m5HwL7SMYC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:g5m5HwL7SMYC"
     },
     {
       "title": "High-Throughput Discovery of Stable Magnetic Semiconductors for Spintronic ApplicationsUsing Explainable Machine Learning",
