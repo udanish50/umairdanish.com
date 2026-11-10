@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-11-09T22:59:06Z",
+  "updated_at": "2026-11-10T20:27:53Z",
   "metrics": {
     "citations": {
-      "all": 207,
-      "since_year": 206,
+      "all": 209,
+      "since_year": 208,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -20,7 +20,7 @@
       "since_year": 6,
       "since_label": "Since 2021"
     },
-    "article_count": 22
+    "article_count": 23
   },
   "citation_graph": [
     {
@@ -29,11 +29,11 @@
     },
     {
       "year": 2025,
-      "citations": 85
+      "citations": 84
     },
     {
       "year": 2026,
-      "citations": 104
+      "citations": 107
     }
   ],
   "articles": [
@@ -45,6 +45,15 @@
       "authors": "D Gholamiangonabadi, MU Danish, Z Chen, K Grolinger",
       "citation_id": "vDmY-KUAAAAJ:70eg2SAEIzsC",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:70eg2SAEIzsC"
+    },
+    {
+      "title": "How Much Representational Work Does a Neural Network Require for a Clinical Prediction?",
+      "citations": 0,
+      "year": "2026",
+      "publication": "Proceedings of the AAAI Symposium Series 10 (1), 1186-1194, 2026",
+      "authors": "MU Danish, U Rehman, A Narayan",
+      "citation_id": "vDmY-KUAAAAJ:ZHo1McVdvXMC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:ZHo1McVdvXMC"
     },
     {
       "title": "Conditional denoising diffusion model for missing value imputation in smart meter data",
@@ -111,7 +120,7 @@
     },
     {
       "title": "Physics-guided memory network for building energy modeling",
-      "citations": 13,
+      "citations": 14,
       "year": "2025",
       "publication": "Energy and AI 21, 100538, 2025",
       "authors": "MU Danish, K Ali, K Siddiqui, K Grolinger",
@@ -210,7 +219,7 @@
     },
     {
       "title": "Leveraging hypernetworks and learnable kernels for consumer energy forecasting across diverse consumer types",
-      "citations": 24,
+      "citations": 25,
       "year": "2024",
       "publication": "IEEE Transactions on Power Delivery 40 (1), 75-87, 2024",
       "authors": "MU Danish, K Grolinger",
