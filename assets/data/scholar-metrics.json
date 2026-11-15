@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-11-14T18:44:29Z",
+  "updated_at": "2026-11-15T19:22:41Z",
   "metrics": {
     "citations": {
-      "all": 209,
-      "since_year": 208,
+      "all": 211,
+      "since_year": 210,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -20,7 +20,7 @@
       "since_year": 6,
       "since_label": "Since 2021"
     },
-    "article_count": 23
+    "article_count": 24
   },
   "citation_graph": [
     {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 107
+      "citations": 109
     }
   ],
   "articles": [
@@ -74,6 +74,15 @@
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:ldfaerwXgEUC"
     },
     {
+      "title": "TraceX: Central Finite-Difference Explainability for AI-Based Financial Credit Evaluation",
+      "citations": 0,
+      "year": "2026",
+      "publication": "2026 IEEE International Conference on AI and Data Analytics (ICAD), 1-8, 2026",
+      "authors": "M Aziz, MU Danish, K Grolinger, U Rehman",
+      "citation_id": "vDmY-KUAAAAJ:3s1wT3WcHBgC",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=vDmY-KUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=vDmY-KUAAAAJ:3s1wT3WcHBgC"
+    },
+    {
       "title": "Linear Lens: A human-centered, non-interventional mechanistic approach to explainable AI",
       "citations": 0,
       "year": "2026",
@@ -93,7 +102,7 @@
     },
     {
       "title": "Any-class presence likelihood for robust multi-label classification with abundant negative data",
-      "citations": 2,
+      "citations": 3,
       "year": "2026",
       "publication": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …, 2026",
       "authors": "D Tissera, O Awadallah, MU Danish, A Sadhu, K Grolinger",
@@ -174,7 +183,7 @@
     },
     {
       "title": "Global-local image perceptual score (GLIPS): Evaluating photorealistic quality of ai-generated images",
-      "citations": 41,
+      "citations": 42,
       "year": "2025",
       "publication": "IEEE Transactions on Human-Machine Systems 55 (2), 223-233, 2025",
       "authors": "M Aziz, U Rehman, MU Danish, K Grolinger",
