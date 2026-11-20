@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-11-19T21:35:29Z",
+  "updated_at": "2026-11-20T21:05:08Z",
   "metrics": {
     "citations": {
-      "all": 211,
-      "since_year": 210,
+      "all": 212,
+      "since_year": 211,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -156,7 +156,7 @@
     },
     {
       "title": "Kolmogorov–Arnold recurrent network for short term load forecasting across diverse consumers",
-      "citations": 66,
+      "citations": 67,
       "year": "2025",
       "publication": "Energy Reports 13, 713-727, 2025",
       "authors": "MU Danish, K Grolinger",
