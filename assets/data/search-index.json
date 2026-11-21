@@ -627,17 +627,6 @@
   },
   {
     "kind": "Publication",
-    "title": "Behavioral Mechanistic Interpretability for Human Cognitive Understanding of Explainable Artificial Intelligence",
-    "url": "/publications/behavioral-mechanistic-interpretability/",
-    "summary": "IEEE Transactions on Artificial Intelligence · Published",
-    "tags": [
-      "2026",
-      "Interpretability",
-      "Journal"
-    ]
-  },
-  {
-    "kind": "Publication",
     "title": "Autoencoder-Based Clustered Federated Learning with Importance-Aware Aggregation for Sentiment Analysis on Non-IID Data",
     "url": "/publications/clustered-federated-learning/",
     "summary": "Machine Learning with Applications · Published",

@@ -421,7 +421,7 @@ def main() -> int:
         # Synchronize the legacy homepage live-metrics file from this canonical
         # Scholar result. This prevents two different citation totals from ever
         # being shown by different pages or cached clients.
-        journals = 12
+        journals = 11
         conferences = 13
         try:
             publication_rows = json.loads(

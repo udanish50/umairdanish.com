@@ -396,25 +396,6 @@
     "scholar_citation_id": "vDmY-KUAAAAJ:R3hNpaxXUhUC"
   },
   {
-    "slug": "behavioral-mechanistic-interpretability",
-    "year": 2026,
-    "type": "Journal",
-    "status": "Published",
-    "title": "Behavioral Mechanistic Interpretability for Human Cognitive Understanding of Explainable Artificial Intelligence",
-    "authors": "M. U. Danish, U. Rehman, and K. Grolinger",
-    "venue": "IEEE Transactions on Artificial Intelligence",
-    "details": "2026",
-    "topic": "Interpretability",
-    "featured": false,
-    "doi": "",
-    "link": "",
-    "code": "",
-    "award": "",
-    "visual": "default.svg",
-    "summary": "",
-    "metadata_source": "Author CV, updated November 2026"
-  },
-  {
     "slug": "clustered-federated-learning",
     "year": 2026,
     "type": "Journal",
