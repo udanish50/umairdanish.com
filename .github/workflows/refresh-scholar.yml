@@ -211,7 +211,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [ -z "$(git status --porcelain -- assets/data/scholar-metrics.json assets/data/live-research-metrics.json)" ]; then
+          if [ -z "$(git status --porcelain -- assets/data/scholar-metrics.json assets/data/live-research-metrics.json index.html cv.html)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Google Scholar metrics are unchanged."
             exit 0
@@ -221,7 +221,7 @@ jobs:
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/data/scholar-metrics.json assets/data/live-research-metrics.json
+          git add assets/data/scholar-metrics.json assets/data/live-research-metrics.json index.html cv.html
           git commit -m "Refresh Google Scholar metrics"
 
           git pull --rebase origin main

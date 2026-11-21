@@ -63,7 +63,7 @@
     "topic": "Research Software",
     "featured": true,
     "title": "MidiPy: A Python Application for Processing MIDI Data in Improvised Active Music Therapy",
-    "authors": "D. Kogutek and M. U. Danish",
+    "authors": "D. Kogutek, M. U. Danish, and T. Ip",
     "venue": "Journal of Creative Music Systems",
     "details": "Accepted",
     "doi": "",
@@ -77,19 +77,20 @@
     "slug": "statistically-guided-kernel-regression",
     "year": 2026,
     "type": "Conference",
-    "status": "Accepted",
+    "status": "Published",
     "topic": "Machine Learning Methods",
     "featured": false,
     "title": "Statistically-Guided Kernel Regression: Embedding Feature Relevance into Kernel Learning",
     "authors": "A. A. Yousaf, M. Aziz, M. U. Danish, S. A. Safi, and U. Rehman",
     "venue": "2nd International Conference on Advanced Machine Learning and Data Science",
-    "details": "Accepted for oral presentation",
+    "details": "Osaka, Japan · July 2026 · IEEE",
     "doi": "",
     "summary": "Embeds statistically estimated feature relevance directly into kernel learning for regression.",
     "link": "",
     "code": "",
     "award": "",
-    "visual": "default.svg"
+    "visual": "default.svg",
+    "scholar_citation_id": "vDmY-KUAAAAJ:ldfaerwXgEUC"
   },
   {
     "slug": "any-class-presence-likelihood",
@@ -107,7 +108,8 @@
     "summary": "Improves multi-label classification when datasets contain many examples in which none of the target classes is present.",
     "code": "",
     "award": "",
-    "visual": "default.svg"
+    "visual": "default.svg",
+    "scholar_citation_id": "vDmY-KUAAAAJ:HDshCWvjkbEC"
   },
   {
     "slug": "conditional-diffusion-imputation",
@@ -125,7 +127,8 @@
     "link": "",
     "code": "",
     "award": "",
-    "visual": "default.svg"
+    "visual": "default.svg",
+    "scholar_citation_id": "vDmY-KUAAAAJ:GnPB-g6toBAC"
   },
   {
     "slug": "linear-lens",
@@ -147,7 +150,8 @@
     "pdf": "/assets/papers/linear-lens.pdf",
     "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/Linear-Lens.pdf",
     "pdf_local": true,
-    "pdf_license": "CC BY-NC-ND 4.0"
+    "pdf_license": "CC BY-NC-ND 4.0",
+    "scholar_citation_id": "vDmY-KUAAAAJ:BqipwSGYUEgC"
   },
   {
     "slug": "monotone-delta",
@@ -169,7 +173,8 @@
     "pdf": "/assets/papers/monotone-delta.pdf",
     "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/Monotone-Delta.pdf",
     "pdf_local": true,
-    "pdf_license": "CC BY 4.0"
+    "pdf_license": "CC BY 4.0",
+    "scholar_citation_id": "vDmY-KUAAAAJ:iH-uZ7U-co4C"
   },
   {
     "slug": "distributional-feature-separability",
@@ -187,7 +192,8 @@
     "summary": "Explains credit-model behavior through the distributional separation of features associated with model decisions.",
     "link": "https://doi.org/10.1109/AIXSET65682.2025.00024",
     "code": "https://github.com/udanish50/DFS",
-    "visual": "default.svg"
+    "visual": "default.svg",
+    "scholar_citation_id": "vDmY-KUAAAAJ:hMod-77fHWUC"
   },
   {
     "slug": "finite-difference-credit-xai",
@@ -197,7 +203,7 @@
     "topic": "Interpretability",
     "featured": false,
     "title": "Finite-Difference Approximation for Explaining Neural Network Predictions in Financial Credit Evaluation",
-    "authors": "M. Aziz, M. U. Danish, F. Iqbal, and U. Rehman",
+    "authors": "M. Aziz, M. U. Danish, K. Grolinger, U. Rehman, and F. Iqbal",
     "venue": "International Conference on Advanced Machine Learning and Data Science",
     "details": "Tokyo, 2025",
     "doi": "10.1109/AMLDS63918.2025.11159472",
@@ -205,7 +211,8 @@
     "summary": "Uses finite-difference approximations to characterize how input changes affect neural-network credit predictions.",
     "code": "https://github.com/udanish50/OLGA",
     "award": "",
-    "visual": "default.svg"
+    "visual": "default.svg",
+    "scholar_citation_id": "vDmY-KUAAAAJ:_kc_bZDykSQC"
   },
   {
     "slug": "glips",
@@ -227,7 +234,8 @@
     "visual_note": "Figure from the GLIPS preprint; displayed under CC BY 4.0.",
     "pdf": "/assets/papers/glips-author-accepted-manuscript.pdf",
     "pdf_kind": "Author accepted manuscript",
-    "pdf_note": "TechRxiv cover page removed; IEEE accepted-author manuscript retained unchanged."
+    "pdf_note": "TechRxiv cover page removed; IEEE accepted-author manuscript retained unchanged.",
+    "scholar_citation_id": "vDmY-KUAAAAJ:IWHjjKOFINEC"
   },
   {
     "slug": "kolmogorov-arnold-recurrent-network",
@@ -250,7 +258,8 @@
     "pdf": "/assets/papers/karn.pdf",
     "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/KARN-published.pdf",
     "pdf_local": true,
-    "pdf_license": "CC BY-NC-ND 4.0"
+    "pdf_license": "CC BY-NC-ND 4.0",
+    "scholar_citation_id": "vDmY-KUAAAAJ:dhFuZR0502QC"
   },
   {
     "slug": "physics-guided-memory-network",
@@ -270,7 +279,8 @@
     "award": "",
     "visual": "papers/pgmn-paper-figure.webp",
     "visual_note": "Graphical abstract from the paper; displayed under CC BY-NC 4.0.",
-    "pdf": "/assets/papers/pgmn.pdf"
+    "pdf": "/assets/papers/pgmn.pdf",
+    "scholar_citation_id": "vDmY-KUAAAAJ:TQgYirikUcIC"
   },
   {
     "slug": "rootsolver",
@@ -288,7 +298,8 @@
     "summary": "Presents a cognitive-inspired method for polynomial root finding with explicit multiplicity detection.",
     "code": "https://github.com/udanish50/RootSolver",
     "award": "",
-    "visual": "default.svg"
+    "visual": "default.svg",
+    "scholar_citation_id": "vDmY-KUAAAAJ:_Qo2XoVZTnwC"
   },
   {
     "slug": "unified-ai-image-evaluation",
@@ -312,7 +323,8 @@
     "pdf_local": true,
     "pdf_license": "CC BY 4.0 (TechRxiv preprint)",
     "pdf_kind": "Author preprint",
-    "pdf_note": "TechRxiv cover page removed; manuscript pages retained unchanged. Publisher DOI retained."
+    "pdf_note": "TechRxiv cover page removed; manuscript pages retained unchanged. Publisher DOI retained.",
+    "scholar_citation_id": "vDmY-KUAAAAJ:ZeXyd9-uunAC"
   },
   {
     "slug": "chebyregnet",
@@ -334,7 +346,8 @@
     "pdf": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/ChebyRegNet__An_Unsupervised_Deep_Learning_Technique_for_Deformable_Medical_Image_Registration_.pdf",
     "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/ChebyRegNet__An_Unsupervised_Deep_Learning_Technique_for_Deformable_Medical_Image_Registration_.pdf",
     "pdf_local": false,
-    "pdf_host": "Western University"
+    "pdf_host": "Western University",
+    "scholar_citation_id": "vDmY-KUAAAAJ:QIV2ME_5wuYC"
   },
   {
     "slug": "graph-attention-convolutional-unet",
@@ -356,7 +369,8 @@
     "pdf": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/Flood_Area_Identification.pdf",
     "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/Flood_Area_Identification.pdf",
     "pdf_local": false,
-    "pdf_host": "Western University"
+    "pdf_host": "Western University",
+    "scholar_citation_id": "vDmY-KUAAAAJ:9ZlFYXVOiuMC"
   },
   {
     "slug": "hypernetworks-learnable-kernels",
@@ -378,6 +392,124 @@
     "pdf": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/HyperEnergy__-for-upload.pdf",
     "pdf_source": "https://www.eng.uwo.ca/electrical/faculty/grolinger_k/docs/HyperEnergy__-for-upload.pdf",
     "pdf_local": false,
-    "pdf_host": "Western University"
+    "pdf_host": "Western University",
+    "scholar_citation_id": "vDmY-KUAAAAJ:R3hNpaxXUhUC"
+  },
+  {
+    "slug": "behavioral-mechanistic-interpretability",
+    "year": 2026,
+    "type": "Journal",
+    "status": "Published",
+    "title": "Behavioral Mechanistic Interpretability for Human Cognitive Understanding of Explainable Artificial Intelligence",
+    "authors": "M. U. Danish, U. Rehman, and K. Grolinger",
+    "venue": "IEEE Transactions on Artificial Intelligence",
+    "details": "2026",
+    "topic": "Interpretability",
+    "featured": false,
+    "doi": "",
+    "link": "",
+    "code": "",
+    "award": "",
+    "visual": "default.svg",
+    "summary": "",
+    "metadata_source": "Author CV, updated November 2026"
+  },
+  {
+    "slug": "clustered-federated-learning",
+    "year": 2026,
+    "type": "Journal",
+    "status": "Published",
+    "title": "Autoencoder-Based Clustered Federated Learning with Importance-Aware Aggregation for Sentiment Analysis on Non-IID Data",
+    "authors": "D. Gholamiangonabadi, M. U. Danish, Z. Chen, and K. Grolinger",
+    "venue": "Machine Learning with Applications",
+    "details": "Vol. 26, Article 101046",
+    "topic": "Machine Learning Methods",
+    "featured": false,
+    "doi": "",
+    "link": "",
+    "code": "",
+    "award": "",
+    "visual": "default.svg",
+    "summary": "",
+    "metadata_source": "Author CV, updated November 2026",
+    "scholar_citation_id": "vDmY-KUAAAAJ:70eg2SAEIzsC"
+  },
+  {
+    "slug": "explanation-intent-xai",
+    "year": 2026,
+    "type": "Conference",
+    "status": "Accepted",
+    "title": "How Explanation Intent Shapes Human Use of XAI for Neural-Network Predictions",
+    "authors": "M. U. Danish, M. Aziz, U. Rehman, and K. Grolinger",
+    "venue": "2026 IEEE 8th International Conference on Cognitive Machine Intelligence (CogMI)",
+    "details": "Accepted, Application Track · San Jose, CA, USA · November 2026",
+    "topic": "Human-AI Interaction",
+    "featured": false,
+    "doi": "",
+    "link": "",
+    "code": "",
+    "award": "",
+    "visual": "default.svg",
+    "summary": "",
+    "metadata_source": "Author CV, updated November 2026"
+  },
+  {
+    "slug": "traceable-kan-malware",
+    "year": 2026,
+    "type": "Conference",
+    "status": "Accepted",
+    "title": "Interpretable by Design: Traceable Edge-Function Kolmogorov–Arnold Networks for Memory-Forensic Malware Detection",
+    "authors": "M. U. Danish, F. Iqbal, B. C. M. Fung, and A. Marrington",
+    "venue": "2026 6th International Conference on Artificial Intelligence and Application Technologies (AIAT)",
+    "details": "Accepted for publication and oral presentation · Tokyo, Japan · December 2026",
+    "topic": "Interpretability",
+    "featured": false,
+    "doi": "",
+    "link": "",
+    "code": "",
+    "award": "",
+    "visual": "default.svg",
+    "summary": "",
+    "metadata_source": "Author CV, updated November 2026"
+  },
+  {
+    "slug": "tracex",
+    "year": 2026,
+    "type": "Conference",
+    "status": "Published",
+    "title": "TraceX: Central Finite-Difference Explainability for AI-Based Financial Credit Evaluation",
+    "authors": "M. Aziz, M. U. Danish, K. Grolinger, and U. Rehman",
+    "venue": "2026 IEEE International Conference on AI and Data Analytics (ICAD)",
+    "details": "2026 · pp. 1–8",
+    "topic": "Interpretability",
+    "featured": false,
+    "doi": "",
+    "link": "",
+    "code": "",
+    "award": "",
+    "visual": "default.svg",
+    "summary": "",
+    "metadata_source": "Author CV, updated November 2026",
+    "scholar_citation_id": "vDmY-KUAAAAJ:3s1wT3WcHBgC"
+  },
+  {
+    "slug": "representational-work-clinical",
+    "year": 2026,
+    "type": "Conference",
+    "status": "Published",
+    "title": "How Much Representational Work Does a Neural Network Require for a Clinical Prediction?",
+    "authors": "M. U. Danish, U. Rehman, and A. Narayan",
+    "venue": "Proceedings of the AAAI Symposium Series",
+    "details": "Vol. 10, No. 1, pp. 1186–1194 · November 6, 2026",
+    "topic": "Interpretability",
+    "featured": false,
+    "doi": "",
+    "link": "",
+    "code": "",
+    "award": "",
+    "visual": "default.svg",
+    "summary": "",
+    "metadata_source": "Author CV, updated November 2026",
+    "scholar_citation_id": "vDmY-KUAAAAJ:ZHo1McVdvXMC"
   }
 ]

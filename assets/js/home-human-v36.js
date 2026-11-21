@@ -22,9 +22,10 @@
     toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
     document.body.classList.toggle('h36-nav-open',open);
   });
+  document.addEventListener('click',e=>{if(nav?.classList.contains('open')&&!e.target.closest('.h36-header'))closeMenu()});
   qa('.h36-nav>a').forEach(a=>a.addEventListener('click',closeMenu));
   addEventListener('resize',()=>{if(innerWidth>1120)closeMenu()},{passive:true});
-  addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.contains('open')){closeMenu();toggle?.focus()}});
 
   /* Whole-card interaction. Nested links keep their own destinations. */
   function activateCard(card){
@@ -56,6 +57,7 @@
   };
 
   function putMetric(key,value){
+    if(value===null||value===undefined||value==='')return;
     const n=Number(value),el=q(`[data-live-metric="${key}"]`);
     if(el&&Number.isFinite(n))el.textContent=n.toLocaleString();
   }
@@ -71,11 +73,11 @@
       const stamp=scholar?.updated_at?new Date(scholar.updated_at):null;
       if(status){
         status.textContent=stamp&&!Number.isNaN(stamp.valueOf())
-          ?`LIVE · Google Scholar refreshed ${stamp.toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}`
-          :'LIVE · Google Scholar auto-refresh';
+          ?`Google Scholar snapshot · ${stamp.toLocaleString(undefined,{year:'numeric',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}`
+          :'Google Scholar snapshot · date unavailable';
       }
     }catch(_){
-      if(status)status.textContent='Latest verified Scholar values · automatic refresh temporarily unavailable';
+      if(status)status.textContent+=' · refresh unavailable';
     }
 
     /* Publication totals come from the same first-party publication archive shown on this site. */
@@ -114,37 +116,6 @@
     }catch(_){}
   }
 
-  /* Daily Knowledge — live public Wikipedia data, graceful offline fallback. */
-  async function dailyKnowledge(){
-    const now=new Date();
-    const day=String(now.getDate()).padStart(2,'0');
-    const month=String(now.getMonth()+1).padStart(2,'0');
-    const dayEl=q('[data-daily-day]'),monthEl=q('[data-daily-month]');
-    if(dayEl)dayEl.textContent=String(now.getDate());
-    if(monthEl)monthEl.textContent=now.toLocaleDateString(undefined,{month:'short'});
-    try{
-      const r=await fetch(`https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${month}/${day}`,{headers:{Accept:'application/json'},cache:'no-store'});
-      if(!r.ok)throw new Error('wikipedia');
-      const d=await r.json(),events=Array.isArray(d.events)?d.events:[];
-      if(!events.length)throw new Error('empty');
-      const event=events[now.getDate()%events.length];
-      const title=String(event.text||'').trim();
-      const page=Array.isArray(event.pages)&&event.pages[0];
-      const href=page?.content_urls?.desktop?.page||page?.content_urls?.mobile?.page||'https://en.wikipedia.org/wiki/Wikipedia:On_this_day/Today';
-      const year=q('[data-daily-year]'),titleEl=q('[data-daily-title]'),text=q('[data-daily-text]'),link=q('[data-daily-link]'),card=q('[data-daily-card]');
-      if(year)year.textContent=String(event.year||'');
-      if(titleEl)titleEl.textContent=title.length>118?`${title.slice(0,115)}…`:title;
-      if(text)text.textContent=title;
-      if(link)link.href=href;
-      if(card)card.dataset.cardHref=href;
-    }catch(_){
-      const year=q('[data-daily-year]'),titleEl=q('[data-daily-title]'),text=q('[data-daily-text]');
-      if(year)year.textContent='';
-      if(titleEl)titleEl.textContent='A moment from history';
-      if(text)text.textContent='The live Wikipedia “On this day” feed is temporarily unavailable. Open Wikipedia to explore today’s historical events.';
-    }
-  }
-
   /* GitHub LIVE badges only appear after a successful current response. */
   async function repoBadges(){
     const cards=qa('[data-github-repo]');
@@ -178,7 +149,7 @@
 
   liveMetrics();
   paperCitations();
-  dailyKnowledge();
+
   repoBadges();
   visitorMap();
 })();

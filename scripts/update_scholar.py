@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import urllib.parse
 import urllib.request
@@ -250,6 +251,39 @@ def graph_from_response(
     return []
 
 
+
+def sync_html_metrics(payload: dict[str, Any], journals: int, conferences: int) -> None:
+    """Keep first paint and no-JavaScript values aligned with the cached snapshot."""
+    metrics = payload["metrics"]
+    values = {"citations": metrics["citations"]["all"], "hindex": metrics["h_index"]["all"],
+              "journals": journals, "conferences": conferences}
+    stamp = datetime.fromisoformat(payload["updated_at"].replace("Z", "+00:00"))
+    label = stamp.strftime("%B %d, %Y").replace(" 0", " ")
+    for path in (Path("index.html"), Path("cv.html")):
+        if not path.exists():
+            continue
+        content = path.read_text(encoding="utf-8")
+        for key, value in values.items():
+            content = re.sub(r'(data-live-metric="' + key + r'">)[0-9,]+',
+                             lambda m: m[1] + str(value), content)
+            content = re.sub(r'(data-impact-' + key + r'(?:="")?>)[0-9,]+',
+                             lambda m: m[1] + str(value), content)
+        content = re.sub(r'(data-impact-total>)[0-9,]+',
+                         lambda m: m[1] + str(journals + conferences), content)
+        content = re.sub(r'(data-live-status>)[^<]*',
+                         lambda m: m[1] + 'Scholar snapshot · ' + label, content)
+        patterns = {"karn": r"Kolmogorov.*Arnold recurrent network",
+                    "glips": r"Global.local image perceptual score",
+                    "unified": r"Towards a unified evaluation framework"}
+        for key, pattern in patterns.items():
+            article = next((a for a in payload.get("articles", [])
+                            if re.search(pattern, a.get("title", ""), re.I)), None)
+            if article:
+                content = re.sub(r'(data-paper-citations="' + key + r'">)[0-9,]+',
+                                 lambda m: m[1] + str(article["citations"]), content)
+        path.write_text(content, encoding="utf-8")
+
+
 def main() -> int:
     api_key = os.environ.get("SERPAPI_KEY", "").strip()
 
@@ -387,8 +421,8 @@ def main() -> int:
         # Synchronize the legacy homepage live-metrics file from this canonical
         # Scholar result. This prevents two different citation totals from ever
         # being shown by different pages or cached clients.
-        journals = 10
-        conferences = 9
+        journals = 12
+        conferences = 13
         try:
             publication_rows = json.loads(
                 PUBLICATIONS_OUTPUT.read_text(encoding="utf-8")
@@ -428,6 +462,7 @@ def main() -> int:
             encoding="utf-8",
         )
         live_temporary.replace(LIVE_OUTPUT)
+        sync_html_metrics(payload, journals, conferences)
 
         print(
             "Updated Google Scholar snapshot: "

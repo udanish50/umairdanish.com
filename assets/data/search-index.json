@@ -624,5 +624,71 @@
       "matrix software",
       "public datasets"
     ]
+  },
+  {
+    "kind": "Publication",
+    "title": "Behavioral Mechanistic Interpretability for Human Cognitive Understanding of Explainable Artificial Intelligence",
+    "url": "/publications/behavioral-mechanistic-interpretability/",
+    "summary": "IEEE Transactions on Artificial Intelligence · Published",
+    "tags": [
+      "2026",
+      "Interpretability",
+      "Journal"
+    ]
+  },
+  {
+    "kind": "Publication",
+    "title": "Autoencoder-Based Clustered Federated Learning with Importance-Aware Aggregation for Sentiment Analysis on Non-IID Data",
+    "url": "/publications/clustered-federated-learning/",
+    "summary": "Machine Learning with Applications · Published",
+    "tags": [
+      "2026",
+      "Machine Learning Methods",
+      "Journal"
+    ]
+  },
+  {
+    "kind": "Publication",
+    "title": "How Explanation Intent Shapes Human Use of XAI for Neural-Network Predictions",
+    "url": "/publications/explanation-intent-xai/",
+    "summary": "2026 IEEE 8th International Conference on Cognitive Machine Intelligence (CogMI) · Accepted",
+    "tags": [
+      "2026",
+      "Human-AI Interaction",
+      "Conference"
+    ]
+  },
+  {
+    "kind": "Publication",
+    "title": "Interpretable by Design: Traceable Edge-Function Kolmogorov–Arnold Networks for Memory-Forensic Malware Detection",
+    "url": "/publications/traceable-kan-malware/",
+    "summary": "2026 6th International Conference on Artificial Intelligence and Application Technologies (AIAT) · Accepted",
+    "tags": [
+      "2026",
+      "Interpretability",
+      "Conference"
+    ]
+  },
+  {
+    "kind": "Publication",
+    "title": "TraceX: Central Finite-Difference Explainability for AI-Based Financial Credit Evaluation",
+    "url": "/publications/tracex/",
+    "summary": "2026 IEEE International Conference on AI and Data Analytics (ICAD) · Published",
+    "tags": [
+      "2026",
+      "Interpretability",
+      "Conference"
+    ]
+  },
+  {
+    "kind": "Publication",
+    "title": "How Much Representational Work Does a Neural Network Require for a Clinical Prediction?",
+    "url": "/publications/representational-work-clinical/",
+    "summary": "Proceedings of the AAAI Symposium Series · Published",
+    "tags": [
+      "2026",
+      "Interpretability",
+      "Conference"
+    ]
   }
 ]

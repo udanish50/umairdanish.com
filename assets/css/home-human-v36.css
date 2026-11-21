@@ -259,3 +259,18 @@ html[data-theme="dark"] .h36-connect,html[data-theme="night"] .h36-connect{backg
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.home-human-v36 *,.home-human-v36 *::before,.home-human-v36 *::after{animation:none!important;transition:none!important}}
+
+/* November 2026 academic review: readable text and direct navigation. */
+.review-jump{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding-block:1rem;font-size:.875rem;border-bottom:1px solid var(--h36-line)}
+.review-jump a{padding-block:.4rem;color:var(--h36-accent);font-weight:650}
+.review-metric-note{font-size:.875rem;color:var(--h36-muted);margin:1rem 0 0;max-width:78ch}
+.review-metric-note a{text-decoration:underline}
+.home-human-v36 h2[id]{scroll-margin-top:7rem}
+.h36-paper-body>p,.h36-tool p,.h36-area>p,.h36-value p,.h36-connect-copy>p{font-size:1rem;line-height:1.7}
+.h36-meta,.h36-paper-foot,.h36-related a,.h36-metrics span,.h36-footer-grid>nav,.h36-footer-meta,.h36-footer-grid>div:first-child span,.h36-footer-grid>div:first-child p{font-size:.875rem}
+.h36-metrics small{font-size:.8125rem}
+.h36-paper-media img{object-fit:contain}
+.h36-paper,.h36-paper-featured{height:auto;min-height:0}
+.h36-hero-side{align-self:start}
+@media(max-width:900px){.h36-portrait-card,.h36-portrait-card img{min-height:0}.h36-portrait-card{max-width:22rem;width:100%;justify-self:center;aspect-ratio:1}.h36-portrait-card img{height:100%;object-position:center top}}
+@media(max-width:430px){.h36-paper-body>p{font-size:1rem}.h36-metrics span{font-size:.875rem}.h36-metrics small{font-size:.8125rem}.h36-socials{font-size:.875rem}}

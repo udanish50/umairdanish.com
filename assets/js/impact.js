@@ -36,6 +36,7 @@
   function apply(data,publications=[]){
     window.__scholarData=data;
     const m=data.metrics||{}; const articles=data.articles||[];
+    setAll('[data-impact-total]',number((countPubs(publications,'Journal')||0)+(countPubs(publications,'Conference')||0)));
     setAll('[data-impact-citations]',number(m.citations?.all, '157'));
     setAll('[data-impact-works]',number(m.article_count, String(articles.length||17)));
     setAll('[data-impact-hindex]',number(m.h_index?.all,'5'));
@@ -84,7 +85,7 @@
         setAll('[data-impact-conferences]',number(countPubs(publications,'Conference'),'9'));
       }catch(_){/* ignore */}
       setAll('[data-impact-status]','Google Scholar snapshot');
-      setAll('[data-impact-updated]','Verified Aug 2026');
+      setAll('[data-impact-updated]','Snapshot unavailable · open Google Scholar for current values');
     }
   }
   load();
