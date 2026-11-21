@@ -25,16 +25,31 @@ function finitePairs(y,p){ const a=[],b=[]; for(let i=0;i<Math.min(y.length,p.le
 function mean(a){return a.length?a.reduce((s,x)=>s+x,0)/a.length:NaN;}
 function quantile(a,q){if(!a.length)return NaN;const b=[...a].sort((x,y)=>x-y),pos=(b.length-1)*q,lo=Math.floor(pos),hi=Math.ceil(pos);return lo===hi?b[lo]:b[lo]+(b[hi]-b[lo])*(pos-lo);}
 function variance(a,m=mean(a)){return a.length?mean(a.map(x=>(x-m)*(x-m))):NaN;}
-function correlation(a,b){const ma=mean(a),mb=mean(b);let n=0,da=0,db=0;for(let i=0;i<a.length;i++){const x=a[i]-ma,y=b[i]-mb;n+=x*y;da+=x*x;db+=y*y;}return da>0&&db>0?n/Math.sqrt(da*db):null;}
+function correlation(a,b){const ma=mean(a),mb=mean(b);let n=0,da=0,db=0;for(let i=0;i<a.length;i++){const x=a[i]-ma,y=b[i]-mb;n+=x*y;da+=x*x;db+=y*y;}const den=Math.sqrt(da*db);return den>EPS?n/den:null;}
 function ranks(a){const idx=a.map((v,i)=>[v,i]).sort((x,y)=>x[0]-y[0]);const out=Array(a.length);let i=0;while(i<idx.length){let j=i+1;while(j<idx.length&&idx[j][0]===idx[i][0])j++;const r=(i+j-1)/2+1;for(let k=i;k<j;k++)out[idx[k][1]]=r;i=j;}return out;}
-OML.regressionMetrics=function(y0,p0){
-  const [y,p]=finitePairs(y0,p0); if(y.length<2)throw new Error('At least two finite truth/prediction pairs are required.');
+OML.regressionMetrics=function(y0,p0,rowIds=null){
+  if(y0.length!==p0.length)throw new Error('Truth and prediction must have the same length.');
+  const ids=rowIds===null?Array.from({length:y0.length},(_,i)=>`row-${i+1}`):Array.from(rowIds);
+  if(ids.length!==y0.length||ids.some(x=>typeof x!=='string'||!x.trim())||new Set(ids).size!==ids.length)throw new Error('row_ids must contain one unique non-empty string per input pair');
+  const y=[],p=[],included=[],excluded=[],mapeIncluded=[],mapeExcluded=[];
+  for(let i=0;i<y0.length;i++){
+    const a=y0[i]===null?NaN:Number(y0[i]),b=p0[i]===null?NaN:Number(p0[i]);
+    const reasons=[];
+    if(!Number.isFinite(a))reasons.push('non_finite_target');
+    if(!Number.isFinite(b))reasons.push('non_finite_prediction');
+    if(!reasons.length){y.push(a);p.push(b);included.push(ids[i]);}
+    else excluded.push({row_id:ids[i],reasons:[...reasons]});
+    if(Number.isFinite(a)&&Math.abs(a)<=EPS)reasons.push('zero_or_near_zero_target');
+    if(reasons.length)mapeExcluded.push({row_id:ids[i],reasons});
+    else mapeIncluded.push(ids[i]);
+  }
+  const row_audit={row_id_source:rowIds===null?'input_position':'provided',input_count:ids.length,finite_pair_count:y.length,included_row_ids:included,excluded_rows:excluded,mape:{target_absolute_threshold:EPS,included_row_ids:mapeIncluded,excluded_rows:mapeExcluded,included_count:mapeIncluded.length,coverage_denominator:'finite_pairs',coverage:mapeIncluded.length/y.length,input_coverage:mapeIncluded.length/ids.length}}; if(y.length<2)throw new Error('At least two finite truth/prediction pairs are required.');
   const e=p.map((v,i)=>v-y[i]),ae=e.map(Math.abs),se=e.map(v=>v*v),my=mean(y),mp=mean(p);
   const sst=y.reduce((s,v)=>s+(v-my)*(v-my),0),sse=se.reduce((a,b)=>a+b,0);
-  const nz=y.map(v=>Math.abs(v)>EPS);const mapeVals=ae.filter((_,i)=>nz[i]).map((v,i2)=>{let idx=-1,c=-1;for(let j=0;j<nz.length;j++){if(nz[j])c++;if(c===i2){idx=j;break;}}return v/Math.abs(y[idx]);});
+  const mapeVals=y.flatMap((v,i)=>Math.abs(v)>EPS?[ae[i]/Math.abs(v)]:[]);
   const sm=ae.map((v,i)=>{const d=Math.abs(y[i])+Math.abs(p[i]);return d>EPS?2*v/d:0;});
   const wden=y.reduce((s,v)=>s+Math.abs(v),0);
-  return {n:y.length,mae:mean(ae),mse:mean(se),rmse:Math.sqrt(mean(se)),medianAE:quantile(ae,.5),maxError:Math.max(...ae),r2:sst>EPS?1-sse/sst:null,explainedVariance:variance(y)>EPS?1-variance(e)/variance(y):null,bias:mean(e),smape:100*mean(sm),mape:mapeVals.length?100*mean(mapeVals):null,mapeCoverage:mapeVals.length/y.length,wape:wden>EPS?100*ae.reduce((a,b)=>a+b,0)/wden:null,pearson:correlation(y,p),spearman:correlation(ranks(y),ranks(p)),p50:quantile(ae,.5),p90:quantile(ae,.9),p95:quantile(ae,.95),p99:quantile(ae,.99),y,p,error:e,absError:ae};
+  return {row_audit,n:y.length,mae:mean(ae),mse:mean(se),rmse:Math.sqrt(mean(se)),medianAE:quantile(ae,.5),maxError:Math.max(...ae),r2:sst>EPS?1-sse/sst:null,explainedVariance:variance(y)>EPS?1-variance(e)/variance(y):null,bias:mean(e),smape:100*mean(sm),mape:mapeVals.length?100*mean(mapeVals):null,mapeCoverage:mapeVals.length/y.length,wape:wden>EPS?100*ae.reduce((a,b)=>a+b,0)/wden:null,pearson:correlation(y,p),spearman:correlation(ranks(y),ranks(p)),p50:quantile(ae,.5),p90:quantile(ae,.9),p95:quantile(ae,.95),p99:quantile(ae,.99),y,p,error:e,absError:ae};
 };
 
 function unique(a){return [...new Set(a.map(String))];}
