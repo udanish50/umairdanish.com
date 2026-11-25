@@ -3,11 +3,11 @@
   "status": "live",
   "author_id": "vDmY-KUAAAAJ",
   "profile_url": "https://scholar.google.com/citations?hl=en&user=vDmY-KUAAAAJ",
-  "updated_at": "2026-11-24T23:01:35Z",
+  "updated_at": "2026-11-25T22:33:04Z",
   "metrics": {
     "citations": {
-      "all": 213,
-      "since_year": 212,
+      "all": 216,
+      "since_year": 215,
       "since_label": "Since 2021"
     },
     "h_index": {
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 109
+      "citations": 112
     }
   ],
   "articles": [
@@ -93,7 +93,7 @@
     },
     {
       "title": "Monotone Delta: An Order-Theoretic Tournament Graph Approach for Internal Consistency Assessment",
-      "citations": 4,
+      "citations": 5,
       "year": "2026",
       "publication": "Frontiers in Applied Mathematics and Statistics 12, 1687194, 2026",
       "authors": "MU Danish, U Rehman, K Grolinger",
@@ -102,7 +102,7 @@
     },
     {
       "title": "Any-class presence likelihood for robust multi-label classification with abundant negative data",
-      "citations": 3,
+      "citations": 4,
       "year": "2026",
       "publication": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …, 2026",
       "authors": "D Tissera, O Awadallah, MU Danish, A Sadhu, K Grolinger",
@@ -156,7 +156,7 @@
     },
     {
       "title": "Kolmogorov–Arnold recurrent network for short term load forecasting across diverse consumers",
-      "citations": 68,
+      "citations": 69,
       "year": "2025",
       "publication": "Energy Reports 13, 713-727, 2025",
       "authors": "MU Danish, K Grolinger",
